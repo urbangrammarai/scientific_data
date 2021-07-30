@@ -1,149 +1,137 @@
-\documentclass[pdftex,letterpaper,11pt]{article}%
-\usepackage[export]{adjustbox}
-\usepackage{multirow}
-\usepackage[arabicsections]{dpugatex}
-%\usepackage{dpppl}
-%\usepackage{lscape}
-\usepackage{pdflscape}
-
-\usepackage{tikz}
-
-\usepackage[british]{babel}
-\usepackage{amssymb,amsmath,warpcol,url,ctable,multirow,caption,threeparttable,float,soul,gensymb}
-%\usepackage[noend]{algpseudocode}
-\makeatletter
-\def\BState{\State\hskip-\ALG@thistlm}
-\makeatother
-
-
-\usepackage{subcaption}
-
-
-\usepackage{xcolor,colortbl}%Per colorejar cel·les de les taules
-\definecolor{verylightgray}{gray}{0.90}
-\newcommand{\verylightgray}[1]{\cellcolor{verylightgray}#1}
-
-
-\usepackage{arydshln} %Per dashed lines
-\setlength\dashlinedash{1.5pt}
-\setlength\dashlinegap{2.5pt}
-\setlength\arrayrulewidth{0.8pt}
-
+\documentclass[fleqn,10pt]{wlscirep}
 \usepackage[utf8]{inputenc}
-\usepackage{eurosym}
-\usepackage{soul}
-\setstcolor{red} % Tatxat vermell pel text a eliminar!!!!
-\definecolor{lightgreen}{rgb}{0.564706,0.933333,0.564706}
-\newcommand{\miquel}[1]{{\sethlcolor{lightgreen} \hl{#1}} } % To highlight with light green Miquel's comments.
-\soulregister\citet7 % These \soulregister commands allow us to avoid problems between soul functions (\hl, \st, ...) and these other functions (\citet,\citep,\ref,\footnote, ...). Include more if it is necessary.
-\soulregister\citep7
-\soulregister\cite7
-\soulregister\ref7
-\soulregister\footnote7
-\soulregister\textit7
-\soulregister\textbf7
-\soulregister\textsc7
-\soulregister\`7 % for open accents.
-\soulregister\'7 % for closed accents.
-\soulregister\% 7 % for \%age symbol
-\usepackage{tabularx,tabulary}
-\usepackage[osf]{mathpazo} % Amb aquest paquet faig ús de la lletra Palatino, la que fan servir Puga, Duranton et al. Amb l'opció [osf] la numeració és "old fashion", però és incompatible amb un títol en negreta i small caps (desapareixen les small caps!). Per tant, per ara opto per NO aplicar aquesta opció.
-\usepackage[abs]{overpic}
+\usepackage[T1]{fontenc}
+\usepackage{lineno}
+\linenumbers
 
-\usepackage{hyperref}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
-\hypersetup{colorlinks=true, breaklinks=true, citecolor= darkblue, linkcolor=blue, urlcolor=blue}
+\title{Characterisation of space in Great Britain using the Spatial Signatures model}
 
-\usepackage{chngcntr}
-
-\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
-\newcommand{\mcc}[1]{\multicolumn{1}{c}{#1}}
-\newcommand{\mcb}[1]{\multicolumn{1}{c}{\bf #1}}
-
-\newcommand{\mr}[3]{\multirow{#1}{#2}{#3}} % Per fer Files múltiples (seguint el punt de vista de les columnes múltiples.
-\newcommand{\mg}[3]{\multicolumn{#1}{#2}{\verylightgray #3}} %Combino el color de les cel·les amb al command de les columnes múltiples.
-
-
-
-%\hypersetup{%
- % pdftitle={Race and neighborhoods in the 21$^{\text{st}}$ century},%
- % pdfauthor={Jorge De la Roca (NYU) , Ingrid Gould Ellen (NYU) and Katherine O'Regan (NYU)},%
- % pdfkeywords={race segregation, discrimination}}
-%\pdfOpenFitWidth
-%\pdfShowBookmarks
-
-\onehalfspacing%
-%\doublespacing%
-
-\newenvironment{tablenote}[1]{\begin{list}{}{\vskip-5mm\relax
-\setlength{\leftmargin}{#1} \setlength{\rightmargin}{\leftmargin}}
-\item[]\footnotesize\vskip-7pt
-{\em Notes}:\space\ignorespaces}{\end{list}}
-
-\newcommand{\jdlradded}[1]{#1}
-\newcommand{\dpadded}[1]{#1}
-\newcommand{\jdlrdeleted}[1]{}
-\newcommand{\dpdeleted}[1]{}
-\newcommand{\jdlrcomment}[1]{}
-\newcommand{\dpcomment}[1]{}
-\newcommand{\comment}[1]{}
-\newcommand{\martin}[1]{{\color{blue} Martin: [{#1}]}}
-\newcommand{\dani}[1]{{\color{purple} Dani: [{#1}]}}
-
-\begin{document}
-\begin{titlepage}
-\vspace*{1ex}
-\begin{minipage}{\textwidth}
-\begin{center}%
-
-    {\textsb{\LARGE Spatial Signatures\\ \textit{Characterisation of space in Great Britain}}}\\[4ex]%
-
-
-{\Large\textbf{Martin Fleischmann}\footnote[1]{THANKS.}\footnote[2]{Geographic
+\author[1, *]{Martin Fleischmann}
+\author[1]{Daniel Arribas-Bel}
+\affil[1]{Geographic
 Data Science Lab, Department of Geography and Planning, University of
 Liverpool, Roxby Building , 74 Bedford St S , Liverpool , L69 7ZT, United
-Kingdom}\footnote[4]{E-mail: \url{D.Arribas-Bel@liverpool.ac.uk}; phone: +44 (0)151 795 9727; website: \url{http://darribas.org}.
-}}\\[1mm]
-%
-{\Large\textsb{Daniel Arribas-Bel}\footnotemark[1]\footnotemark[2]\footnote[3]{
-E-mail: \url{M.Fleischmann@liverpool.ac.uk}; website: \url{https://martinfleischmann.net/}.}}\\[1mm]
-{\large\textit{Geographic Data Science Lab, University of Liverpool} }\\[2.5ex]
-%
-July 2021\vspace{1.5ex}
-%
-\end{center}
-%
+Kingdom}
+
+\affil[*]{corresponding author(s): Martin Fleischmann (m.fleischmann@liverpool.ac.uk)}
+
+
 \begin{abstract}
-Add abstract here
+This is a manuscript template for Data Descriptor submissions to \emph{Scientific Data} (\href{http://www.nature.com/scientificdata}{http://www.nature.com/scientificdata}). The abstract must be no longer than 170 words, and should succinctly describe the study, the assay(s) performed, the resulting data, and the reuse potential, but should not make any claims regarding new scientific findings. No references are allowed in this section.
 \end{abstract}
-%
-\vspace{1.5ex}
-%
-\vspace*{-1.5ex}
-%
-\end{minipage}
-\end{titlepage}
+\begin{document}
+
+\flushbottom
+\maketitle
+%  Click the title above to edit the author information and abstract
+
+\thispagestyle{empty}
+
+\noindent Please note: Abbreviations should be introduced at the first mention in the main text – no abbreviations lists or tables should be included. Structure of the main text is provided below.
+
+\section*{Background \& Summary}
+
+(700 words maximum) An overview of the study design, the assay(s) performed, and the created data, including any background information needed to put this study in the context of previous work and the literature. The section should also briefly outline the broader goals that motivated the creation of this dataset and the potential reuse value. We also encourage authors to include a figure that provides a schematic overview of the study and assay(s) design. The Background \& Summary should not include subheadings. This section and the other main body sections of the manuscript should include citations to the literature as needed.
 
 \input{01_background.tex}
 
+\section*{Methods}
+
+The Methods should include detailed text describing any steps or procedures used in producing the data, including full descriptions of the experimental design, data acquisition assays, and any computational processing (e.g. normalization, image feature extraction). See the detailed section in our submission guidelines for advice on writing a transparent and reproducible methods section. Related methods should be grouped under corresponding subheadings where possible, and methods should be described in enough detail to allow other researchers to interpret and repeat, if required, the full study. Specific data outputs should be explicitly referenced via data citation (see Data Records and Citing Data, below).
+
+Authors should cite previous descriptions of the methods under use, but ideally the method descriptions should be complete enough for others to understand and reproduce the methods and processing steps without referring to associated publications. There is no limit to the length of the Methods section. Subheadings should not be numbered.
+
+
+\subsection*{Subsection}
+
+Example text under a subsection. Bulleted lists may be used where appropriate, e.g.
+
+\begin{itemize}
+\item First item
+\item Second item
+\end{itemize}
+
+\subsubsection*{Third-level section}
+
+Topical subheadings are allowed.
+
 \input{02_methods.tex}
+
+\section*{Data Records}
+
+The Data Records section should be used to explain each data record associated with this work, including the repository where this information is stored, and to provide an overview of the data files and their formats. Each external data record should be cited numerically in the text of this section, for example \cite{Hao:gidmaps:2014}, and included in the main reference list as described below. A data citation should also be placed in the subsection of the Methods containing the data-collection or analytical procedure(s) used to derive the corresponding record. Providing a direct link to the dataset may also be helpful to readers (\hyperlink{https://doi.org/10.6084/m9.figshare.853801}{https://doi.org/10.6084/m9.figshare.853801}).
+
+Tables should be used to support the data records, and should clearly indicate the samples and subjects (study inputs), their provenance, and the experimental manipulations performed on each (please see 'Tables' below). They should also specify the data output resulting from each data-collection or analytical step, should these form part of the archived record.
 
 \input{03_data.tex}
 
+\section*{Technical Validation}
+
+This section presents any experiments or analyses that are needed to support the technical quality of the dataset. This section may be supported by figures and tables, as needed. This is a required section; authors must present information justifying the reliability of their data.
+
 \input{04_validation.tex}
+
+
+\section*{Usage Notes}
+
+The Usage Notes should contain brief instructions to assist other researchers with reuse of the data. This may include discussion of software packages that are suitable for analysing the assay data files, suggested downstream processing steps (e.g. normalization, etc.), or tips for integrating or comparing the data records with other datasets. Authors are encouraged to provide code, programs or data-processing workflows if they may help others understand or use the data. Please see our code availability policy for advice on supplying custom code alongside Data Descriptor manuscripts.
+
+For studies involving privacy or safety controls on public access to the data, this section should describe in detail these controls, including how authors can apply to access the data, what criteria will be used to determine who may access the data, and any limitations on data use.
 
 \input{05_usage.tex}
 
+\section*{Code availability}
+
 \input{06_code.tex}
 
-\clearpage
+For all studies using custom code in the generation or processing of datasets, a statement must be included under the heading "Code availability", indicating whether and how the code can be accessed, including any restrictions to access. This section should also include information on the versions of any software used, if relevant, and any specific variables or parameters used to generate, test, or process the current dataset.
 
-
-
-
-\bibliographystyle{apalike}
 \bibliography{refs}
 
-\clearpage
+\noindent LaTeX formats citations and references automatically using the bibliography records in your .bib file, which you can edit via the project menu. Use the cite command for an inline citation, e.g. \cite{Kaufman2020, Figueredo:2009dg, Babichev2002, behringer2014manipulating}. For data citations of datasets uploaded to e.g. \emph{figshare}, please use the \verb|howpublished| option in the bib entry to specify the platform and the link, as in the \verb|Hao:gidmaps:2014| example in the sample bibliography file. For journal articles, DOIs should be included for works in press that do not yet have volume or page numbers. For other journal articles, DOIs should be included uniformly for all articles or not at all. We recommend that you encode all DOIs in your bibtex database as full URLs, e.g. https://doi.org/10.1007/s12110-009-9068-2.
+
+\section*{Acknowledgements} (not compulsory)
+
+Acknowledgements should be brief, and should not include thanks to anonymous referees and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
+
+\section*{Author contributions statement}
+
+Must include all authors, identified by initials, for example:
+A.A. conceived the experiment(s), A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results. All authors reviewed the manuscript.
+
+\section*{Competing interests} (mandatory statement)
+
+The corresponding author is responsible for providing a \href{https://www.nature.com/sdata/policies/editorial-and-publishing-policies#competing}{competing interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file.
+
+\section*{Figures \& Tables}
+
+Figures, tables, and their legends, should be included at the end of the document. Figures and tables can be referenced in \LaTeX{} using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
+
+Authors are encouraged to provide one or more tables that provide basic information on the main ‘inputs’ to the study (e.g. samples, participants, or information sources) and the main data outputs of the study. Tables in the manuscript should generally not be used to present primary data (i.e. measurements). Tables containing primary data should be submitted to an appropriate data repository.
+
+Tables may be provided within the \LaTeX{} document or as separate files (tab-delimited text or Excel files). Legends, where needed, should be included here. Generally, a Data Descriptor should have fewer than ten Tables, but more may be allowed when needed. Tables may be of any size, but only Tables which fit onto a single printed page will be included in the PDF version of the article (up to a maximum of three).
+
+Due to typesetting constraints, tables that do not fit onto a single A4 page cannot be included in the PDF version of the article and will be made available in the online version only. Any such tables must be labelled in the text as ‘Online-only’ tables and numbered separately from the main table list e.g. ‘Table 1, Table 2, Online-only Table 1’ etc.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{stream}
+\caption{Legend (350 words max). Example legend text.}
+\label{fig:stream}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Condition & n & p \\
+\hline
+A & 5 & 0.1 \\
+\hline
+B & 10 & 0.01 \\
+\hline
+\end{tabular}
+\caption{\label{tab:example}Legend (350 words max). Example legend text.}
+\end{table}
 
 \end{document}
