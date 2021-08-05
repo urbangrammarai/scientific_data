@@ -1,17 +1,96 @@
-% The Methods section in Data Descriptors should describe any steps or procedures used in producing the data, including full descriptions of the experimental design, data acquisition assays, and any computational processing (e.g. normalization, image feature extraction). Specific data outputs should be explicitly referenced via our data citation format.
+% conceptualisation of signature detection
+    % small unit
+    % complex descirption (F&F)
+    % cluster analysis
 
-% - Data inputs
-%     - Spatial unit
-%     - Form
-%         - Input data
-%         - Morphometrics
-%     - Function
-%         - Input data
-%         - Transfer methods
-%             - Spatial join / interpolation / accessibility
-%     - Context
-% - Clustering
-%     - Comparison of clustering methods
-%     - 2-level clustering & dissolution
-%     - Component-based clustering
-% - Feature importance
+% spatial unit
+    % conceptualisation of enclosed tessellation
+    % rules
+        % indivisible
+        % internally consistent
+        % geographically exhaustive
+    % options
+        % admin boundaries
+        % arbitrary grids
+        % morphological units
+    % ET design
+        % barriers
+        % enclosures
+        % anchors
+        % ET cells
+
+    % data input
+        % barries
+            % roads from OS Open Roads
+                % data description (simplified centerlines)
+            % railway from OS OpenMap - Local
+                % data description (simplified centerlines)
+            % rivers from OS OpenRivers
+                % data description (simplified centerlines)
+            % coastline from OS Strategi®
+                % data description (continuous enclosing geometry)
+        % buildings
+            % OS OpenMap - Local
+            % data quality description (merged adjacent geometries)
+
+% characterisation of space
+    % form
+        % input data
+            % ET cells
+            % bulidings
+            % street network
+        % morphometrics
+            % different categories of characters
+                % dimension
+                % shape
+                % spatial distribution
+                % intensity
+                % connectivity
+                % diversity
+            % different scales
+                % individual elements -> adjacency -> networks
+        % contextualisation
+            % interest in characterisation of spatial patterns
+            % distance-weighted higher order contiguity spatial weights
+            % reflection of a statistical distribution of data within context
+                % proxy of diversity
+
+    % function
+        % input data
+            % overview - from population and POIs to NDVI and night lights
+            % include table with transfer methods
+        % transfer methods overview
+            % spatial join
+            % interpolation
+            % accessibility
+        % contextualisation
+            % depending on the transfer method, function-based characters we contextualised using the same method used in morphometrics
+
+% cluster analysis
+    % comparison of clustering methods (shall we include this?? skip for now)
+        % K-Means, GMM, SOM
+
+    % two levels of K-Means clustering
+        % data input
+            % combination of both form and function, all characters equally weighted
+            % only contextualised representation of characters is used to capture pattern
+
+            % data standardisation
+                % column-based mean standardisation
+
+        % selection of number of clusters
+            % clustergram
+            % supplementary metrics
+                % Silhouette
+                % Calinski-Harabasz
+                % Davies-Boulding
+
+        % top level providing a first national classification
+        % sub clustering of urban areas
+            % selection criteria for to-be-subclustered classes
+
+% generation of signature geometry
+    % dissolution based on contiguity and assigned class
+
+
+% - Feature importance - should this actually be included in here?
