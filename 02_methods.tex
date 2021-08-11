@@ -57,7 +57,7 @@ tessellation cell} (ETC), defined as:
 \textit{A characterisation of space based on form and function designed to understand urban
 environments}
 
-% We should drop a reference to conceptual paper here.
+% We should drop a reference to the conceptual paper here.
 
 ETC follows the morphological tradition in a sense that is it
 based on the physical elements of an enviroment but overcomes the drawbacks of
@@ -103,6 +103,14 @@ does not distinguish between individual buildings when they are adajcent (e.g. p
 block composed of multiple buildings is represent by a single polygon).
 
 % characterisation of space
+\subsection*{Characterisation of space}
+Spatial signatures are capturing the character of the built and unbuilt environment
+based on two components - form and function. Each of them is quantified on the level of
+individual ETCs using methods appropriate for the specific datasets. While form
+component is described using urban morphometrics (i.e. quantitave analysis of urban
+form), function is a composite of a variety of data inputs outlined in detail below.
+
+\subsubsection*{Form}
     % form
         % input data
             % ET cells
@@ -123,7 +131,32 @@ block composed of multiple buildings is represent by a single polygon).
             % distance-weighted higher order contiguity spatial weights
             % reflection of a statistical distribution of data within context
                 % proxy of diversity
+Morphometric characterisation of urban form is based on the numerical description
+of four elements capturing the built environment - buildings, streets, ETCs, and
+enclosures, and reflects their patterns based on six categories of characters - dimensions, shapes, spatial
+distribution, intensity, connectivity and diversity. Each element is considered across
+different scales, from the measurements of individual geometries, relations of
+neighbouring geometries to graph-based analysis of street network. The combination of
+elements, categories and scales results in a set of 59 individual morphometric
+characters listed in the table XXX.
+% Q: do we want to include some morphometric theory here? I'd say no since this is a
+% data descriptor but I can add some if needed.
 
+However, measuring individual characters is not enough to understand the predominant
+spatial patterns as for some types of urban form is typical high heterogeneity. That
+means that using, for example, areas of building footprints would in most cases resulted
+in largely discontinous clusters. We are, therefore, representing each of the
+morphometric characters using three proxy variables reflecting statistical distributions
+of measured data within a spatial context of each ETC. Context is defined as 10\sup{th}
+order of contiguity based on the mesh composed of contiguous ETCs. Furhtermore, each
+value is weigthed by the inverse distance between so called poles of inaccessibility
+(defined as a centre of a maximum inscribed circle) of each ETC. Three proxy variables
+then capture the first, the second and the third quartile of the resulting weighted
+distribution. Such a characterisation is able to capture the contextual tendency of each
+morphometric character and hence identify contiguous clusters in both homogenous and
+heterogenous urban tissues.
+
+\subsubsection*{Function}
     % function
         % input data
             % overview - from population and POIs to NDVI and night lights
@@ -136,6 +169,8 @@ block composed of multiple buildings is represent by a single polygon).
             % depending on the transfer method, function-based characters we
             %  contextualised using the same method used in morphometrics
 
+
+\subsection*{Cluster analysis}
 % cluster analysis
     % comparison of clustering methods (shall we include this?? skip for now)
         % K-Means, GMM, SOM
@@ -148,6 +183,12 @@ block composed of multiple buildings is represent by a single polygon).
             % data standardisation
                 % column-based mean standardisation
 
+When combined, contextual proxies of form and function characters (or characters
+themselves when they are reflecting the context by definition) compose a dataset
+describing each ETC by 331 variables (177 for form and 154 for function.) We treat all
+of them equally (there is no weighting involved), standardize each variable applying
+Z-score normalization and use them as an input for K-Means cluster analysis.
+
         % selection of number of clusters
             % clustergram
             % supplementary metrics
@@ -155,12 +196,15 @@ block composed of multiple buildings is represent by a single polygon).
                 % Calinski-Harabasz
                 % Davies-Boulding
 
+
+
         % top level providing a first national classification
         % sub clustering of urban areas
             % selection criteria for to-be-subclustered classes
 
 % generation of signature geometry
     % dissolution based on contiguity and assigned class
-
+Finally, individual spatial signature geometries are generated as a combination of
+adjacent ETCs belonging to the same signature class.
 
 % - Feature importance - should this actually be included in here?
