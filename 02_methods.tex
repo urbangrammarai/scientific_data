@@ -2,7 +2,14 @@
     % small unit
     % complex descirption (F&F)
     % cluster analysis
+The method of identification of spatial signatures consists of three top level steps.
+First, we need to delineate spatial unit of analysis, one that reflects the structure of
+urban phenomena on a very granular level. Then we charactercterise each of them
+according to the form and function capturing the nature of each unit and its spatial
+context. Finally, we use cluster analysis to derive a typology of our spatial units
+that, once combined into contiguous areas, forms a typology of spatial signatures.
 
+\subsection*{Spatial unit}
 % spatial unit
     % conceptualisation of enclosed tessellation
     % rules
@@ -18,6 +25,60 @@
         % enclosures
         % anchors
         % ET cells
+The first major methodological decision needs to be taken on the definition of the
+spatial unit. As mentioned, it needs to reflect space in a granular manner and we argue
+that it should fulfil three conditions. First, it should be \textit{indivisible},
+meaning that when such a unit would be subdivided into smaller parts, none of them would
+be enough to capture the nature of spatial signature. Second, it needs to be
+\textit{internally consistent} - it should always reflect only a single signature type.
+Last, it should be geographically \textit{exhaustive}, covering entirety of the study
+area.
+
+Spatial units used in literature can be split into three groups. One is using
+administrative boundaries like city regions, wards or census output areas, that are
+convenient to obatain and can be easily linked to auxiliarry data. However,
+those rarely reflect the morphological composition of urban space and in some cases may
+even “obscure morphologic reality” REF Taubenbock 2019. At the same time, most of them
+are divisible and larger units are not alwyas internally consistent. Another group is based on
+arbitrary uniform grids linked either to spatial indexing method like H3 REF or OS
+National Grid REF, or to anciliarry data of remote sensing or other origins like a
+WorldPop grid REF. The issue is that grids cannot be considered internally consistent as
+they have no relation to the real-life spatial pattern. Finally, urban morphology tends to use morphological elements as
+street segments REF, blocks REF buildings or plots as a unit of analysis. Some of those
+could be seen as indivisible and internally consistent but since they are largely based
+on built-up fabric, they are not exhaustive. When there is no builiding or street, there
+is no spatial unit to work with. Plots could be theoretically considered as exhaustive,
+consistent and indivisible but there is no accepted conceptual definition and unified
+geometric representation (REF Kropf).
+
+We are, therefore, proposing an application of an alternative spatial unit called \textit{enclosed
+tessellation cell} (ETC), defined as:
+
+\newtheorem*{theorem}{}
+\begin{theorem}
+    A characterisation of space based on form and function designed to understand urban
+environments
+\end{theorem}
+
+% We should drop a reference to conceptual paper here.
+
+ETC follows the morphological tradition in a sense that is it
+based on the physical elements of an enviroment but overcomes the drawbacks of
+conventionally used units. Its geometry is generated in three steps illustrated on a
+Figure \ref{fig:et_diagram}. First, a set of features representing physical barriers
+subdividing space, in our case composed of street network, railways, rivers and a
+coastline, is combined together, generating a layer of boundaries. These then partition space
+into smaller enclosed geometries called \textit{enclosures}, which can be very granular
+or very coarse depending on the geographic context. In dense city centres where a single
+enclosure represent a single block is a high frequency of small enclosures, while in the
+countryside, we can observe very few large enclosures as their delimiters are far away
+from each other. Enclosures are then combined with building footprints, posing as
+anchors in the space and are subdivided into enclosed tessellation cells using the
+morphological tessellation algorithm REF, a polygon-based adaptation of Voronoi
+tessellation. Resulting geometries are indivisible as they contain, at most, a single
+achor building, internally consistent due to their granularity and link to morphological
+elements composing urban fabric, and geogrpahically exhasutive as they cover entire area
+limited by specified boundaries.
 
     % data input
         % barries
@@ -32,6 +93,17 @@
         % buildings
             % OS OpenMap - Local
             % data quality description (merged adjacent geometries)
+
+In the case of classification of Great Britain, street networks are extracted from OS
+Open Roads datasets (REF) representing simplified road centrelines cleaned of road
+segments under the ground. Railways are retrieved from OS OpenMap - Local
+("RailwayTrack" layer) which captures surfance railway tracks. Rivers are extracted from
+OS OpenRivers (REF) representing river network of GB as centrelines, and a coastline is
+retrieved from OS Strategi® (2016) REF, capturing  coastline as a continous line
+geometry. Building geometry is extracted, again, from OS OpenMap - Local ("Building"
+layer) and represents generalised building footprint polygons. Note that the dataset
+does not distinguish between individual buildings when they are adajcent (e.g. perimeter
+block composed of multiple buildings is represent by a single polygon).
 
 % characterisation of space
     % form
@@ -64,7 +136,8 @@
             % interpolation
             % accessibility
         % contextualisation
-            % depending on the transfer method, function-based characters we contextualised using the same method used in morphometrics
+            % depending on the transfer method, function-based characters we
+            %  contextualised using the same method used in morphometrics
 
 % cluster analysis
     % comparison of clustering methods (shall we include this?? skip for now)
