@@ -82,20 +82,17 @@ reliability of their data.
 
 \section*{Usage Notes}
 
-The Usage Notes should contain brief instructions to assist other researchers with reuse
-of the data. This may include discussion of software packages that are suitable for
-analysing the assay data files, suggested downstream processing steps (e.g.
-normalization, etc.), or tips for integrating or comparing the data records with other
-datasets. Authors are encouraged to provide code, programs or data-processing workflows
-if they may help others understand or use the data. Please see our code availability
-policy for advice on supplying custom code alongside Data Descriptor manuscripts.
+Released dataset is following the widespread standards for geographic data storage and
+should not pose a challenge for researches wanting to reuse it. Due to the density of
+signature geometry (resulting from the detailed ETCs), it may be needed to simplify the
+geometry for smoother interactive experience on weaker machines.
 
-For studies involving privacy or safety controls on public access to the data, this
-section should describe in detail these controls, including how authors can apply to
-access the data, what criteria will be used to determine who may access the data, and
-any limitations on data use.
-
-\input{05_usage.tex}
+Replication of the analysis optimally requires at least a single computational node with
+large amount of RAM (100 GB+) due to the size of the input data and detail on which
+signature characterization is computed. It is also recommended to revisit the state of
+the development of related software packages, notably momepy, libpysal, tobler and
+dask-geopandas as they may in the near future offer more efficient drop-in replacements
+of the custom code used to produce this dataset.
 
 \section*{Code availability}
 
