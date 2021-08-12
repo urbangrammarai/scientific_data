@@ -48,35 +48,6 @@ to the literature as needed.
 
 \section*{Methods}
 
-The Methods should include detailed text describing any steps or procedures used in
-producing the data, including full descriptions of the experimental design, data
-acquisition assays, and any computational processing (e.g. normalization, image feature
-extraction). See the detailed section in our submission guidelines for advice on writing
-a transparent and reproducible methods section. Related methods should be grouped under
-corresponding subheadings where possible, and methods should be described in enough
-detail to allow other researchers to interpret and repeat, if required, the full study.
-Specific data outputs should be explicitly referenced via data citation (see Data
-Records and Citing Data, below).
-
-Authors should cite previous descriptions of the methods under use, but ideally the
-method descriptions should be complete enough for others to understand and reproduce the
-methods and processing steps without referring to associated publications. There is no
-limit to the length of the Methods section. Subheadings should not be numbered.
-
-
-\subsection*{Subsection}
-
-Example text under a subsection. Bulleted lists may be used where appropriate, e.g.
-
-\begin{itemize}
-\item First item
-\item Second item
-\end{itemize}
-
-\subsubsection*{Third-level section}
-
-Topical subheadings are allowed.
-
 \input{02_methods.tex}
 
 \section*{Data Records}
@@ -128,13 +99,14 @@ any limitations on data use.
 
 \section*{Code availability}
 
-\input{06_code.tex}
-
-For all studies using custom code in the generation or processing of datasets, a
-statement must be included under the heading "Code availability", indicating whether and
-how the code can be accessed, including any restrictions to access. This section should
-also include information on the versions of any software used, if relevant, and any
-specific variables or parameters used to generate, test, or process the current dataset.
+The source code used to produce this dataset is openly available in a GitHub repository
+at
+\hyperlink{https://github.com/urbangrammarai/spatial_signatures}{https://github.com/urbangrammarai/spatial_signatures}
+and in the form of a website on
+\hyperlink{https://urbangrammarai.github.io}{https://urbangrammarai.github.io}. Code is
+organized in a series of Jupyter notebooks and have been executed within the gds_env
+container, unless specified otherwise in the individual notebooks. The specific version
+of the container is listed on top of each notebook.
 
 \bibliography{refs}
 
