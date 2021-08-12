@@ -1,6 +1,52 @@
-% This section should present any experiments or analyses that are needed to support the technical quality of the dataset. This section may be supported by figures and tables, as needed.
+Spatial signatures are unique as a classification method, limiting the potential
+validation methods to only indirect methods using ancillary datasets capturing
+conceptually similar aspects of environment. We compare the signatures with three of
+such datasets, each focusing on a different classification perspective, but all related
+to our classification to a degree when we can assume there will be measurable level of
+association between the two:
 
-% - WorldPop (Spsig & form)
-% - MODUM (Spsig & form)
-% - Urban atlas (Spsig & function)
-% - GB land use/cover(Spsig & function)
+\begin{itemize}
+    \item WorldPop settlement patterns of building footprints (2021)
+    \item Classification of Multidimensional Open Data of Urban Morphology (MODUM)(2015)
+    \item Copernicus Urban Atlas (2018)
+\end{itemize}
+
+
+\subsection*{Validation method}
+% General method of validation
+    % data transfer (one or the other way depending on feasibility)
+    % chi-squared statistic
+    % Cramer's V
+
+
+\subsection*{WorldPop settlement patterns of building footprints}
+% - WorldPop (Spsig)
+    % description of dataset
+    % expectations regarding similarity
+    % results
+    chi2: 13341832.31867016, p: 0.0, dof: 114, N: 22993921
+    V: 0.311
+
+
+\subsection*{MODUM}
+% - MODUM (Spsig)
+    % description of dataset
+    % expectations regarding similarity
+    % results
+    chi2: 13938867.969895832, p: 0.0, dof: 152, N: 13067584
+    V: 0.300
+
+
+\subsection*{Copernicus Urban Atlas}
+% - Urban atlas (Spsig)
+    % description of dataset
+    % expectations regarding similarity
+    % results
+    chi2: 5229900.007979867, p: 0.0, dof: 450, N: 8396642
+    V: 0.186
+
+\subsection*{Summary}
+% Summary
+    % WP
+    % MODUM
+    % UA
