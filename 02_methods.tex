@@ -62,7 +62,9 @@ environments}
 ETC follows the morphological tradition in a sense that is it
 based on the physical elements of an enviroment but overcomes the drawbacks of
 conventionally used units. Its geometry is generated in three steps illustrated on a
-Figure \ref{fig:et_diagram}. First, a set of features representing physical barriers
+Figure
+% \ref{fig:et_diagram}
+. First, a set of features representing physical barriers
 subdividing space, in our case composed of street network, railways, rivers and a
 coastline, is combined together, generating a layer of boundaries. These then partition space
 into smaller enclosed geometries called \textit{enclosures}, which can be very granular
@@ -170,9 +172,12 @@ heterogenous urban tissues.
             %  contextualised using the same method used in morphometrics
 
 
+
+
 \subsection*{Cluster analysis}
 % cluster analysis
-    % comparison of clustering methods (shall we include this?? skip for now)
+    % comparison of clustering methods (shall we include this?? skip for now, keep only
+    % as a notebook online)
         % K-Means, GMM, SOM
 
     % two levels of K-Means clustering
@@ -195,16 +200,36 @@ Z-score normalization and use them as an input for K-Means cluster analysis.
                 % Silhouette
                 % Calinski-Harabasz
                 % Davies-Boulding
-
-
+Due to the nature of the selected K-Means clustering the step preceeding the final
+analysis is the selection of an optimal number of clusters. We use exploratory
+clustergram method (REF) reflecting the behaviour of different options, the relationship
+between clustering solutions regarding the allocation of individual observations to
+classes and the separation between the clusters within each tested solution.
+Clustergram is furhter accompanies by measures of internal validation measures - the
+Silhouette score diagram, Calinski-Harabasz index and Davies-Bouldin index. The optimal
+number of classes is selected based on the interpretation of clustergram supported by
+additional measures aiming at a balance between cluster separation and an appropriate
+detail of resulting classification.
 
         % top level providing a first national classification
         % sub clustering of urban areas
             % selection criteria for to-be-subclustered classes
+The results of the top level clustering capture the first layer of a national signature
+classification. However, since the classified ETCs cover entirety of space from vast
+natural open spaces to dense city centres, it may result in only a few class
+representing urban areas. While that is caused by the variable heterogeneity of our
+dataset in combination with K-Means clustering, the measured characters have the ability
+to further distinguish sub-classes of already identified clusters. As spatial signatures
+are focused on urban environment, we furhter subdivide those clusters covering
+substantial portion of urban areas using another iteration of K-Means clustering.
+Resulting classification then provide two hierarchical levels capturing the typology of
+spatial signatures with a detailed focus on urban development.
+
 
 % generation of signature geometry
     % dissolution based on contiguity and assigned class
 Finally, individual spatial signature geometries are generated as a combination of
 adjacent ETCs belonging to the same signature class.
 
-% - Feature importance - should this actually be included in here?
+% - Feature importance - should this actually be included in here? It is not part of the
+%   data product so I'd say no.
