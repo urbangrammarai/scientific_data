@@ -17,31 +17,58 @@ association between the two:
     % data transfer (one or the other way depending on feasibility)
     % chi-squared statistic
     % Cramer's V
-
+All datasets, spatial signatures as well as those selected as validation contain
+categorical classification of space linked to their unique geometry. The first task, to
+make each pair comparable is to transfer data to the same geometry. That can be
+interpolation of one set of polygon-based data to another (input to ETCs) or converting
+spatial signatures to the raster representation matching an input raster as the latter
+is computationally more feasible when one of the layers is already a raster. The second
+step is a statistical comparison of two sets of classification labels, one representing
+spatial signature typology and the other validation classes. We use contingency tables
+and a Pearson's $\chi^{2}$ test to determine whether the frequencies of observed
+(signature types) and expected (validation types) labels significantly differ in one or
+more categories. Furthermore, we use Cramér's $V$ statistics to assess the strength of
+an association (assuming the Pearson's $\chi^{2}$ test rejected the hypothesis of
+independence).
 
 \subsection*{WorldPop settlement patterns of building footprints}
 % - WorldPop (Spsig)
-    % description of dataset
+    % description of dataset + figure
+WorldPop settlement patterns of building footprints aim to derive a typology of
+morphological patterns based on the gridded approach (spatial unit is a grid of a size
+100x100m per cell) and building footprints. Authors measure 6 morphometric characters
+linked to the grid cells and use them as an input of unsupervised clustering leading to
+a 6 class typology (Figure XXX).
     % expectations regarding similarity
-    % results
-    chi2: 13341832.31867016, p: 0.0, dof: 114, N: 22993921
-    V: 0.311
+As the classification is dependent on the building footprint data, grid cells that do
+not contain any information on building-based pattern are treated as missing in the final data
+product. For the validation of spatial signatures, this \textit{missing} category is
+treated as a single class. It is assumed that the top-level large scale patterns
+detected by the WorldPop method and spatial signatures will provide similar results.
+However, there will be differences caused by inclusion of function in spatial
+signatures, higher granularity of both initial spatial unit and the resulting
+classification (6 vs 19 classes).
 
+Signature typology is rasterized and linked to the WorldPop grid. The resulting
+contingency table is shown on Figure XXX. There is a significant relationship between
+two typologies, $\chi^{2} (114, N = 22993921) = 13341832, p < .001$. The strength of
+association measured as Cramér's $V$ is $0.311$, indicating moderate association.
+    % results + contingency table figure
 
 \subsection*{MODUM}
 % - MODUM (Spsig)
-    % description of dataset
+    % description of dataset + figure
     % expectations regarding similarity
-    % results
+    % results + contingency table figure
     chi2: 13938867.969895832, p: 0.0, dof: 152, N: 13067584
     V: 0.300
 
 
 \subsection*{Copernicus Urban Atlas}
 % - Urban atlas (Spsig)
-    % description of dataset
+    % description of dataset + figure
     % expectations regarding similarity
-    % results
+    % results + contingency table figure
     chi2: 5229900.007979867, p: 0.0, dof: 450, N: 8396642
     V: 0.186
 
