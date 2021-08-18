@@ -58,19 +58,55 @@ association measured as Cramér's $V$ is $0.311$, indicating moderate associatio
 \subsection*{MODUM}
 % - MODUM (Spsig)
     % description of dataset + figure
+Multidimensional Open Data Urban Morphology (MODUM) classification describes a typology
+of neighbourhoods derived from 18 indicators capturing built environment as streets,
+railways or parks, linked to the Census Output Area geometry. The classification
+identifies 8 types of neighbourhoods illustrated on figure XXX.
     % expectations regarding similarity
+Compared to the WorldPop classification, MODUM takes into the account more features of
+built environment than building footprints, which makes it conceptually closer to
+the spatial signatures. However, it is still focusing predominantly on the form
+component, although there are some indicators that would be
+classified as function within the signatures framework (e.g. population). The MODUM
+method uses a different way of capturing the context compared to the signatures, which
+leads to some classes being determined predominantly by a single character. For example,
+\textit{Railway Buzz} type forms a narrow strip around the railway network, which is an
+effect signatures are trying to avoid.
     % results + contingency table figure
-    chi2: 13938867.969895832, p: 0.0, dof: 152, N: 13067584
-    V: 0.300
+MODUM typology is available only for England and Wales, therefore the validation takes
+into the account only ETCs covering the same area. The classification is linked to the
+ETC geometry based on the proportion (the type covering the largest portion of ETC is
+assigned). The resulting contingency table is shown on Figure XXX. There is a
+significant relationship between two typologies, $\chi^{2} (152, N = 13067584) =
+13938867, p < .001$. The strength of association measured as Cramér's $V$ is $0.300$,
+indicating moderate association of a very similar levels we have seen above.
 
 
 \subsection*{Copernicus Urban Atlas}
 % - Urban atlas (Spsig)
     % description of dataset + figure
+Copernicus Urban Atlas is the least similar of the validation datasets. It is a
+high-resolution land use classification of functional urban areas derived primarily from
+Earth Observation date enriched by other reference data as OpenStreetMap or topographic
+maps. Its smallest spatial unit in urban areas is 0.25 ha and 1 ha in rural areas,
+defined primarily by physical barriers. The Urban Atlas classification, which identifies
+27 classes, is illustrated on figure XXX.
     % expectations regarding similarity
+The majority of urban areas is classified as urban fabric further distinguished based on
+continuity and density resulting in 6 classes of urban fabric. The classification does
+not consider the type of the pattern or any other aspect. Furthermore, it does not take
+into account what signatures call the \textit{context} as each spatial unit is
+classified independently, which in some cases leads to a high heterogeneity of
+classification within a small portion of land. Signatures take a different approach,
+therefore it is expected that the similarity between the two will be limited.
     % results + contingency table figure
-    chi2: 5229900.007979867, p: 0.0, dof: 450, N: 8396642
-    V: 0.186
+Urban Atlas is available only for functional urban areas (FUA), leaving rural areas
+unclassified. Validation then works with FUAs only. The classification is linked to the
+ETC geometry based on the proportion (the type covering the largest portion of ETC is
+assigned). The resulting contingency table is shown on Figure XXX. There is a
+significant relationship between two typologies, $\chi^{2} (450, N = 8396642) =
+5229900, p < .001$. The strength of association measured as Cramér's $V$ is $0.186$,
+indicating weak association.
 
 \subsection*{Summary}
 % Summary
