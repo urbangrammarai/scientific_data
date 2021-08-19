@@ -35,21 +35,22 @@ Last, it should be geographically \textit{exhaustive}, covering entirety of the 
 area.
 
 Spatial units used in literature can be split into three groups. One is using
-administrative boundaries like city regions, wards or census output areas, that are
-convenient to obatain and can be easily linked to auxiliarry data. However,
+administrative boundaries like city regions\cite{angel2020}, wards or census output areas\cite{alexiou2016}, that are
+convenient to obtain and can be easily linked to auxiliary data. However,
 those rarely reflect the morphological composition of urban space and in some cases may
-even “obscure morphologic reality” REF Taubenbock 2019. At the same time, most of them
-are divisible and larger units are not alwyas internally consistent. Another group is based on
-arbitrary uniform grids linked either to spatial indexing method like H3 REF or OS
-National Grid REF, or to anciliarry data of remote sensing or other origins like a
-WorldPop grid REF. The issue is that grids cannot be considered internally consistent as
+even “obscure morphologic reality”\cite{taubenbock2019new}. At the same time, most of them
+are divisible and larger units are not always internally consistent. Another group is based on
+arbitrary uniform grids linked either to spatial indexing method like
+H3\cite{brodsky2018h3} or Ordnance Survey
+National Grid, or to ancillary data of remote sensing or other origins like a
+WorldPop grid\cite{jochem2021tools}. The issue is that grids cannot be considered internally consistent as
 they have no relation to the real-life spatial pattern. Finally, urban morphology tends to use morphological elements as
-street segments REF, blocks REF buildings or plots as a unit of analysis. Some of those
+street segments\cite{araldi2019}, blocks\cite{gil2012}, buildings\cite{hamaina2012a} or plots\cite{bobkova2019} as a unit of analysis. Some of those
 could be seen as indivisible and internally consistent but since they are largely based
-on built-up fabric, they are not exhaustive. When there is no builiding or street, there
+on built-up fabric, they are not exhaustive. When there is no building or street, there
 is no spatial unit to work with. Plots could be theoretically considered as exhaustive,
 consistent and indivisible but there is no accepted conceptual definition and unified
-geometric representation (REF Kropf).
+geometric representation\cite{kropf2018}.
 
 We are, therefore, proposing an application of an alternative spatial unit called \textit{enclosed
 tessellation cell} (ETC), defined as:
@@ -60,11 +61,9 @@ environments}
 % We should drop a reference to the conceptual paper here.
 
 ETC follows the morphological tradition in a sense that is it
-based on the physical elements of an enviroment but overcomes the drawbacks of
+based on the physical elements of an environment but overcomes the drawbacks of
 conventionally used units. Its geometry is generated in three steps illustrated on a
-Figure
-% \ref{fig:et_diagram}
-. First, a set of features representing physical barriers
+Figure \ref{fig:et_diagram}. First, a set of features representing physical barriers
 subdividing space, in our case composed of street network, railways, rivers and a
 coastline, is combined together, generating a layer of boundaries. These then partition space
 into smaller enclosed geometries called \textit{enclosures}, which can be very granular
@@ -73,11 +72,20 @@ enclosure represent a single block is a high frequency of small enclosures, whil
 countryside, we can observe very few large enclosures as their delimiters are far away
 from each other. Enclosures are then combined with building footprints, posing as
 anchors in the space and are subdivided into enclosed tessellation cells using the
-morphological tessellation algorithm REF, a polygon-based adaptation of Voronoi
+morphological tessellation algorithm\cite{fleischmann2020}, a polygon-based adaptation of Voronoi
 tessellation. Resulting geometries are indivisible as they contain, at most, a single
-achor building, internally consistent due to their granularity and link to morphological
-elements composing urban fabric, and geogrpahically exhasutive as they cover entire area
+anchor building, internally consistent due to their granularity and link to morphological
+elements composing urban fabric, and geographically exhaustive as they cover entire area
 limited by specified boundaries.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{fig/et_diagram.pdf}
+    \caption{Diagram illustrating the sequential steps leading to the delineation of
+    enclosed tessellation. From a series of enclosing components, where blue are streets
+    and yellow river banks (A), to enclosures (B), incorporation of buildings as anchors
+    (C) to final tessellation cells (D).}
+    \label{fig:et_diagram}
+\end{figure}
 
     % data input
         % barries
@@ -94,14 +102,14 @@ limited by specified boundaries.
             % data quality description (merged adjacent geometries)
 
 In the case of classification of Great Britain, street networks are extracted from OS
-Open Roads datasets (REF) representing simplified road centrelines cleaned of road
-segments under the ground. Railways are retrieved from OS OpenMap - Local
-("RailwayTrack" layer) which captures surfance railway tracks. Rivers are extracted from
-OS OpenRivers (REF) representing river network of GB as centrelines, and a coastline is
-retrieved from OS Strategi® (2016) REF, capturing  coastline as a continous line
+Open Roads datasets\cite{openroads2020} representing simplified road centrelines cleaned of road
+segments under the ground. Railways are retrieved from OS OpenMap - Local\cite{openmap2020}
+("RailwayTrack" layer) which captures surface railway tracks. Rivers are extracted from
+OS OpenRivers\cite{openrivers2020} representing river network of GB as centrelines, and a coastline is
+retrieved from OS Strategi®\cite{strategi2016}, capturing  coastline as a continuos line
 geometry. Building geometry is extracted, again, from OS OpenMap - Local ("Building"
 layer) and represents generalised building footprint polygons. Note that the dataset
-does not distinguish between individual buildings when they are adajcent (e.g. perimeter
+does not distinguish between individual buildings when they are adjacent (e.g. perimeter
 block composed of multiple buildings is represent by a single polygon).
 
 % characterisation of space
@@ -109,7 +117,7 @@ block composed of multiple buildings is represent by a single polygon).
 Spatial signatures are capturing the character of the built and unbuilt environment
 based on two components - form and function. Each of them is quantified on the level of
 individual ETCs using methods appropriate for the specific datasets. While form
-component is described using urban morphometrics (i.e. quantitave analysis of urban
+component is described using urban morphometrics (i.e. quantitative analysis of urban
 form), function is a composite of a variety of data inputs outlined in detail below.
 
 \subsubsection*{Form}
@@ -136,23 +144,24 @@ form), function is a composite of a variety of data inputs outlined in detail be
 Morphometric characterisation of urban form is based on the numerical description
 of four elements capturing the built environment - buildings, streets, ETCs, and
 enclosures, and reflects their patterns based on six categories of characters - dimensions, shapes, spatial
-distribution, intensity, connectivity and diversity. Each element is considered across
+distribution, intensity, connectivity and diversity\cite{fleischmann2020a}. Each element is considered across
 different scales, from the measurements of individual geometries, relations of
 neighbouring geometries to graph-based analysis of street network. The combination of
 elements, categories and scales results in a set of 59 individual morphometric
 characters listed in the table XXX.
+% TODO: add table
 % Q: do we want to include some morphometric theory here? I'd say no since this is a
 % data descriptor but I can add some if needed.
 
 However, measuring individual characters is not enough to understand the predominant
 spatial patterns as for some types of urban form is typical high heterogeneity. That
 means that using, for example, areas of building footprints would in most cases resulted
-in largely discontinous clusters. We are, therefore, representing each of the
+in largely discontinuous clusters. We are, therefore, representing each of the
 morphometric characters using three proxy variables reflecting statistical distributions
 of measured data within a spatial context of each ETC. Context is defined as
 10\textsuperscript{th}
-order of contiguity based on the mesh composed of contiguous ETCs. Furhtermore, each
-value is weigthed by the inverse distance between so called poles of inaccessibility
+order of contiguity based on the mesh composed of contiguous ETCs. Furthermore, each
+value is weighted by the inverse distance between so called poles of inaccessibility
 (defined as a centre of a maximum inscribed circle) of each ETC. Three proxy variables
 then capture the first, the second and the third quartile of the resulting weighted
 distribution. Such a characterisation is able to capture the contextual tendency of each
@@ -193,7 +202,7 @@ In this work we are using five different transfer methods:
 Areal interpolation is used when the functional data covers the entirety of space in a
 form of polygon geometry and when there is no assumption that the phenomena it captures
 is linked directly to the human population, for example land cover data. When there is
-an assumption of relation to the population, building-based dasymetric areal
+an assumption of relation to the population, building-based dasymmetric areal
 interpolation is used instead. The main difference is that instead of ETC polygons,
 building footprint polygons linked to individual ETCs are used as a target of
 interpolation. That ensures that data like population estimates are linked to ETCs
@@ -210,6 +219,7 @@ geometry. Finally, characters based on interpolation and zonal statistics are ex
 using their contextual versions following the method used for form characters to, again,
 reflect the pattern of measured values. The selection of datasets and the chosen
 transfer method are listed in the table XXX.
+% TODO: add table
 
 \subsection*{Cluster analysis}
 % cluster analysis
@@ -237,13 +247,13 @@ Z-score normalization and use them as an input for K-Means cluster analysis.
                 % Silhouette
                 % Calinski-Harabasz
                 % Davies-Boulding
-Due to the nature of the selected K-Means clustering the step preceeding the final
+Due to the nature of the selected K-Means clustering the step preceding the final
 analysis is the selection of an optimal number of clusters. We use exploratory
-clustergram method (REF) reflecting the behaviour of different options, the relationship
+clustergram method\cite{schonlau2002clustergram} reflecting the behaviour of different options, the relationship
 between clustering solutions regarding the allocation of individual observations to
 classes and the separation between the clusters within each tested solution.
-Clustergram is furhter accompanies by measures of internal validation measures - the
-Silhouette score diagram, Calinski-Harabasz index and Davies-Bouldin index. The optimal
+Clustergram is further accompanies by measures of internal validation measures - the
+Silhouette score diagram, Calinski-Harabasz index\cite{calinski1974} and Davies-Bouldin index\cite{davies1979cluster}. The optimal
 number of classes is selected based on the interpretation of clustergram supported by
 additional measures aiming at a balance between cluster separation and an appropriate
 detail of resulting classification.
@@ -257,7 +267,7 @@ natural open spaces to dense city centres, it may result in only a few class
 representing urban areas. While that is caused by the variable heterogeneity of our
 dataset in combination with K-Means clustering, the measured characters have the ability
 to further distinguish sub-classes of already identified clusters. As spatial signatures
-are focused on urban environment, we furhter subdivide those clusters covering
+are focused on urban environment, we further subdivide those clusters covering
 substantial portion of urban areas using another iteration of K-Means clustering.
 Resulting classification then provide two hierarchical levels capturing the typology of
 spatial signatures with a detailed focus on urban development.
