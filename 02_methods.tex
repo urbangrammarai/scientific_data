@@ -148,8 +148,8 @@ distribution, intensity, connectivity and diversity\cite{fleischmann2020a}. Each
 different scales, from the measurements of individual geometries, relations of
 neighbouring geometries to graph-based analysis of street network. The combination of
 elements, categories and scales results in a set of 59 individual morphometric
-characters listed in the table XXX.
-% TODO: add table
+characters listed in the online table 1.
+
 % Q: do we want to include some morphometric theory here? I'd say no since this is a
 % data descriptor but I can add some if needed.
 
@@ -218,8 +218,31 @@ format to ETC polygons as a mean value of raster pixels intersecting each polygo
 geometry. Finally, characters based on interpolation and zonal statistics are expressed
 using their contextual versions following the method used for form characters to, again,
 reflect the pattern of measured values. The selection of datasets and the chosen
-transfer method are listed in the table XXX.
-% TODO: add table
+transfer method are listed in the table \ref{tab:function}.
+
+\begin{table}
+\begin{tabular}{lll}
+\toprule
+                                data &                   input geometry &                               transfer method \\
+\midrule
+                Population estimates &     Vector (output area polygon) & Building-based dasymetric areal interpolation \\
+        Retail POIs (supermarkets) &                   Vector (point) &             Network-constrained accessibility \\
+                        Water bodies &      Vector (water body polygon) &                       Euclidean accessibility \\
+                    Listed Buildings &                   Vector (point) &             Network-constrained accessibility \\
+                        Night Lights &                    Raster (500m) &                              Zonal statistics \\
+Food Hygiene Rating Scheme Ratings &                   Vector (point) &             Network-constrained accessibility \\
+                Workplace population &     Vector (output area polygon) & Building-based dasymetric areal interpolation \\
+        Culture (theatres, cinemas) &                   Vector (point) &             Network-constrained accessibility \\
+                    Corine land cover & Vector (land cover zone polygon) &                           Areal interpolation \\
+                                NDVI &                     Raster (10m) &                              Zonal statistics \\
+                CDRC Retail centres &   Vector (retail centre polygon) &                       Euclidean accessibility \\
+\bottomrule
+\end{tabular}
+
+\caption{\label{tab:function}Functional characters used to
+describe the function component of spatial signatures. For details of the implementation,
+refer to the reproducible Jupyter notebooks available at urbangrammarai.github.io.}
+\end{table}
 
 \subsection*{Cluster analysis}
 % cluster analysis

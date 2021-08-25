@@ -1,0 +1,60 @@
+	index	element	category
+0	area	building	dimension
+1	perimeter	building	dimension
+2	courtyard area	building	dimension
+3	circular compactness	building	shape
+4	corners	building	shape
+5	squareness	building	shape
+6	equivalent rectangular index	building	shape
+7	elongation	building	shape
+8	centroid - corner distance deviation	building	shape
+9	centroid - corner mean distance	building	dimension
+10	solar orientation	building	distribution
+11	street alignment	building	distribution
+12	cell alignment	building	distribution
+13	longest axis length	tessellation cell	dimension
+14	area	tessellation cell	dimension
+15	circular compactness	tessellation cell	shape
+16	equivalent rectangular index	tessellation cell	shape
+17	solar orientation	tessellation cell	distribution
+18	coverage area ratio	tessellation cell	intensity
+19	length	street segment	dimension
+20	width	street profile	dimension
+21	openness	street profile	distribution
+22	width deviation	street profile	diversity
+23	linearity	street segment	shape
+24	area covered	street segment	dimension
+25	buildings per meter	street segment	intensity
+26	area covered	street node	dimension
+27	alignment	neighbouring buildings	distribution
+28	mean distance	neighbouring buildings	distribution
+29	weighted neighbours	tessellation cell	distribution
+30	area covered	neighbouring cells	dimension
+31	reached cells	neighbouring segments	intensity
+32	reached area	neighbouring segments	dimension
+33	degree	street node	distribution
+34	mean distance to neighbouring nodes	street node	dimension
+35	mean inter-building distance	neighbouring buildings	distribution
+36	weighted reached enclosures	neighbouring tessellation cells	intensity
+37	reached neighbors	neighbouring tessellation cells	intensity
+38	reached area	neighbouring tessellation cells	dimension
+39	area	enclosure	dimension
+40	perimeter	enclosure	dimension
+41	circular compactness	enclosure	shape
+42	equivalent rectangular index	enclosure	shape
+43	compactness-weighted axis	enclosure	shape
+44	solar orientation	enclosure	distribution
+45	weighted neighbours	enclosure	distribution
+46	weighted cells	enclosure	intensity
+47	local meshedness	street network	connectivity
+48	mean segment length	street network	dimension
+49	cul-de-sac length	street network	dimension
+50	reached area	street network	dimension
+51	reached cells	street network	intensity
+52	node density	street network	intensity
+53	proportion of cul-de-sacs	street network	connectivity
+54	proportion of 3-way intersections	street network	connectivity
+55	proportion of 4-way intersections	street network	connectivity
+56	degree weighted node density	street network	intensity
+57	local closeness centrality	street network	connectivity
+58	square clustering	street network	connectivity
