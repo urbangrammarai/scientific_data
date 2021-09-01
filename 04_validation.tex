@@ -1,8 +1,8 @@
 Spatial signatures are unique as a classification method, limiting the potential
 validation methods to only indirect methods using ancillary datasets capturing
-conceptually similar aspects of environment. We compare the signatures with three of
+conceptually similar aspects of the environment. We compare the signatures with three of
 such datasets, each focusing on a different classification perspective, but all related
-to our classification to a degree when we can assume there will be measurable level of
+to our classification to a degree when we can assume there will be a measurable level of
 association between the two:
 
 \begin{itemize}
@@ -16,10 +16,10 @@ association between the two:
 % General method of validation
     % data transfer (one or the other way depending on feasibility) chi-squared
     % statistic Cramer's V
-All datasets, spatial signatures as well as those selected as validation contain
-categorical classification of space linked to their unique geometry. The first task, to
+All datasets, spatial signatures, and those selected as validation contain
+categorical classification of space linked to their unique geometry. The first task to
 make each pair comparable is to transfer data to the same geometry. That can be
-interpolation of one set of polygon-based data to another (input to ETCs) or converting
+an interpolation of one set of polygon-based data to another (input to ETCs) or converting
 spatial signatures to the raster representation matching an input raster as the latter
 is computationally more feasible when one of the layers is already a raster. The second
 step is a statistical comparison of two sets of classification labels, one representing
@@ -40,16 +40,16 @@ linked to the grid cells and use them as an input of unsupervised clustering lea
 a 6 class typology.
     % expectations regarding similarity
 As the classification is dependent on the building footprint data, grid cells that do
-not contain any information on building-based pattern are treated as missing in the
+not contain any information on the building-based pattern are treated as missing in the
 final data product. For the validation of spatial signatures, this \textit{missing}
 category is treated as a single class. It is assumed that the top-level large scale
 patterns detected by the WorldPop method and spatial signatures will provide similar
-results. However, there will be differences caused by inclusion of function in spatial
-signatures, higher granularity of both initial spatial unit and the resulting
+results. However, there will be differences caused by the inclusion of function in spatial
+signatures, higher granularity of both initial spatial units and the resulting
 classification (6 vs 19 classes).
 
 Signature typology is rasterized and linked to the WorldPop grid. The resulting
-contingency table is shown on Figure \ref{fig:crosstab_worldpop}. There is a significant relationship between
+contingency table is shown in Figure \ref{fig:crosstab_worldpop}. There is a significant relationship between
 two typologies, $\chi^{2} (114, N = 22993921) = 13341832, p < .001$. The strength of
 association measured as Cramér's $V$ is $0.311$, indicating moderate association.
     % results + contingency table figure
@@ -69,23 +69,23 @@ of neighbourhoods derived from 18 indicators capturing built environment as stre
 railways or parks, linked to the Census Output Area geometry. The classification
 identifies 8 types of neighbourhoods.
     % expectations regarding similarity
-Compared to the WorldPop classification, MODUM takes into the account more features of
-built environment than building footprints, which makes it conceptually closer to the
+Compared to the WorldPop classification, MODUM takes into account more features of
+the built environment than building footprints, which makes it conceptually closer to the
 spatial signatures. However, it is still focusing predominantly on the form component,
-although there are some indicators that would be classified as function within the
+although there are some indicators that would be classified as a function within the
 signatures framework (e.g. population). The MODUM method uses a different way of
 capturing the context compared to the signatures, which leads to some classes being
 determined predominantly by a single character. For example, \textit{Railway Buzz} type
 forms a narrow strip around the railway network, which is an effect signatures are
 trying to avoid.
     % results + contingency table figure
-MODUM typology is available only for England and Wales, therefore the validation takes
-into the account only ETCs covering the same area. The classification is linked to the
-ETC geometry based on the proportion (the type covering the largest portion of ETC is
-assigned). The resulting contingency table is shown on Figure \ref{fig:crosstab_modum}. There is a
+MODUM typology is available only for England and Wales. Therefore the validation takes
+into account only ETCs covering the same area. The classification is linked to the
+ETC geometry is based on the proportion (the type covering the largest portion of ETC is
+assigned). The resulting contingency table is shown in Figure \ref{fig:crosstab_modum}. There is a
 significant relationship between two typologies, $\chi^{2} (152, N = 13067584) =
 13938867, p < .001$. The strength of association measured as Cramér's $V$ is $0.300$,
-indicating moderate association of a very similar levels we have seen above.
+indicating moderate association of very similar levels we have seen above.
 
 \begin{figure}
     \centering
@@ -99,26 +99,26 @@ indicating moderate association of a very similar levels we have seen above.
     % description of dataset + figure
 Copernicus Urban Atlas is the least similar of the validation datasets. It is a
 high-resolution land use classification of functional urban areas derived primarily from
-Earth Observation date enriched by other reference data as OpenStreetMap or topographic
+Earth Observation data enriched by other reference data as OpenStreetMap or topographic
 maps. Its smallest spatial unit in urban areas is 0.25 ha and 1 ha in rural areas,
 defined primarily by physical barriers. The Urban Atlas classification, which identifies
-27 classes predefined classes using supervised method.
+27 classes predefined classes using the supervised method.
     % expectations regarding similarity
 The majority of urban areas is classified as urban fabric further distinguished based on
-continuity and density resulting in 6 classes of urban fabric. The classification does
+continuity and density resulting in 6 classes of the urban fabric. The classification does
 not consider the type of the pattern or any other aspect. Furthermore, it does not take
 into account what signatures call the \textit{context} as each spatial unit is
-classified independently, which in some cases leads to a high heterogeneity of
-classification within a small portion of land. Signatures take a different approach,
-therefore it is expected that the similarity between the two will be limited.
+classified independently, which in some cases leads to the high heterogeneity of
+classification within a small portion of land. Signatures take a different approach.
+Consequently, it is expected that the similarity between the two will be limited.
     % results + contingency table figure
 Urban Atlas is available only for functional urban areas (FUA), leaving rural areas
 unclassified. Validation then works with FUAs only. The classification is linked to the
-ETC geometry based on the proportion (the type covering the largest portion of ETC is
-assigned). The resulting contingency table is shown on Figure \ref{fig:crosstab_ua}. There is a
+ETC geometry is based on the proportion (the type covering the largest portion of ETC is
+assigned). The resulting contingency table is shown in Figure \ref{fig:crosstab_ua}. There is a
 significant relationship between two typologies, $\chi^{2} (450, N = 8396642) = 5229900,
 p < .001$. The strength of association measured as Cramér's $V$ is $0.186$, indicating
-weak association.
+a weak association.
 
 \begin{figure}
     \centering
@@ -128,14 +128,14 @@ weak association.
 \end{figure}
 
 \subsection*{Summary}
-None of the comparisons shows better than a moderate association but since none of the
+None of the comparisons shows better than a moderate association, but since none of the
 validation datasets is aiming to capture the same conceptualization of space as spatial
 signatures do, such a result is expected. The moderate association with both WorldPop
 settlements patterns and MODUM is reassuring as both are conceptually closer to
 signatures than the Urban Atlas (especially in their unsupervised design). Urban Atlas,
-though very different in its aims and methods still shows measurable association,
+though very different in its aims and methods, still shows a measurable association,
 indicating that the key structural aspects forming cities are captured by both. The
 validation exercise suggests that general patterns forming cities are shared among
 signatures and existing typologies. Quantitatively assessing the specificity of spatial
 signature typology from the perspective of validation further is unfeasible due do
-uniqueness of the presented typology.
+the uniqueness of the presented typology.
