@@ -152,10 +152,11 @@ component with a bit more detail below.
                 % proxy of diversity
 Morphometric characterisation of urban form is based on the numerical description
 of four elements capturing the built environment - buildings, streets, ETCs, and
-enclosures, and reflects their patterns based on six categories of characters - dimensions, shapes, spatial
+enclosures - and reflects their patterns based on six categories of
+characters: dimensions, shapes, spatial
 distribution, intensity, connectivity and diversity\cite{fleischmann2020a}. Each element is considered across
-different scales, from the measurements of individual geometries, relations of
-neighbouring geometries to a graph-based analysis of the street network. The combination of
+different scales, from the measurement of individual geometries, to relations of
+neighbouring geometries, to a graph-based analysis of the street network. The combination of
 elements, categories and scales results in a set of 59 individual morphometric
 characters listed in the online table 1.
 
@@ -163,13 +164,13 @@ characters listed in the online table 1.
 % data descriptor but I can add some if needed.
 
 However, measuring individual characters is not enough to understand the predominant
-spatial patterns as for some types of urban form is typical high heterogeneity. That
-means that using, for example, areas of building footprints would, in most cases, resulted
-in largely discontinuous clusters. Therefore, we represent each of the
-morphometric characters using three proxy variables reflecting statistical distributions
+spatial patterns. For some types of urban form, high heterogeneity is not
+uncommon. This means that using, for example, areas of building footprints would, in most cases, result
+in largely discontinuous clusters that do not capture the aspect of an area. Therefore, we represent each of the
+morphometric characters using three summary variables reflecting statistical distributions
 of measured data within a spatial context of each ETC. Context is defined as
-10\textsuperscript{th}
-order of contiguity based on the mesh composed of contiguous ETCs. Furthermore, each
+tenth
+order of contiguity computed across the mesh composed of contiguous ETCs. Furthermore, each
 value is weighted by the inverse distance between so-called poles of inaccessibility
 (defined as a centre of a maximum inscribed circle) of each ETC. Three proxy variables
 then capture the first, the second and the third quartile of the resulting weighted
@@ -195,7 +196,7 @@ Characterisation of the function component uses a different approach. While data
 describing urban form are not generally available in a processed format, forcing us to employ morphometric approaches, different aspects of function are often available as
 open data products. Therefore, the main goal of our characterisation of ETCs based on
 function is to develop appropriate transfer methods to link data published as grids or
-linked to administrative boundaries to enclosed tessellation.
+linked to administrative boundaries to ETCs.
 
 In this work, we are using five different transfer methods:
 
@@ -214,18 +215,18 @@ an assumption of relation to the population, building-based dasymetric areal
 interpolation is used instead. The main difference is that instead of ETC polygons,
 building footprint polygons linked to individual ETCs are used as a target of
 interpolation. That ensures that data like population estimates are linked to ETCs
-proportionally to their ability to provide accommodation rather than by their area.
+proportionally to their ability to house population rather than by their area.
 Network-constrained accessibility is used when the input data represent points of
 interest like locations of supermarkets. Points are then snapped to the nearest node on
-the street network and linked to the ETCs as a number of observations within 15 minutes
-walking distance (1200m on the street network) and a distance to the nearest point. In
+the street network and linked to the ETCs through the count of observations
+accessible from the cell within 15 minutes of walk (1200m on the street network) and a distance to the nearest point. In
 some cases, Euclidean (as-crow-flies) accessibility is measured instead to accommodate
-for phenomena that are often reached outside of a drivable network like water bodies.
-The final method, zonal statistics, is used to transfer data originally stored in a raster
-format to ETC polygons as a mean value of raster pixels intersecting each polygon
+for phenomena that are often outside the reach of a drivable network like water bodies.
+Zonal statistics are used to transfer data originally stored in a raster
+format to ETCs as the mean value of raster pixels intersecting each polygon
 geometry. Finally, characters based on interpolation and zonal statistics are expressed
 using their contextual versions following the method used for form characters to, again,
-reflect the pattern of measured values. The selection of datasets and the chosen
+reflect the contextual pattern of measured values. The selection of datasets and the chosen
 transfer method are listed in the table \ref{tab:function}.
 
 \begin{table}
@@ -266,11 +267,11 @@ refer to the reproducible Jupyter notebooks available at urbangrammarai.github.i
             % data standardisation
                 % column-based mean standardisation
 
-When combined, contextual proxies of form and function characters (or characters
+When combined, contextual summaries of form and function characters (or characters
 themselves when they are reflecting the context by definition) compose a dataset
-describing each ETC by 331 variables (177 for form and 154 for function.) We treat all
-of them equally (there is no weighting involved), standardize each variable applying
-Z-score normalization and use them as an input for K-Means cluster analysis.
+describing each ETC by 331 variables (177 for form and 154 for function.)
+Assigning equal weight to each variable, we standardize them applying
+Z-score normalization, and use them as input for K-Means cluster analysis.
 
         % selection of number of clusters
             % clustergram
@@ -279,10 +280,10 @@ Z-score normalization and use them as an input for K-Means cluster analysis.
                 % Calinski-Harabasz
                 % Davies-Boulding
 Due to the nature of the selected K-Means clustering, the step preceding the final
-analysis is the selection of an optimal number of clusters. We use exploratory
-clustergram method\cite{schonlau2002clustergram} reflecting the behaviour of different options, the relationship
+analysis is the selection of an optimal number of clusters. We use the
+clustergram exploratory method\cite{schonlau2002clustergram}, reflecting the behaviour of different options, the relationship
 between clustering solutions regarding the allocation of individual observations to
-classes and the separation between the clusters within each tested solution.
+classes, and the separation between the clusters within each tested solution.
 Clustergram is further accompanied by measures of internal validation measures - the
 Silhouette score diagram, Calinski-Harabasz index\cite{calinski1974} and Davies-Bouldin index\cite{davies1979cluster}. The optimal
 number of classes is selected based on the interpretation of clustergram supported by
