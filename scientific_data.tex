@@ -108,16 +108,18 @@ perspective on cities and their structure.
 
 \section*{Usage Notes}
 
-The released dataset is following the widespread standards for geographic data storage and
-should not pose a challenge for researchers wanting to reuse it. However, due to the density of
+The released data product follows widespread standards for geographic data storage and
+should be easy to integrate with other data and methods by researchers wanting to reuse it. However, due to the density of
 signature geometry (resulting from the detailed ETCs), it may be needed to simplify the
 geometry for a smoother interactive experience on machines with limited resources.
 
 Replication of the analysis optimally requires at least a single computational node with
-a large amount of RAM (100 GB+) due to the size of the input data and detail on which
+a large amount of RAM (+100GB) due to the size of the input data and detail on which
 signature characterization is computed. It is also recommended to revisit the state of
-the development of related software packages, notably momepy, libpysal, tobler and
-dask-geopandas as they may soon offer more efficient drop-in replacements
+the development of related software packages, notably
+\texttt{momepy}\cite{fleischmann_2019}, \texttt{libpysal}\cite{rey2021pysal},
+\texttt{tobler}\cite{eli_knaap_2021_5047613} and
+\texttt{dask-geopandas} as they may soon offer more efficient drop-in replacements
 of the custom code used to produce this dataset.
 
 \section*{Code availability}
@@ -128,7 +130,8 @@ at
 and in the form of a website on
 \hyperlink{https://urbangrammarai.github.io}{https://urbangrammarai.github.io}.
 Code is
-organized in a series of Jupyter notebooks and have been executed within the darribas:gds\_env
+organized in a series of Jupyter notebooks and have been executed within the
+\texttt{darribas:gds\_dev:6.1}\cite{gds_env}
 Docker container, unless specified otherwise in the individual notebooks.
 
 \bibliography{refs}
@@ -149,7 +152,9 @@ Docker container, unless specified otherwise in the individual notebooks.
 % Acknowledgements should be brief, and should not include thanks to anonymous referees
 % and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
 
-xxxTODOxxx: Dani do you know how to acknowledge the ESRC grant?
+M.F. and D.A. kindly acknowledge funding by the UK's Economic and Social Research
+Council through the project ``Learning an urban grammar from satellite data
+through AI'', project reference \texttt{ES/T005238/1}.
 
 \section*{Author contributions statement}
 
@@ -158,7 +163,7 @@ xxxTODOxxx: Dani do you know how to acknowledge the ESRC grant?
 % results. All authors reviewed the manuscript.
 
 M.F. and D.A. designed the method, M.F. conducted the experiments, M.F. and D.A.
-analysed the results. M.F. and D.A. written and reviewed the manuscript.
+analysed the results. M.F. and D.A. wrote and reviewed the manuscript.
 
 \section*{Competing interests}
 
