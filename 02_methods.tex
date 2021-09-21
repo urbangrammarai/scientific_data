@@ -43,7 +43,7 @@ are divisible, and larger units are not always internally consistent. Another gr
 arbitrary uniform grids linked either to spatial indexing methods like
 H3\cite{brodsky2018h3} or Ordnance Survey
 National Grid, or to ancillary data of remote sensing or other origins like a
-WorldPop grid\cite{jochem2021tools}. Grids however cannot be considered internally 
+WorldPop grid\cite{jochem2021tools}. Grids however cannot be considered internally
 consistent as
 they do not consider the underlying structure of the landscape.
 Finally, urban morphology studies tend to use morphological elements as
@@ -58,7 +58,7 @@ consistent and indivisible, but there is no accepted conceptual definition and u
 geometric representation\cite{kropf2018}.
 
 We are, therefore, proposing an application of an alternative spatial unit called \textit{enclosed
-tessellation cell} (ETC), defined as "the portion of space that results 
+tessellation cell} (ETC), defined as "the portion of space that results
 from growing a morphological tessellation within an enclosure delineated by a series
 of natural or built barriers identified from the literature on urban form, function and
 perception"\cite{dab_mf_2021a}.
@@ -109,7 +109,7 @@ limited by specified boundaries.
             % data quality description (merged adjacent geometries)
 
 In our ODP for Great Britain, street networks are extracted from OS
-Open Roads datasets\cite{openroads2020} representing simplified road centrelines 
+Open Roads datasets\cite{openroads2020} representing simplified road centrelines
 cleaned of underground road segments.
 Railways are retrieved from OS OpenMap - Local\cite{openmap2020}
 ("RailwayTrack" layer) which captures surface railway tracks. Rivers are extracted from
@@ -126,7 +126,7 @@ Spatial signatures capture the character of the built and unbuilt environment
 based on two components - form and function. Each of them is quantified at the level of
 individual ETCs using methods appropriate for each specific dataset. While form
 is described using urban morphometrics (i.e. quantitative analysis of urban
-form), function is a composite of a variety of data inputs. We outline each
+form)\cite{dibble2019origin}, function is a composite of a variety of data inputs. We outline each
 component with a bit more detail below.
 
 \subsubsection*{Form}
@@ -198,17 +198,10 @@ open data products. Therefore, the main goal of our characterisation of ETCs bas
 function is to develop appropriate transfer methods to link data published as grids or
 linked to administrative boundaries to ETCs.
 
-In this work, we are using five different transfer methods:
-
-\begin{itemize}
-    \item Areal interpolation
-    \item Building-based dasymetric areal interpolation
-    \item Network-constrained accessibility
-    \item Euclidean accessibility
-    \item Zonal statistics
-\end{itemize}
-
-Areal interpolation is used when the functional data covers the entirety of space in the
+In this work, we are using five different transfer methods: Areal interpolation,
+Building-based dasymetric areal interpolation\cite{eli_knaap_2021_5047613}, Network-constrained accessibility,
+Euclidean accessibility, and Zonal statistics. Areal interpolation is used when the
+functional data covers the entirety of space in the
 form of polygon geometry and when there is no assumption that the phenomena it captures
 are linked directly to the human population, such as land cover data. When there is
 an assumption of relation to the population, building-based dasymetric areal
@@ -230,21 +223,21 @@ reflect the contextual pattern of measured values. The selection of datasets and
 transfer method are listed in the table \ref{tab:function}.
 
 \begin{table}
-\begin{tabular}{lll}
+\begin{tabular}{p{35mm}p{50mm}p{35mm}p{40mm}}
 \toprule
-                                data &                   input geometry &                               transfer method \\
+                                data & source &                   input geometry &                               transfer method \\
 \midrule
-                Population estimates &     Vector (output area polygon) & Building-based dasymetric areal interpolation \\
-        Retail POIs (supermarkets) &                   Vector (point) &             Network-constrained accessibility \\
-                        Water bodies &      Vector (water body polygon) &                       Euclidean accessibility \\
-                    Listed Buildings &                   Vector (point) &             Network-constrained accessibility \\
-                        Night Lights &                    Raster (500m) &                              Zonal statistics \\
-Food Hygiene Rating Scheme Ratings &                   Vector (point) &             Network-constrained accessibility \\
-                Workplace population &     Vector (output area polygon) & Building-based dasymetric areal interpolation \\
-        Culture (theatres, cinemas) &                   Vector (point) &             Network-constrained accessibility \\
-                    Corine land cover & Vector (land cover zone polygon) &                           Areal interpolation \\
-                                NDVI &                     Raster (10m) &                              Zonal statistics \\
-                CDRC Retail centres &   Vector (retail centre polygon) &                       Euclidean accessibility \\
+                Population estimates & ONS Census Output Area population estimates, Statistics.gov.scot &     Vector (output area polygon) & Building-based dasymetric areal interpolation \\
+          Retail POIs (supermarkets) & Geolytix &                   Vector (point) &             Network-constrained accessibility \\
+                        Water bodies & OS OpenMap Local &      Vector (water body polygon) &                       Euclidean accessibility \\
+                    Listed Buildings & Historic England, Historic Environment Scotland, Lle Geo-Portal for Wales &                   Vector (point) & Network-constrained accessibility \\
+                        Night Lights & VIIRS DNB Nighttime Lights &                    Raster (500m) &                              Zonal statistics \\
+  Food Hygiene Rating Scheme Ratings & CDRC.ac.uk &                   Vector (point) &             Network-constrained accessibility \\
+                Workplace population & ONS Census Workplace population, Scotland's census Workplace population &     Vector (output area polygon) & Building-based dasymetric areal interpolation \\
+         Culture (theatres, cinemas) & OpenStreetMap &                   Vector (point) &             Network-constrained accessibility \\
+                   Corine land cover & Copernicus Land Monitoring Service & Vector (land cover zone polygon) &                           Areal interpolation \\
+                                NDVI & GHS-composite-S2 R2020A &                     Raster (10m) &                              Zonal statistics \\
+                      Retail centres & CDRC.ac.uk &   Vector (retail centre polygon) &                       Euclidean accessibility \\
 \bottomrule
 \end{tabular}
 
@@ -293,15 +286,16 @@ detail of resulting classification.
         % top level providing a first national classification
         % sub clustering of urban areas
             % selection criteria for to-be-subclustered classes
-The results of the top-level clustering capture the first layer of a national signature
-classification. However, since the classified ETCs cover entirety of space from vast
+The results of the clustering capture the first group of a national signature
+classification composed of ten clusters. However, since the classified ETCs cover entirety of space from vast
 natural open spaces to dense city centres, it may result in only a few classes
 representing urban areas. While that is caused by the variable heterogeneity of our
 dataset in combination with K-Means clustering, the measured characters have the ability
-to further distinguish sub-classes of already identified clusters. As spatial signatures
+to further distinguish classes of already identified clusters. As spatial signatures
 are focused on the urban environment, we further subdivide those clusters covering
-a substantial portion of urban areas using another iteration of K-Means clustering.
-The resulting classification then provide two hierarchical levels capturing the typology of
+a substantial portion of urban areas using another iteration of K-Means clustering
+(one class into nine and another into three clusters).
+The resulting classification then provide classification capturing the typology of
 spatial signatures with a detailed focus on urban development.
 
 
