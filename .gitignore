@@ -143,3 +143,8 @@ book/_build
 # dask
 dask-worker-space
 
+scientific_data.synctex.gz
+scientific_data.aux
+scientific_data.bbl
+scientific_data.blg
+scientific_data.out
