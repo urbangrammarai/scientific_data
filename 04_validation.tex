@@ -1,6 +1,6 @@
 Spatial signatures are unique as a classification method, limiting the potential
 validation approaches. In this context, we focus on indirect methods that use ancillary datasets capturing
-conceptually similar aspects of the environment. We compare the signatures with three of
+conceptually similar aspects of the environment. We compare the signatures with four of
 such datasets, each focusing on a different classification perspective, but all related
 to our classification to a degree when we can assume there will be a measurable level of
 association between the two:
@@ -9,6 +9,7 @@ association between the two:
     \item WorldPop settlement patterns of building footprints (2021)\cite{jochem2021tools}
     \item Classification of Multidimensional Open Data of Urban Morphology (MODUM) (2015)\cite{alexiou2016}
     \item Copernicus Urban Atlas (2018)\cite{eea2018}
+    \item Local Climate Zones (2019)\cite{demuzere2019mapping}
 \end{itemize}
 
 
@@ -137,6 +138,39 @@ as in the previous two cases.
     \includegraphics[width=\linewidth]{fig/crosstab_ua.pdf}
     \caption{Contingency table showing frequencies (in \%) of Urban Atlas classes within signature types.}
     \label{fig:crosstab_ua}
+\end{figure}
+
+\subsection*{Local Climate Zones}
+% - Local climate zones (Spsig)
+    % description of dataset + figure
+Local climate zones (LCZ) are conceptual classes originally designed to support study of urban
+climate as temperature. It consists of 17 classes of which 10 can be classified as urban
+and 7 and natural ones. In the context of Great Britain, the dataset used in this study
+does not contain 2 of them, \textit{Lightweight low-rise} and \textit{Compact highrise}
+as they are not present in the British landscape. The datasets produced by
+\cite{demuzere2019mapping} released LCZs in a 100 meters grid based on the 2016 data. As
+the LCZs are remotely sensed in this case, authors report overall average accuracy of 80 \%.
+    % expectations regarding similarity
+As a conceptual classification aimed to cover all possible types of primariliy urban climate zones globally,
+LZCs may not be optimal when looking into a single country with specific history of urban
+development. This is furhter indicated by classes that are missing. It is therefore likely
+that large parts of British cities will fall into only a few of LCZ classes, while being representated
+by a much larger number of signature types.
+    % results + contingency table figure
+
+Signature typology is rasterized and linked to the LCZ grid.
+The resulting contingency table is shown in Figure \ref{fig:crosstab_lcz}. There is a
+significant relationship between two typologies, $\chi^{2} (225, N = 16203338) = 18467242,
+p < .001$. The strength of association measured as Cramér's $V$ is $0.276$, indicating
+a modest to weak association, close to values we've seen in first two cases. As expected,
+urban signature types are clustered primarily within \textit{Compact midrise} and
+\textit{Open lowrise} LCZs, while non-urban signatures mostly fall into the \textit{Low plants} LCZ.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{fig/crosstab_lcz.pdf}
+    \caption{Contingency table showing frequencies (in \%) of Local Climate Zones within signature types.}
+    \label{fig:crosstab_lcz}
 \end{figure}
 
 \subsection*{Summary}
