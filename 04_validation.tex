@@ -1,5 +1,5 @@
 Spatial signatures are unique as a classification method, limiting the potential
-validation approaches. In this context, we focus on indirect methods that use ancillary datasets capturing
+validation. Therefore, we rahter present a comparison of signatures and ancillary datasets capturing
 conceptually similar aspects of the environment. We compare the signatures with four of
 such datasets, each focusing on a different classification perspective, but all related
 to our classification to a degree when we can assume there will be a measurable level of
@@ -13,11 +13,11 @@ association between the two:
 \end{itemize}
 
 
-\subsection*{Validation approach}
+\subsection*{Comparison approach}
 % General method of validation
     % data transfer (one or the other way depending on feasibility) chi-squared
     % statistic Cramer's V
-All datasets, spatial signatures and those selected as validation contain a
+All datasets, spatial signatures and those selected for a comparison contain a
 categorical classification of space linked to their unique geometry. The first
 requirement to be able to compare data products is to transfer their
 information to the same geometry. We take two approaches for this step,
@@ -27,9 +27,9 @@ or the conversion of
 spatial signatures to the raster representation matching an input raster,
 which is computationally more efficient when one of the layers is already a raster. The second
 step is a statistical comparison of two sets of classification labels, one representing
-spatial signature typology and the other validation classes. We use contingency tables
+spatial signature typology and the other comparison classes. We use contingency tables
 and Pearson's $\chi^{2}$ test to determine whether the frequencies of observed
-(signature types) and expected (validation types) labels significantly differ in one or
+(signature types) and expected (comparison types) labels significantly differ in one or
 more categories. Furthermore, we use Cramér's $V$ statistics\cite{cramer2016mathematical} to assess the strength of
 the association.
 
@@ -44,7 +44,7 @@ algorithm leading to a six-class typology.
     % expectations regarding similarity
 As the classification is dependent on building footprints, grid cells that do
 not contain any information on the building-based pattern are treated as missing in the
-final data product. For the validation of spatial signatures, this \textit{missing}
+final data product. For the comparison, this \textit{missing}
 category is treated as a single class. It is assumed that the top-level large scale
 patterns detected by the WorldPop method and spatial signatures will provide similar
 results. However, there will be differences caused by the inclusion of function in spatial
@@ -85,7 +85,7 @@ capturing context compared to the signatures, which leads to some classes being
 determined predominantly by a single character. For example, the \textit{Railway Buzz} type
 forms a narrow strip around the railway network, which is an effect signatures avoid.
     % results + contingency table figure
-MODUM typology is available only for England and Wales. Therefore the validation takes
+MODUM typology is available only for England and Wales. Therefore the comparison takes
 into account only ETCs covering the same area. The classification is linked to the
 ETC geometry is based on the proportion (the type covering the largest portion of ETC is
 assigned). The resulting contingency table is shown in Figure \ref{fig:crosstab_modum}. There is a
@@ -106,7 +106,7 @@ on the similarity of types.
 \subsection*{Copernicus Urban Atlas}
 % - Urban atlas (Spsig)
     % description of dataset + figure
-Copernicus Urban Atlas is the least similar of the validation datasets. It is a
+Copernicus Urban Atlas is the least similar of the comparison datasets. It is a
 high-resolution land use classification of functional urban areas derived primarily from
 Earth Observation data enriched by other reference data as OpenStreetMap or topographic
 maps. Its smallest spatial unit in urban areas is 0.25 ha and 1 ha in rural areas,
@@ -122,7 +122,7 @@ classification within a small portion of land. Signatures take a different appro
 Consequently, it is expected that the similarity between the two will be limited.
     % results + contingency table figure
 Urban Atlas is available only for functional urban areas (FUA), leaving rural areas
-unclassified. Validation then applies to FUAs only. The classification is linked to the
+unclassified. Comparison then applies to FUAs only. The classification is linked to the
 ETC geometry based on the proportion (the type covering the largest portion of ETC is
 assigned). The resulting contingency table is shown in Figure \ref{fig:crosstab_ua}. There is a
 significant relationship between two typologies, $\chi^{2} (450, N = 8396642) = 5229900,
@@ -175,15 +175,15 @@ urban signature types are clustered primarily within \textit{Compact midrise} an
 
 \subsection*{Summary}
 None of the comparisons shows more than a moderate association, but since none of the
-validation datasets is aiming to capture the same conceptualization of space as spatial
+comparison datasets is aiming to capture the same conceptualization of space as spatial
 signatures do, such a result is expected. The moderate association with both WorldPop
 settlements patterns and MODUM is reassuring as both are conceptually closer to
 signatures than the Urban Atlas (especially in their unsupervised design). Urban Atlas,
 though very different in its aims and methods, still shows a measurable association,
 which we interpret as sign that the key structural aspects forming cities are captured by both. The
-validation exercise suggests that general patterns forming cities are shared among
+comparison exercise suggests that general patterns forming cities are shared among
 signatures and existing typologies. Signature types tend to form groups when we look at
-their relation to validation classes and it is not uncommon that a single signature type
+their relation to comparison classes and it is not uncommon that a single signature type
 is present in multiple groups linked to different classes. However, all these groups
 tend to be formed based on the similarity and illustrate the granularity of the
 presented classification compared to existing datasets, allowing us to distinguish, for
