@@ -60,6 +60,13 @@ signature types of a similarly degree of urbanity. A WorldPop class 15 is "undef
 to the lack of building footprints in the area, therefore overlapping a large portion of
 signatures.
     % results + contingency table figure
+The difference between classifications is likely driven by two main aspects - one is the different
+number of classes. We can see that WorldPop classes tend to cluster wihtin a limited number of
+signature types and vice versa. The only exception is allocation of signature types into classes 4 and 6,
+which seems to heavily overlap. That is possibly caused by the second aspect - inclusion of function. Both
+classes 4 and 6 tend to be outside of city centres but still within urban areas. While it is
+the footprint-based form that is driving the difference between them, signatures in the same
+area are often disntiguished by function and varies access to amenities and services.
 
 \begin{figure}
     \centering
@@ -94,7 +101,10 @@ significant relationship between two typologies, $\chi^{2} (152, N = 13067584) =
 indicating moderate association of very similar levels we have seen above. The
 contingency table indicates similar relationships, where a single MODUM class overlaps a
 group of signature types. However, the groups tend to be well defined and formed based
-on the similarity of types.
+on the similarity of types. Signature types are minimally present in MODUM classes driven
+by a single character (\textit{Railway Buzz}, \textit{Waterside Settings},
+\textit{High Street and Promenades}), suggesting the more balanced weight of characters.
+
 
 \begin{figure}
     \centering
@@ -132,6 +142,10 @@ signatures and that of Urban Atlas with a majority of signatures being linked to
 of Urban Atlas classes. Within relevant classes, we see a tendency of signature types to
 cluster within Urban Atlas classes based on the level of urbanity, albeit not as strong
 as in the previous two cases.
+The main reason behind such a large difference are the aims of both classifications. While
+the Copernicus Urban Atlas attemps to capture land cover, resulting in a large number
+of non-urban classes, spatial signatures are aimed at urban environment with 13 out of 16
+classes covering primarily urbanised areas.
 
 \begin{figure}
     \centering
@@ -165,6 +179,14 @@ p < .001$. The strength of association measured as Cramér's $V$ is $0.276$, ind
 a modest to weak association, close to values we've seen in first two cases. As expected,
 urban signature types are clustered primarily within \textit{Compact midrise} and
 \textit{Open lowrise} LCZs, while non-urban signatures mostly fall into the \textit{Low plants} LCZ.
+
+The difference between signatures and LCZs can be accounted to two aspects. One, as we've seen
+before is the inclusion of function in spatial signatures, differentiating e.g. LCZ's \textit{Open lowrise} into
+many signature types. The other is data-driven nature of signatures compared to conceptual LCZs,
+where differences in signature types are below the resolution capability of simple matrix composed of
+density and compactness levels. On the other, it is encouraging to see that most of signature types
+fall predominantly in a single LCZ class, suggesting that while both classifications are built differently,
+they are able to capture similar large-scale patterns in cities.
 
 \begin{figure}
     \centering
