@@ -207,3 +207,5 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 }
 %% Automatically abbreviate journal names
 \RequirePackage{jabbrv}
+
+\usepackage{longtable}
