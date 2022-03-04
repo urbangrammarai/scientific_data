@@ -165,88 +165,86 @@ many characters present in literature as is feasible, while minimising potential
 collinearity and limiting redundancy of information.
 
 
-\begin{table}
-    \begin{longtable}{lll}
-        \toprule
-                                                 character &     category &               reference \\
-        \midrule
-        \endfirsthead
-
-        \toprule
-                                                 character &     category &               reference \\
-        \midrule
-        \endhead
-        \midrule
-        \multicolumn{3}{r}{{Continued on next page}} \\
-        \midrule
-        \endfoot
-
-        \bottomrule
-        \endlastfoot
-                                          area of building &    dimension &    \cite{hallowell2013} \\
-                                     perimeter of building &    dimension & \cite{vanderhaegen2017} \\
-                                courtyard area of building &    dimension &     \cite{schirmer2015} \\
-                          circular compactness of building &        shape &       \cite{dibble2017} \\
-                                       corners of building &        shape &    \cite{steiniger2008} \\
-                                    squareness of building &        shape &    \cite{steiniger2008} \\
-                  equivalent rectangular index of building &        shape &    \cite{basaraner2017} \\
-                                    elongation of building &        shape &    \cite{steiniger2008} \\
-          centroid - corner distance deviation of building &        shape &  \cite{fleischmann2021} \\
-               centroid - corner mean distance of building &    dimension &     \cite{schirmer2015} \\
-                                   orientation of building & distribution &     \cite{schirmer2015} \\
-                              street alignment of building & distribution &     \cite{schirmer2015} \\
-                                cell alignment of building & distribution &  \cite{fleischmann2021} \\
-                                longest axis length of ETC &    dimension &  \cite{fleischmann2021} \\
-                                               area of ETC &    dimension &     \cite{hamaina2012a} \\
-                               circular compactness of ETC &        shape &  \cite{fleischmann2021} \\
-                       equivalent rectangular index of ETC &        shape &  \cite{fleischmann2021} \\
-                                        orientation of ETC & distribution &  \cite{fleischmann2021} \\
-                                 covered area ratio of ETC &    intensity &      \cite{hamaina2013} \\
-                                  length of street segment &    dimension &          \cite{gil2012} \\
-                                   width of street profile &    dimension &       \cite{araldi2019} \\
-                                openness of street profile & distribution &       \cite{araldi2019} \\
-                         width deviation of street profile &    diversity &       \cite{araldi2019} \\
-                               linearity of street segment &        shape &       \cite{araldi2019} \\
-                        area covered by edge-attached ETCs &    dimension &  \cite{fleischmann2021} \\
-                     buildings per meter of street segment &    intensity &  \cite{fleischmann2021} \\
-                        area covered by node-attached ETCs &    dimension &  \cite{fleischmann2021} \\
-                       alignment of neighbouring buildings & distribution &       \cite{hijazi2016} \\
-              mean distance between neighbouring buildings & distribution &       \cite{hijazi2016} \\
-                      perimeter-weighted neighbours of ETC & distribution &  \cite{fleischmann2021} \\
-                        area covered by neighbouring cells &    dimension &  \cite{fleischmann2021} \\
-                     reached ETCs by neighbouring segments &    intensity &  \cite{fleischmann2021} \\
-                     reached area by neighbouring segments &    dimension &  \cite{fleischmann2021} \\
-                                   node degree of junction & distribution &       \cite{boeing2018} \\
-        mean distance to neighbouring nodes of street n... &    dimension &  \cite{fleischmann2021} \\
-                              mean inter-building distance & distribution &       \cite{caruso2017} \\
-                        weighted reached enclosures of ETC &    intensity &  \cite{fleischmann2021} \\
-                   reached ETCs by tessellation contiguity &    intensity &  \cite{fleischmann2021} \\
-                   reached area by tessellation contiguity &    dimension &  \cite{fleischmann2021} \\
-                                         area of enclosure &    dimension &       \cite{dibble2017} \\
-                                    perimeter of enclosure &    dimension &          \cite{gil2012} \\
-                         circular compactness of enclosure &        shape &     \cite{schirmer2015} \\
-                 equivalent rectangular index of enclosure &        shape &    \cite{basaraner2017} \\
-                    compactness-weighted axis of enclosure &        shape &   \cite{feliciotti2018} \\
-                                  orientation of enclosure & distribution &          \cite{gil2012} \\
-                perimeter-weighted neighbours of enclosure & distribution &  \cite{fleischmann2021} \\
-                           area-weighted ETCs of enclosure &    intensity &  \cite{fleischmann2021} \\
-                        local meshedness of street network & connectivity &   \cite{feliciotti2018} \\
-                        mean segment length within 3 steps &    dimension &  \cite{fleischmann2021} \\
-                 local cul-de-sac length of street network &    dimension &  \cite{fleischmann2021} \\
-                      reached area by local street network &    dimension &  \cite{fleischmann2021} \\
-                      reached ETCs by local street network &    intensity &  \cite{fleischmann2021} \\
-                      local node density of street network &    intensity &  \cite{fleischmann2021} \\
-         local proportion of cul-de-sacs of street network & connectivity &        \cite{lowry2014} \\
-        local proportion of 3-way intersections of stre... & connectivity &       \cite{boeing2018} \\
-        local proportion of 4-way intersections of stre... & connectivity &       \cite{boeing2018} \\
-        local degree weighted node density of street ne... &    intensity &       \cite{dibble2017} \\
-                         local closeness of street network & connectivity &        \cite{porta2006} \\
-                       square clustering of street network & connectivity &  \cite{fleischmann2021} \\
-        \end{longtable}
+\begin{longtable}{lll}
 \caption{\label{tab:form}Morphometric characters used to
 describe the form component of spatial signatures. For details of the implementation,
-refer to the reproducible Jupyter notebooks available at urbangrammarai.xyz.}
-\end{table}
+refer to the reproducible Jupyter notebooks available at urbangrammarai.xyz.}\\
+\toprule
+                                            character &     category &               reference \\
+\midrule
+\endfirsthead
+
+\toprule
+                                            character &     category &               reference \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+                                    area of building &    dimension &    \cite{hallowell2013} \\
+                                perimeter of building &    dimension & \cite{vanderhaegen2017} \\
+                        courtyard area of building &    dimension &     \cite{schirmer2015} \\
+                    circular compactness of building &        shape & \cite{dibble2019origin} \\
+                                corners of building &        shape &    \cite{steiniger2008} \\
+                            squareness of building &        shape &    \cite{steiniger2008} \\
+            equivalent rectangular index of building &        shape &    \cite{basaraner2017} \\
+                            elongation of building &        shape &    \cite{steiniger2008} \\
+    centroid - corner distance deviation of building &        shape &  \cite{fleischmann2021} \\
+        centroid - corner mean distance of building &    dimension &     \cite{schirmer2015} \\
+                            orientation of building & distribution &     \cite{schirmer2015} \\
+                        street alignment of building & distribution &     \cite{schirmer2015} \\
+                        cell alignment of building & distribution &  \cite{fleischmann2021} \\
+                        longest axis length of ETC &    dimension &  \cite{fleischmann2021} \\
+                                        area of ETC &    dimension &     \cite{hamaina2012a} \\
+                        circular compactness of ETC &        shape &  \cite{fleischmann2021} \\
+                equivalent rectangular index of ETC &        shape &  \cite{fleischmann2021} \\
+                                orientation of ETC & distribution &  \cite{fleischmann2021} \\
+                            covered area ratio of ETC &    intensity &      \cite{hamaina2013} \\
+                            length of street segment &    dimension &          \cite{gil2012} \\
+                            width of street profile &    dimension &       \cite{araldi2019} \\
+                        openness of street profile & distribution &       \cite{araldi2019} \\
+                    width deviation of street profile &    diversity &       \cite{araldi2019} \\
+                        linearity of street segment &        shape &       \cite{araldi2019} \\
+                area covered by edge-attached ETCs &    dimension &  \cite{fleischmann2021} \\
+                buildings per meter of street segment &    intensity &  \cite{fleischmann2021} \\
+                area covered by node-attached ETCs &    dimension &  \cite{fleischmann2021} \\
+                alignment of neighbouring buildings & distribution &       \cite{hijazi2016} \\
+        mean distance between neighbouring buildings & distribution &       \cite{hijazi2016} \\
+                perimeter-weighted neighbours of ETC & distribution &  \cite{fleischmann2021} \\
+                area covered by neighbouring cells &    dimension &  \cite{fleischmann2021} \\
+                reached ETCs by neighbouring segments &    intensity &  \cite{fleischmann2021} \\
+                reached area by neighbouring segments &    dimension &  \cite{fleischmann2021} \\
+                            node degree of junction & distribution &       \cite{boeing2018} \\
+mean distance to neighbouring nodes of street network &    dimension &  \cite{fleischmann2021} \\
+                        mean inter-building distance & distribution &       \cite{caruso2017} \\
+                weighted reached enclosures of ETC &    intensity &  \cite{fleischmann2021} \\
+            reached ETCs by tessellation contiguity &    intensity &  \cite{fleischmann2021} \\
+            reached area by tessellation contiguity &    dimension &  \cite{fleischmann2021} \\
+                                    area of enclosure &    dimension & \cite{dibble2019origin} \\
+                            perimeter of enclosure &    dimension &          \cite{gil2012} \\
+                    circular compactness of enclosure &        shape &     \cite{schirmer2015} \\
+            equivalent rectangular index of enclosure &        shape &    \cite{basaraner2017} \\
+            compactness-weighted axis of enclosure &        shape &   \cite{feliciotti2018} \\
+                            orientation of enclosure & distribution &          \cite{gil2012} \\
+        perimeter-weighted neighbours of enclosure & distribution &  \cite{fleischmann2021} \\
+                    area-weighted ETCs of enclosure &    intensity &  \cite{fleischmann2021} \\
+                local meshedness of street network & connectivity &   \cite{feliciotti2018} \\
+                mean segment length within 3 steps &    dimension &  \cite{fleischmann2021} \\
+            local cul-de-sac length of street network &    dimension &  \cite{fleischmann2021} \\
+                reached area by local street network &    dimension &  \cite{fleischmann2021} \\
+                reached ETCs by local street network &    intensity &  \cite{fleischmann2021} \\
+                local node density of street network &    intensity &  \cite{fleischmann2021} \\
+    local proportion of cul-de-sacs of street network & connectivity &        \cite{lowry2014} \\
+local proportion of 3-way intersections of street network & connectivity &       \cite{boeing2018} \\
+local proportion of 4-way intersections of street network & connectivity &       \cite{boeing2018} \\
+local degree weighted node density of street network &    intensity & \cite{dibble2019origin} \\
+                    local closeness of street network & connectivity &        \cite{porta2006} \\
+                square clustering of street network & connectivity &  \cite{fleischmann2021} \\
+\end{longtable}
 
 % Q: do we want to include some morphometric theory here? I'd say no since this is a
 % data descriptor but I can add some if needed.
@@ -334,88 +332,87 @@ reflect the contextual pattern of measured values. As in the case of morphometri
 only contextual versions are then used in the cluster analysis. The selection of datasets and the chosen
 transfer method are listed in the table \ref{tab:function}.
 
-\begin{table}
-    \begin{longtable}{lllll}
-        \toprule
-                                                                                                  character &                               data  &                                                                     source  &                    input geometry  &                                transfer method  \\
-        \midrule
-        \endfirsthead
-
-        \toprule
-                                                                                                  character &                               data  &                                                                     source  &                    input geometry  &                                transfer method  \\
-        \midrule
-        \endhead
-        \midrule
-        \multicolumn{5}{r}{{Continued on next page}} \\
-        \midrule
-        \endfoot
-
-        \bottomrule
-        \endlastfoot
-                                                                                                 Population &               Population estimates  &           ONS Census Output Area population estimates, Statistics.gov.scot  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
-                                                                                               Night lights &                       Night Lights  &                                                 VIIRS DNB Nighttime Lights  &                     Raster (500m)  &                               Zonal statistics  \\
-                                                       Workplace population [Agriculture, energy and water] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
-                                                                       Workplace population [Manufacturing] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
-                                                                        Workplace population [Construction] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
-                                                Workplace population [Distribution, hotels and restaurants] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
-                                                         Workplace population [Transport and communication] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
-                  Workplace population [Financial, real estate, professional and administrative activities] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
-                                         Workplace population [Public administration, education and health] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
-                                                                               Workplace population [Other] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                      Land cover [Airports] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                     Land cover [Non-irrigated arable land] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                Land cover [Industrial or commercial units] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                  Land cover [Salt marshes] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                     Land cover [Estuaries] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                  Land cover [Sport and leisure facilities] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                             Land cover [Green urban areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                    Land cover [Discontinuous urban fabric] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                      Land cover [Pastures] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                           Land cover [Broad-leaved forest] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                      Land cover [Mineral extraction sites] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                    Land cover [Port areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                    Land cover [Road and rail networks and associated land] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                  Land cover [Water bodies] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-        Land cover [Land principally occupied by agriculture, with significant areas of natural vegetation] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                  Land cover [Mixed forest] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                     Land cover [Peat bogs] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                            Land cover [Natural grasslands] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                           Land cover [Moors and heathland] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                   Land cover [Transitional woodland-shrub] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                       Land cover [Continuous urban fabric] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                              Land cover [Intertidal flats] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                 Land cover [Sea and ocean] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                             Land cover [Coniferous forest] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                            Land cover [Construction sites] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                      Land cover [Sparsely vegetated areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                    Land cover [Bare rocks] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                Land cover [Inland marshes] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                    Land cover [Dump sites] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                             Land cover [Fruit trees and berry plantations] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                  Land cover [Complex cultivation patterns] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                         Land cover [Beaches, dunes, sands] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                 Land cover [Water courses] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                   Land cover [Burnt areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                           Land cover [Agro-forestry areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                               Land cover [Coastal lagoons] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
-                                                                                                       NDVI &                               NDVI  &                                                    GHS-composite-S2 R2020A  &                      Raster (10m)  &                               Zonal statistics  \\
-                                                                         Supermarkets [distance to nearest] &         Retail POIs (supermarkets)  &                                                                   Geolytix  &                    Vector (point)  &              Network-constrained accessibility  \\
-                                                                         Supermarkets [counts within 1200m] &         Retail POIs (supermarkets)  &                                                                   Geolytix  &                    Vector (point)  &              Network-constrained accessibility  \\
-                                                                     Listed buildings [distance to nearest] &                   Listed Buildings  &  Historic England, Historic Environment Scotland, Lle Geo-Portal for Wales  &                    Vector (point)  &              Network-constrained accessibility  \\
-                                                                     Listed buildings [counts within 1200m] &                   Listed Buildings  &  Historic England, Historic Environment Scotland, Lle Geo-Portal for Wales  &                    Vector (point)  &              Network-constrained accessibility  \\
-                                                                          FHRS points [distance to nearest] & Food Hygiene Rating Scheme Ratings  &                                                                 CDRC.ac.uk  &                    Vector (point)  &              Network-constrained accessibility  \\
-                                                                          FHRS points [counts within 1200m] & Food Hygiene Rating Scheme Ratings  &                                                                 CDRC.ac.uk  &                    Vector (point)  &              Network-constrained accessibility  \\
-                                                                      Cultural venues [distance to nearest] &        Culture (theatres, cinemas)  &                                                              OpenStreetMap  &                    Vector (point)  &              Network-constrained accessibility  \\
-                                                                      Cultural venues [counts within 1200m] &        Culture (theatres, cinemas)  &                                                              OpenStreetMap  &                    Vector (point)  &              Network-constrained accessibility  \\
-                                                                         Water bodies [distance to nearest] &                       Water bodies  &                                                           OS OpenMap Local  &       Vector (water body polygon)  &                        Euclidean accessibility  \\
-                                                                       Retail centres [distance to nearest] &                     Retail centres  &                                                                 CDRC.ac.uk  &    Vector (retail centre polygon)  &                        Euclidean accessibility  \\
-        \end{longtable}
-
-
-\caption{\label{tab:function}Functional characters used to
+\begin{longtable}{p{0.25\textwidth}p{0.1\textwidth}p{0.2\textwidth}p{0.15\textwidth}p{0.15\textwidth}}
+    \caption{\label{tab:function}Functional characters used to
 describe the function component of spatial signatures. For details of the implementation,
-refer to the reproducible Jupyter notebooks available at urbangrammarai.xyz.}
-\end{table}
+refer to the reproducible Jupyter notebooks available at urbangrammarai.xyz.}\\
+    \toprule
+                                                                                                character &                               data  &                                                                     source  &                    input geometry  &                                transfer method  \\
+    \midrule
+    \endfirsthead
+
+    \toprule
+                                                                                                character &                               data  &                                                                     source  &                    input geometry  &                                transfer method  \\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{5}{r}{{Continued on next page}} \\
+    \midrule
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+                                                                                                Population &               Population estimates  &           ONS Census Output Area population estimates, Statistics.gov.scot  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
+                                                                                            Night lights &                       Night Lights  &                                                 VIIRS DNB Nighttime Lights  &                     Raster (500m)  &                               Zonal statistics  \\
+                                                    Workplace population [Agriculture, energy and water] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
+                                                                    Workplace population [Manufacturing] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
+                                                                    Workplace population [Construction] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
+                                            Workplace population [Distribution, hotels and restaurants] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
+                                                        Workplace population [Transport and communication] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
+                Workplace population [Financial, real estate, professional and administrative activities] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
+                                        Workplace population [Public administration, education and health] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
+                                                                            Workplace population [Other] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                    Land cover [Airports] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                    Land cover [Non-irrigated arable land] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                            Land cover [Industrial or commercial units] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Salt marshes] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                    Land cover [Estuaries] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                Land cover [Sport and leisure facilities] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                            Land cover [Green urban areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                Land cover [Discontinuous urban fabric] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                    Land cover [Pastures] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                        Land cover [Broad-leaved forest] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                    Land cover [Mineral extraction sites] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Port areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                Land cover [Road and rail networks and associated land] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Water bodies] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+    Land cover [Land principally occupied by agriculture, with significant areas of natural vegetation] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Mixed forest] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                    Land cover [Peat bogs] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                        Land cover [Natural grasslands] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                        Land cover [Moors and heathland] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                Land cover [Transitional woodland-shrub] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                    Land cover [Continuous urban fabric] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                            Land cover [Intertidal flats] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Sea and ocean] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                            Land cover [Coniferous forest] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                        Land cover [Construction sites] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                    Land cover [Sparsely vegetated areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Bare rocks] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                            Land cover [Inland marshes] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Dump sites] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                            Land cover [Fruit trees and berry plantations] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                Land cover [Complex cultivation patterns] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                        Land cover [Beaches, dunes, sands] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Water courses] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                Land cover [Burnt areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                        Land cover [Agro-forestry areas] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                            Land cover [Coastal lagoons] &                  Corine land cover  &                                         Copernicus Land Monitoring Service  &  Vector (land cover zone polygon)  &                            Areal interpolation  \\
+                                                                                                    NDVI &                               NDVI  &                                                    GHS-composite-S2 R2020A  &                      Raster (10m)  &                               Zonal statistics  \\
+                                                                        Supermarkets [distance to nearest] &         Retail POIs (supermarkets)  &                                                                   Geolytix  &                    Vector (point)  &              Network-constrained accessibility  \\
+                                                                        Supermarkets [counts within 1200m] &         Retail POIs (supermarkets)  &                                                                   Geolytix  &                    Vector (point)  &              Network-constrained accessibility  \\
+                                                                    Listed buildings [distance to nearest] &                   Listed Buildings  &  Historic England, Historic Environment Scotland, Lle Geo-Portal for Wales  &                    Vector (point)  &              Network-constrained accessibility  \\
+                                                                    Listed buildings [counts within 1200m] &                   Listed Buildings  &  Historic England, Historic Environment Scotland, Lle Geo-Portal for Wales  &                    Vector (point)  &              Network-constrained accessibility  \\
+                                                                        FHRS points [distance to nearest] & Food Hygiene Rating Scheme Ratings  &                                                                 CDRC.ac.uk  &                    Vector (point)  &              Network-constrained accessibility  \\
+                                                                        FHRS points [counts within 1200m] & Food Hygiene Rating Scheme Ratings  &                                                                 CDRC.ac.uk  &                    Vector (point)  &              Network-constrained accessibility  \\
+                                                                    Cultural venues [distance to nearest] &        Culture (theatres, cinemas)  &                                                              OpenStreetMap  &                    Vector (point)  &              Network-constrained accessibility  \\
+                                                                    Cultural venues [counts within 1200m] &        Culture (theatres, cinemas)  &                                                              OpenStreetMap  &                    Vector (point)  &              Network-constrained accessibility  \\
+                                                                        Water bodies [distance to nearest] &                       Water bodies  &                                                           OS OpenMap Local  &       Vector (water body polygon)  &                        Euclidean accessibility  \\
+                                                                    Retail centres [distance to nearest] &                     Retail centres  &                                                                 CDRC.ac.uk  &    Vector (retail centre polygon)  &                        Euclidean accessibility  \\
+\end{longtable}
+
+
+
 
 \subsection*{Cluster analysis}
 % cluster analysis
@@ -532,11 +529,27 @@ characters, and release it as additional descriptive tables. The resulting numer
 profile of each signature type is available as table \ref{tab:port}. Table \ref{tab:pens} contains pen portraits
 derived from these numerical profiles.
 
-\begin{table}
-    \begin{tabular}{lrrrrrrrrrrrrrrrr}
+\tiny
+    \begin{longtable}{p{0.1\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}p{0.035\textwidth}}
+        \caption{\label{tab:port}Numerical portraits characterising each signature type. Each value is computed as a mean of values of all ETCs within the type.}\\
+
         \toprule
-        type &  Accessible suburbia &  Connected residential neighbourhoods &  Countryside agriculture &  Dense residential neighbourhoods &  Dense urban neighbourhoods &  Disconnected suburbia &  Concentrated urbanity &  Gridded residential quarters &  Hyper concentrated urbanity &  Local urbanity &  Metropolitan urbanity &  Open sprawl &  Regional urbanity &  Urban buffer &  Warehouse/Park land &  Wild countryside \\
+        type &  Accessible suburbia &  Connected residential neighbourhoods &  Countryside agriculture &  Dense residential neighbourhoods &  Dense urban neighbourhoods &  Disconnected suburbia &  Concentrated urbanity &  Gridded residential quarters &  Hyper concentrated urbanity &  Local urbanity &  Metropolitan urbanity &  Open sprawl &  Regional urbanity &  Urban buffer &  Warehouse / Park land &  Wild countryside \\
         \midrule
+        \endfirsthead
+
+        \toprule
+        type &  Accessible suburbia &  Connected residential neighbourhoods &  Countryside agriculture &  Dense residential neighbourhoods &  Dense urban neighbourhoods &  Disconnected suburbia &  Concentrated urbanity &  Gridded residential quarters &  Hyper concentrated urbanity &  Local urbanity &  Metropolitan urbanity &  Open sprawl &  Regional urbanity &  Urban buffer &  Warehouse / Park land &  Wild countryside \\
+        \midrule
+        \endhead
+        \midrule
+        \multicolumn{17}{r}{{Continued on next page}} \\
+        \midrule
+        \endfoot
+
+        \bottomrule
+        \endlastfoot
+
         area of building                                                                                    &               176.95 &                                272.52 &                   204.10 &                            375.60 &                      588.36 &                 212.71 &                3713.38 &                        283.89 &                      3358.10 &          823.35 &                2413.94 &       226.72 &            1480.26 &        209.42 &               393.22 &            209.86 \\
         perimeter of building                                                                               &                53.90 &                                 69.12 &                    56.05 &                             80.56 &                      107.36 &                  61.63 &                 376.30 &                         69.67 &                       330.82 &          135.54 &                 283.94 &        59.64 &             195.98 &         55.94 &                75.68 &             57.12 \\
         courtyard area of building                                                                          &                 0.48 &                                  1.07 &                     0.51 &                              2.13 &                        5.03 &                   0.52 &                 159.09 &                          0.75 &                        90.82 &           12.67 &                 118.95 &         0.90 &              43.19 &          0.74 &                 3.26 &              0.22 \\
@@ -654,18 +667,31 @@ derived from these numerical profiles.
         Water bodies [distance to nearest]                                                                  &               542.61 &                                555.96 &                   304.49 &                            483.12 &                      528.85 &                 523.05 &                 565.25 &                        522.09 &                       759.60 &          507.71 &                 467.71 &       378.36 &             461.42 &        345.79 &               417.43 &            236.73 \\
         Retail centres [distance to nearest]                                                                &               849.45 &                                536.47 &                  4943.97 &                            421.09 &                      224.33 &                 725.57 &                  29.80 &                        445.52 &                        32.54 &          161.85 &                  66.32 &      1002.66 &              90.87 &       2102.46 &               898.17 &          11041.32 \\
         \bottomrule
-        \end{tabular}
-
-        \caption{\label{tab:port}Numerical portraits characterising each signature type. Each value is computed as a mean of values of all ETCs within the type.}
-
-    \end{table}
+        \end{longtable}
+\normalsize
 
 
-\begin{table}
-\begin{tabular}{ll}
+
+\begin{longtable}{p{0.25\textwidth}p{0.7\textwidth}}
+    \caption{\label{tab:pens}Interpretative pen portraits characterising each signature type based on its numerical profile.}\\
+
     \toprule
-    {} &                                                                                                                                                                                                                                                                                                                                                                                                                             0 \\
+    Signature type &                                                                                                                                                                                                                                                                                                                                                                                                                             Pen Portait \\
     \midrule
+    \endfirsthead
+
+    \toprule
+    Signature type &                                                                                                                                                                                                                                                                                                                                                                                                                             Pen Portait \\
+    \midrule
+    \endhead
+    \midrule
+    \multicolumn{2}{r}{{Continued on next page}} \\
+    \midrule
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
     Wild countryside                     &                                                                                       In “Wild countryside”, human influence is the least intensive. This signature covers large open spaces in the countryside where no urbanisation happens apart from occasional roads, cottages, and pastures. You can find it across the Scottish Highlands, numerous national parks such as Lake District, or in the majority of Wales. \\
     Countryside agriculture              &                                                                                                                                                                               “Countryside agriculture” features much of the English countryside and displays a high degree of agriculture including both fields and pastures. There are a few buildings scattered across the area but, for the most part, it is green space. \\
     Urban buffer                         &                                                                                             “Urban buffer” can be characterised as a green belt around cities. This signature includes mostly agricultural land in the immediate adjacency of towns and cities, often including edge development. It still feels more like countryside than urban, but these signatures are much smaller compared to other countryside types. \\
@@ -683,8 +709,6 @@ derived from these numerical profiles.
     Concentrated urbanity                &  Concentrated urbanity” is a signature type found in the city centre of London and nowhere else in Great Britain. It reflects the uniqueness of London in the British context with an extremely high number of jobs and amenities located nearby, as well as high built-up and population densities. Buildings in this signature are large and tightly packed, forming complex shapes with courtyards and little green space. \\
     Hyper concentrated urbanity          &     The epitome of urbanity in the British context. “Hyper concentrated urbanity” is a signature type present only in the centre of London, around the Soho district, and covering Oxford and Regent streets. This signature is the result of centuries of urban primacy, with a multitude of historical layers interwoven, very high built-up and population density, and extreme abundance of amenities, services and jobs. \\
     \bottomrule
-    \end{tabular}
-\caption{\label{tab:pens}Interpretative pen portraits characterising each signature type based on its numerical profile.}
-\end{table}
+\end{longtable}
 % - Feature importance - should this actually be included in here? It is not part of the
 %   data product so I'd say no.
