@@ -285,7 +285,15 @@ final form component composed of 177 contextual characters.
             %  contextualised using the same method used in morphometrics
 Characterisation of the function component uses a different approach. While data
 describing urban form are not generally available in a processed format, forcing us to employ morphometric approaches, different aspects of function are often available as
-open data products. Therefore, the main goal of our characterisation of ETCs based on
+open data products. 
+%
+We guide the compilation of functional characters following three main
+principles: first, we identify from the literature on urban function key areas
+to be represented; second, we translate those abstract areas into measurable
+features; and third, we select open data available in for Great Britain that
+allows for the redistribution of derivative products. 
+%
+With a list of function characters selected, the main goal of our characterisation of ETCs based on
 function is to develop appropriate transfer methods to link data published as grids or
 linked to administrative boundaries to ETCs.
 
@@ -404,9 +412,43 @@ themselves when they are reflecting the context by definition) compose a dataset
 describing each ETC by 331 variables (177 contextual characters representing 59 initial
 characters for form and 154 for function composed of 144 contextual characters
 representing 48 characters that do not capture context by design and 10
-accessibility-based characters that do.)
+accessibility-based characters that do).
 Assigning equal weight to each variable, we standardize them applying
 Z-score normalization, and use them as input for K-Means cluster analysis.
+% Collinearity
+Although collinearity is likely to be present between several of them, we do
+not view this as a problem: we select each character not from a purely
+statistical point of view (i.e., which ones will be more effective at
+segmenting the dataset), but instead from a conceptual one. Each variable has
+been identified by the literature on urban form and function as a relevant
+aspect that contributes to collectively characterising these two more abstract
+concepts. We thus see this situation as a way of adding robustness to the
+measurement of more conceptual notions which are ultimately our aim.
+% Why K-Means
+We opt for K-Means because we consider it strikes a compromise in
+the trade-off between performance and scalability. K-Means is widely used in the literature on
+unsupervised learning, and in much of that concerning the clustering of
+geographic entities\cite{webber2018predictive}. 
+% Alternatives
+To select the algorithm, we experimented with a random subset of our dataset,
+comparing K-Means with alternatives such as Gaussian
+Mixture Models (GMM) or Self-Organising Maps (SOM). We found results from the
+latter two were not notably better in terms of cluster compactness and qualitative examination
+of the geographic clusters, but were significantly slower in computation
+runtime, posing serious challenges to be run at scale.
+% Space
+Although K-Means does not consider space explicitly, our approach incorporates
+information about the geographic context of each observation through the
+operation described above and illustrated in Figure \ref{fig:context}. We
+prefer this over a spatially-constrained algorithm (e.g.,
+SKATER\cite{lage2001minimal}) that restricts the clustering only among spatially contiguous observations
+because we are not interested in areas that are spatially contiguous unless
+they are sufficiently similar to each other on the attribute space. Our
+contextual approach is more similar to spatially-encouraged algorithms such as the
+GeoSOM\cite{baccao2005self} or spatially-encouraged spectral clustering\cite{wolf2021spatially} that incorporate geographic proximity when
+clustering but do not restrict. Our choice in this case was led by its
+scalability over other such algorithms.
+Nevertheless, we consider this a fruitful avenue for future research.
 
         % selection of number of clusters
             % clustergram
@@ -443,7 +485,8 @@ to ensure the stability of the outcome.
         % sub clustering of urban areas
             % selection criteria for to-be-subclustered classes
 The results of the clustering capture the first group of a national signature
-classification composed of ten clusters. However, since the classified ETCs cover entirety of space from vast
+classification composed of ten clusters. However, since the classified ETCs
+cover the entirety of space, from vast
 natural open spaces to dense city centres, it may result in only a few classes
 representing urban areas. While that is caused by the variable heterogeneity of our
 dataset in combination with K-Means clustering, the measured characters have the ability
