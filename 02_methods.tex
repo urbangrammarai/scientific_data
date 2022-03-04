@@ -166,71 +166,83 @@ collinearity and limiting redundancy of information.
 
 
 \begin{table}
-\begin{tabular}{lll}
-\toprule
-                                            character &     category &               reference \\
-\midrule
-                                    area of building &    dimension &    \cite{hallowell2013} \\
-                                perimeter of building &    dimension & \cite{vanderhaegen2017} \\
-                        courtyard area of building &    dimension &     \cite{schirmer2015} \\
-                    circular compactness of building &        shape &       \cite{dibble2019origin} \\
-                                corners of building &        shape &    \cite{steiniger2008} \\
-                            squareness of building &        shape &    \cite{steiniger2008} \\
-            equivalent rectangular index of building &        shape &    \cite{basaraner2017} \\
-                            elongation of building &        shape &    \cite{steiniger2008} \\
-    centroid - corner distance deviation of building &        shape &  \cite{fleischmann2021} \\
-        centroid - corner mean distance of building &    dimension &     \cite{schirmer2015} \\
-                            orientation of building & distribution &     \cite{schirmer2015} \\
-                        street alignment of building & distribution &     \cite{schirmer2015} \\
-                        cell alignment of building & distribution &  \cite{fleischmann2021} \\
-                        longest axis length of ETC &    dimension &  \cite{fleischmann2021} \\
-                                        area of ETC &    dimension &     \cite{hamaina2012a} \\
-                        circular compactness of ETC &        shape &  \cite{fleischmann2021} \\
-                equivalent rectangular index of ETC &        shape &  \cite{fleischmann2021} \\
-                                orientation of ETC & distribution &  \cite{fleischmann2021} \\
-                            covered area ratio of ETC &    intensity &      \cite{hamaina2013} \\
-                            length of street segment &    dimension &          \cite{gil2012} \\
-                            width of street profile &    dimension &       \cite{araldi2019} \\
-                        openness of street profile & distribution &       \cite{araldi2019} \\
-                    width deviation of street profile &    diversity &       \cite{araldi2019} \\
-                        linearity of street segment &        shape &       \cite{araldi2019} \\
-                area covered by edge-attached ETCs &    dimension &  \cite{fleischmann2021} \\
-                buildings per meter of street segment &    intensity &  \cite{fleischmann2021} \\
-                area covered by node-attached ETCs &    dimension &  \cite{fleischmann2021} \\
-                alignment of neighbouring buildings & distribution &       \cite{hijazi2016} \\
-        mean distance between neighbouring buildings & distribution &       \cite{hijazi2016} \\
-                perimeter-weighted neighbours of ETC & distribution &  \cite{fleischmann2021} \\
-                area covered by neighbouring cells &    dimension &  \cite{fleischmann2021} \\
-                reached ETCs by neighbouring segments &    intensity &  \cite{fleischmann2021} \\
-                reached area by neighbouring segments &    dimension &  \cite{fleischmann2021} \\
-                            node degree of junction & distribution &       \cite{boeing2018} \\
-mean distance to neighbouring nodes of street n... &    dimension &  \cite{fleischmann2021} \\
-                        mean inter-building distance & distribution &       \cite{caruso2017} \\
-                weighted reached enclosures of ETC &    intensity &  \cite{fleischmann2021} \\
-            reached ETCs by tessellation contiguity &    intensity &  \cite{fleischmann2021} \\
-            reached area by tessellation contiguity &    dimension &  \cite{fleischmann2021} \\
-                                    area of enclosure &    dimension &       \cite{dibble2019origin} \\
-                            perimeter of enclosure &    dimension &          \cite{gil2012} \\
-                    circular compactness of enclosure &        shape &     \cite{schirmer2015} \\
-            equivalent rectangular index of enclosure &        shape &    \cite{basaraner2017} \\
-            compactness-weighted axis of enclosure &        shape &   \cite{feliciotti2018} \\
-                            orientation of enclosure & distribution &          \cite{gil2012} \\
-        perimeter-weighted neighbours of enclosure & distribution &  \cite{fleischmann2021} \\
-                    area-weighted ETCs of enclosure &    intensity &  \cite{fleischmann2021} \\
-                local meshedness of street network & connectivity &   \cite{feliciotti2018} \\
-                mean segment length within 3 steps &    dimension &  \cite{fleischmann2021} \\
-            local cul-de-sac length of street network &    dimension &  \cite{fleischmann2021} \\
-                reached area by local street network &    dimension &  \cite{fleischmann2021} \\
-                reached ETCs by local street network &    intensity &  \cite{fleischmann2021} \\
-                local node density of street network &    intensity &  \cite{fleischmann2021} \\
-    local proportion of cul-de-sacs of street network & connectivity &        \cite{lowry2014} \\
-local proportion of 3-way intersections of stre... & connectivity &       \cite{boeing2018} \\
-local proportion of 4-way intersections of stre... & connectivity &       \cite{boeing2018} \\
-local degree weighted node density of street ne... &    intensity &       \cite{dibble2019origin} \\
-                    local closeness of street network & connectivity &        \cite{porta2006} \\
-                square clustering of street network & connectivity &  \cite{fleischmann2021} \\
-\bottomrule
-\end{tabular}
+    \begin{longtable}{lll}
+        \toprule
+                                                 character &     category &               reference \\
+        \midrule
+        \endfirsthead
+
+        \toprule
+                                                 character &     category &               reference \\
+        \midrule
+        \endhead
+        \midrule
+        \multicolumn{3}{r}{{Continued on next page}} \\
+        \midrule
+        \endfoot
+
+        \bottomrule
+        \endlastfoot
+                                          area of building &    dimension &    \cite{hallowell2013} \\
+                                     perimeter of building &    dimension & \cite{vanderhaegen2017} \\
+                                courtyard area of building &    dimension &     \cite{schirmer2015} \\
+                          circular compactness of building &        shape &       \cite{dibble2017} \\
+                                       corners of building &        shape &    \cite{steiniger2008} \\
+                                    squareness of building &        shape &    \cite{steiniger2008} \\
+                  equivalent rectangular index of building &        shape &    \cite{basaraner2017} \\
+                                    elongation of building &        shape &    \cite{steiniger2008} \\
+          centroid - corner distance deviation of building &        shape &  \cite{fleischmann2021} \\
+               centroid - corner mean distance of building &    dimension &     \cite{schirmer2015} \\
+                                   orientation of building & distribution &     \cite{schirmer2015} \\
+                              street alignment of building & distribution &     \cite{schirmer2015} \\
+                                cell alignment of building & distribution &  \cite{fleischmann2021} \\
+                                longest axis length of ETC &    dimension &  \cite{fleischmann2021} \\
+                                               area of ETC &    dimension &     \cite{hamaina2012a} \\
+                               circular compactness of ETC &        shape &  \cite{fleischmann2021} \\
+                       equivalent rectangular index of ETC &        shape &  \cite{fleischmann2021} \\
+                                        orientation of ETC & distribution &  \cite{fleischmann2021} \\
+                                 covered area ratio of ETC &    intensity &      \cite{hamaina2013} \\
+                                  length of street segment &    dimension &          \cite{gil2012} \\
+                                   width of street profile &    dimension &       \cite{araldi2019} \\
+                                openness of street profile & distribution &       \cite{araldi2019} \\
+                         width deviation of street profile &    diversity &       \cite{araldi2019} \\
+                               linearity of street segment &        shape &       \cite{araldi2019} \\
+                        area covered by edge-attached ETCs &    dimension &  \cite{fleischmann2021} \\
+                     buildings per meter of street segment &    intensity &  \cite{fleischmann2021} \\
+                        area covered by node-attached ETCs &    dimension &  \cite{fleischmann2021} \\
+                       alignment of neighbouring buildings & distribution &       \cite{hijazi2016} \\
+              mean distance between neighbouring buildings & distribution &       \cite{hijazi2016} \\
+                      perimeter-weighted neighbours of ETC & distribution &  \cite{fleischmann2021} \\
+                        area covered by neighbouring cells &    dimension &  \cite{fleischmann2021} \\
+                     reached ETCs by neighbouring segments &    intensity &  \cite{fleischmann2021} \\
+                     reached area by neighbouring segments &    dimension &  \cite{fleischmann2021} \\
+                                   node degree of junction & distribution &       \cite{boeing2018} \\
+        mean distance to neighbouring nodes of street n... &    dimension &  \cite{fleischmann2021} \\
+                              mean inter-building distance & distribution &       \cite{caruso2017} \\
+                        weighted reached enclosures of ETC &    intensity &  \cite{fleischmann2021} \\
+                   reached ETCs by tessellation contiguity &    intensity &  \cite{fleischmann2021} \\
+                   reached area by tessellation contiguity &    dimension &  \cite{fleischmann2021} \\
+                                         area of enclosure &    dimension &       \cite{dibble2017} \\
+                                    perimeter of enclosure &    dimension &          \cite{gil2012} \\
+                         circular compactness of enclosure &        shape &     \cite{schirmer2015} \\
+                 equivalent rectangular index of enclosure &        shape &    \cite{basaraner2017} \\
+                    compactness-weighted axis of enclosure &        shape &   \cite{feliciotti2018} \\
+                                  orientation of enclosure & distribution &          \cite{gil2012} \\
+                perimeter-weighted neighbours of enclosure & distribution &  \cite{fleischmann2021} \\
+                           area-weighted ETCs of enclosure &    intensity &  \cite{fleischmann2021} \\
+                        local meshedness of street network & connectivity &   \cite{feliciotti2018} \\
+                        mean segment length within 3 steps &    dimension &  \cite{fleischmann2021} \\
+                 local cul-de-sac length of street network &    dimension &  \cite{fleischmann2021} \\
+                      reached area by local street network &    dimension &  \cite{fleischmann2021} \\
+                      reached ETCs by local street network &    intensity &  \cite{fleischmann2021} \\
+                      local node density of street network &    intensity &  \cite{fleischmann2021} \\
+         local proportion of cul-de-sacs of street network & connectivity &        \cite{lowry2014} \\
+        local proportion of 3-way intersections of stre... & connectivity &       \cite{boeing2018} \\
+        local proportion of 4-way intersections of stre... & connectivity &       \cite{boeing2018} \\
+        local degree weighted node density of street ne... &    intensity &       \cite{dibble2017} \\
+                         local closeness of street network & connectivity &        \cite{porta2006} \\
+                       square clustering of street network & connectivity &  \cite{fleischmann2021} \\
+        \end{longtable}
 \caption{\label{tab:form}Morphometric characters used to
 describe the form component of spatial signatures. For details of the implementation,
 refer to the reproducible Jupyter notebooks available at urbangrammarai.xyz.}
@@ -285,13 +297,13 @@ final form component composed of 177 contextual characters.
             %  contextualised using the same method used in morphometrics
 Characterisation of the function component uses a different approach. While data
 describing urban form are not generally available in a processed format, forcing us to employ morphometric approaches, different aspects of function are often available as
-open data products. 
+open data products.
 %
 We guide the compilation of functional characters following three main
 principles: first, we identify from the literature on urban function key areas
 to be represented; second, we translate those abstract areas into measurable
 features; and third, we select open data available in for Great Britain that
-allows for the redistribution of derivative products. 
+allows for the redistribution of derivative products.
 %
 With a list of function characters selected, the main goal of our characterisation of ETCs based on
 function is to develop appropriate transfer methods to link data published as grids or
@@ -428,7 +440,7 @@ measurement of more conceptual notions which are ultimately our aim.
 We opt for K-Means because we consider it strikes a compromise in
 the trade-off between performance and scalability. K-Means is widely used in the literature on
 unsupervised learning, and in much of that concerning the clustering of
-geographic entities\cite{webber2018predictive}. 
+geographic entities\cite{webber2018predictive}.
 % Alternatives
 To select the algorithm, we experimented with a random subset of our dataset,
 comparing K-Means with alternatives such as Gaussian
