@@ -335,10 +335,23 @@ only contextual versions are then used in the cluster analysis. The selection of
 transfer method are listed in the table \ref{tab:function}.
 
 \begin{table}
-    \begin{tabular}{lllll}
+    \begin{longtable}{lllll}
         \toprule
                                                                                                   character &                               data  &                                                                     source  &                    input geometry  &                                transfer method  \\
         \midrule
+        \endfirsthead
+
+        \toprule
+                                                                                                  character &                               data  &                                                                     source  &                    input geometry  &                                transfer method  \\
+        \midrule
+        \endhead
+        \midrule
+        \multicolumn{5}{r}{{Continued on next page}} \\
+        \midrule
+        \endfoot
+
+        \bottomrule
+        \endlastfoot
                                                                                                  Population &               Population estimates  &           ONS Census Output Area population estimates, Statistics.gov.scot  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
                                                                                                Night lights &                       Night Lights  &                                                 VIIRS DNB Nighttime Lights  &                     Raster (500m)  &                               Zonal statistics  \\
                                                        Workplace population [Agriculture, energy and water] &               Workplace population  &    ONS Census Workplace population, Scotland's census Workplace population  &      Vector (output area polygon)  &  Building-based dasymetric areal interpolation  \\
@@ -396,8 +409,7 @@ transfer method are listed in the table \ref{tab:function}.
                                                                       Cultural venues [counts within 1200m] &        Culture (theatres, cinemas)  &                                                              OpenStreetMap  &                    Vector (point)  &              Network-constrained accessibility  \\
                                                                          Water bodies [distance to nearest] &                       Water bodies  &                                                           OS OpenMap Local  &       Vector (water body polygon)  &                        Euclidean accessibility  \\
                                                                        Retail centres [distance to nearest] &                     Retail centres  &                                                                 CDRC.ac.uk  &    Vector (retail centre polygon)  &                        Euclidean accessibility  \\
-        \bottomrule
-    \end{tabular}
+        \end{longtable}
 
 
 \caption{\label{tab:function}Functional characters used to
