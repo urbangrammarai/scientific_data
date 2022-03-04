@@ -1,0 +1,821 @@
+\documentclass[fleqn,10pt]{wlscirep}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lineno}
+\linenumbers
+
+\title{Geographical Characterisation of British Urban Form and Function using
+the Spatial Signatures Framework}
+
+\author[1, *]{Martin Fleischmann}
+\author[1]{Daniel Arribas-Bel}
+\affil[1]{Geographic Data Science Lab, Department of Geography and Planning, University
+of Liverpool, Roxby Building , 74 Bedford St S , Liverpool , L69 7ZT, United Kingdom}
+
+\affil[*]{corresponding author(s): Martin Fleischmann (m.fleischmann@liverpool.ac.uk)}
+
+
+\begin{abstract}
+% This is a manuscript template for Data Descriptor submissions to \emph{Scientific Data}
+% (\href{http://www.nature.com/scientificdata}{http://www.nature.com/scientificdata}). The
+% abstract must be no longer than 170 words, and should succinctly describe the study, the
+% assay(s) performed, the resulting data, and the reuse potential, but should not make any
+% claims regarding new scientific findings. No references are allowed in this section.
+
+% intro
+The spatial arrangement of the building blocks that make up cities matters  to
+understand the rules directing their dynamics. Our study outlines the development of the
+national open-source classification of space according to its form and function into a
+single typology. We create a bespoke granular spatial unit, the enclosed tessellation,
+and measure characters capturing its form and function within a relevant spatial
+context. Using K-Means clustering of individual enclosed tessellation cells, we generate
+a classification of space for the whole of Great Britain. Contiguous enclosed
+tessellation cells belonging to the same class are merged forming spatial signature
+geometries and their typology. We identify 16 distinct types of spatial signatures
+stretching from wild countryside, through various kinds of suburbia to types denoting
+urban centres according to their regional importance. The open data product presented
+here has the potential to serve as boundary delineation for other researchers interested
+in urban environments and policymakers looking for a unique perspective on cities and
+their structure.
+
+\end{abstract}
+\begin{document}
+
+\flushbottom
+\maketitle
+%  Click the title above to edit the author information and abstract
+
+\thispagestyle{empty}
+
+% \noindent Please note: Abbreviations should be introduced at the first mention in the
+% main text – no abbreviations lists or tables should be included. Structure of the main
+% text is provided below.
+
+\section*{Background \& Summary}
+
+%       (700 words maximum) An overview of the study design, the assay(s) performed, and the
+%       created data, including any background information needed to put this study in the
+%       context of previous work and the literature. The section should also briefly outline the
+%       broader goals that motivated the creation of this dataset and the potential reuse value.
+%       We also encourage authors to include a figure that provides a schematic overview of the
+%       study and assay(s) design. The Background \& Summary should not include subheadings.
+%       This section and the other main body sections of the manuscript should include citations
+%       to the literature as needed.
+
+% This section should provide an overview of the study that generated the data, as well as outlining the potential reuse value of the data. Any previous publications that used these data, in whole or in part, should be cited and briefly summarized.
+
+% + Form vs function in classification & missing link
+% + detailed x scalable x consistent
+% + *largely rephrase main arguments from conceptual paper*
+% + summary - spsig in the whole GB
+%     - classification and description of space
+
+
+% Form & Function in cities and their value
+How the building blocks that make up cities are spatially arranged is worth
+quantifying and understanding.
+%% What FF is
+By "building blocks", we mean both the activities and agents that inhabit
+cities, as well as the (infra)structure that supports them. The
+former can be conceptualised as \textit{urban function}, while the latter
+falls under the study of \textit{urban form}.
+%% Why:
+Understanding urban form and function is important for two main reasons.
+%%% encodes
+First, the combination of both \textit{encodes} rich information about the
+history, character and evolution of cities.
+%
+For example, the shape and properties of the street network encode the technology of the
+time (e.g., automobile); while the degree of mix in land uses can reflect
+cultural values.
+%%% influences
+Second, the spatial pattern of urban form and function also acts as a
+frame that \textit{influences} a variety of outcomes, from economic
+productivity to socio-economic cohesion to environmental sustainability.
+
+% We use the Spatial Signatures
+In this paper, we use the Spatial Signatures framework \cite{dab_mf_2021a, dab_mf_2021b},
+which develops a ``characterisation of space based on form and function
+designed to understand urban environments''\cite{dab_mf_2021a}.
+%% Signature definition
+Spatial signatures are theory-informed, data-driven computable classes that
+describe the form and function of a consistent patch of geography.
+%
+Figure \ref{fig:workflow} presents an overview of the development of a spatial
+signature classification.
+%
+We build a series of enclosures that we combine with building footprints
+to further subdivide geographical space into what we call enclosed tessellation cells (ETCs). We then attach form and function
+characters to each of these subdivisions, and use those to group them into
+consistent and differentiated classes we call signatures.
+%
+Each phase is expanded in detail in the next section.
+
+    % In this paper
+% Great British Signatures
+We introduce an open data product (ODP \cite{odp_paper21}) containing a classification of
+spatial signatures for Great Britain (illustrated in a figure \ref{fig:map}). In doing so, we provide an
+analysis-ready layer that brings together urban form and function consistently, in
+detail, and at national scale. To the best of our knowledge, this is the first
+dataset capturing urban form and function published both with a degree of detail and scale as
+ours.
+%% Input data used
+Our results are based on the analysis of more than 14 million of ETCs, to
+each of which we attach more than 300 characters capturing a wide range of
+aspects relating to urban form and function.
+%% Data available
+We provide access to both granular geographical boundaries of the delineated spatial signatures
+as well as measurements for each character at the signature level.
+%% Web map and code
+The ODP also includes a web map that allows exploration without any technical
+requirement other than a web browser, and we have open sourced all the code,
+including details on the computational backend.
+%% Comparison with other datasets
+The uniqueness of our ODP makes it challenging to set up a technical validation as a
+comparison with existing datasets. Nevertheless, we relate our
+signatures to a few well-established data products that capture each a subset
+of the form and function dimensions we consider. Our results are encouraging
+in that they show broad agreement in expected areas, but also highlight
+aspects that can only be discovered when considering form and function in tandem.
+
+% Benefits of signature approach (goals why we created it)
+The approach and outputs presented bring several benefits to a range of
+stakeholders interested in cities.
+%% ODP
+This spatial signatures ODP provides insight generated from detailed,
+comprehensive and computationally intensive data analysis and presents it in a
+way that is easy to access, work with and integrate into larger projects.
+%
+%%% Academics and policymakers
+Together with the importance of form and function discussed above, we
+anticipate the output will be relevant to both academic researchers as well as
+policymakers and practitioners.
+%% Broader SS benefits
+As a conceptual framework, the spatial signatures provide a flexible yet
+generalisable approach to understand, characterise and quantify urban form and
+function. One way to understand our results is as an implementation of a
+more general way of thinking about the spatial dimension of cities. In this
+context, it can be useful to researchers and practitioners who, even if not
+specifically interested in Great Britain, would like to implement a similar
+approach.
+%
+In this respect, we hope the present paper serves not only to document our own
+work but to inspire future efforts aimed at urban form and function.
+
+
+
+            %%% FROM ORIGNAL GUIDELINE %%%
+
+% An overview of the study design, the assay(s) performed, and the created data, including any background information needed to put this study in the context of previous work and the literature.
+
+%- Briefly outline the broader goals that motivated the creation of this dataset and the potential reuse value.
+
+%- We also encourage authors to include a figure that provides a schematic overview of the study and assay(s) design.
+
+
+
+
+\section*{Methods}
+
+% conceptualisation of signature detection
+% small unit
+% complex descirption (F&F)
+% cluster analysis
+The method of identification of spatial signatures consists of three top-level steps.
+First, we delineate a spatial unit of analysis that reflects the structure of
+urban phenomena on a very granular level. Then we characterise each of them
+according to form and function, capturing the nature of each unit and its spatial
+context. Finally, we use cluster analysis to derive a typology of our spatial units
+that, once combined into contiguous areas, forms a typology of spatial signatures.
+
+\subsection*{Spatial unit}
+% spatial unit
+    % conceptualisation of enclosed tessellation
+    % rules
+        % indivisible
+        % internally consistent
+        % geographically exhaustive
+    % options
+        % admin boundaries
+        % arbitrary grids
+        % morphological units
+    % ET design
+        % barriers
+        % enclosures
+        % anchors
+        % ET cells
+The first major methodological decision relates to the definition of the
+spatial unit. An ideal candidate needs to reflect space in a granular manner, and we argue
+it should fulfil three conditions. First, it should be \textit{indivisible},
+meaning that any subdivision would result in a unit that is incapable of
+capturing the nature of urban form and function. Second, it needs to be
+\textit{internally consistent} - it should always reflect only a single signature type.
+Last, it should be geographically \textit{exhaustive}, covering the entirety of the study
+area.
+
+Spatial units used in literature can be split into three groups. One is using
+administrative boundaries like city regions\cite{angel2020}, wards or census output areas\cite{alexiou2016}, that are
+convenient to obtain and can be easily linked to auxiliary data. However,
+those rarely reflect the morphological composition of urban space and, in some cases, may
+even “obscure morphologic reality”\cite{taubenbock2019new}. At the same time, most of them
+are divisible, and larger units are not always internally consistent. Another group is based on
+arbitrary uniform grids linked either to spatial indexing methods like
+H3\cite{brodsky2018h3} or Ordnance Survey
+National Grid, or to ancillary data of remote sensing or other origins like a
+WorldPop grid\cite{jochem2021tools}. Grids however cannot be considered internally
+consistent as
+they do not consider the underlying structure of the landscape.
+Finally, urban morphology studies tend to use morphological elements as
+street segments\cite{araldi2019}, blocks\cite{gil2012},
+buildings\cite{hamaina2012a} or plots\cite{bobkova2019} as units of analysis.
+Some of those
+could be seen as indivisible and internally consistent, but since they are largely based
+on built-up fabric, they are not exhaustive. For example, in areas without any building or
+street, there
+is no spatial unit to work with. Plots could be theoretically considered as exhaustive,
+consistent and indivisible, but there is no accepted conceptual definition and unified
+geometric representation\cite{kropf2018}.
+
+We are, therefore, proposing an application of an alternative spatial unit called \textit{enclosed
+tessellation cell} (ETC), defined as "the portion of space that results
+from growing a morphological tessellation within an enclosure delineated by a series
+of natural or built barriers identified from the literature on urban form, function and
+perception"\cite{dab_mf_2021a}.
+% We should drop a reference to the conceptual paper here.
+ETCs follow the morphological tradition in that it is
+based on the physical elements of an environment but overcome the drawbacks of
+conventionally used units. Its geometry is generated in the three steps illustrated in a
+Figure \ref{fig:et_diagram}. First, a set of features representing physical barriers
+subdividing space, in our case composed of the street network, railways, rivers and a
+coastline, is combined, generating a layer of boundaries (\ref{fig:et_diagram} A).
+These then partition space
+into smaller enclosed geometries called \textit{enclosures} (\ref{fig:et_diagram} B),
+which can be very granular
+or very coarse depending on the geographic context. In dense city centres where a single
+enclosure represents a single block is a high frequency of small enclosures. At the same time, in the
+countryside, this approach leads to very few large enclosures as their delimiters are far away
+from each other. Enclosures are then combined with building footprints (\ref{fig:et_diagram} B),
+which act as
+anchors in space and potentially subdivide enclosures into enclosed tessellation cells using the
+morphological tessellation algorithm\cite{fleischmann2020} (\ref{fig:et_diagram} D),
+a polygon-based adaptation of Voronoi
+tessellation. The resulting geometries are indivisible as they contain, at most, a single
+anchor building, internally consistent due to their granularity and link to morphological
+elements composing urban fabric, and geographically exhaustive as they cover an entire area
+limited by specified boundaries.
+
+    % data input
+        % barries
+            % roads from OS Open Roads
+                % data description (simplified centerlines)
+            % railway from OS OpenMap - Local
+                % data description (simplified centerlines)
+            % rivers from OS OpenRivers
+                % data description (simplified centerlines)
+            % coastline from OS Strategi®
+                % data description (continuous enclosing geometry)
+        % buildings
+            % OS OpenMap - Local
+            % data quality description (merged adjacent geometries)
+
+In our ODP for Great Britain, street networks are extracted from OS
+Open Roads datasets\cite{openroads2020} representing simplified road centrelines
+cleaned of underground road segments.
+Railways are retrieved from OS OpenMap - Local\cite{openmap2020}
+("RailwayTrack" layer) which captures surface railway tracks. Rivers are extracted from
+OS OpenRivers\cite{openrivers2020} representing river network of GB as centrelines, and a coastline is
+retrieved from OS Strategi®\cite{strategi2016}, capturing coastline as a continuous line
+geometry. Building geometry is extracted, again, from OS OpenMap - Local ("Building"
+layer) and represents generalised building footprint polygons.\footnote{Note that the dataset
+does not distinguish between individual buildings when they are adjacent (e.g. perimeter
+block composed of multiple buildings is represented by a single polygon).}
+
+% characterisation of space
+\subsection*{Characterisation of space}
+Spatial signatures capture the character of the built and unbuilt environment
+based on two components - form and function. Each of them is quantified at the level of
+individual ETCs using methods appropriate for each specific dataset. While form
+is described using urban morphometrics (i.e. quantitative analysis of urban
+form)\cite{dibble2019origin}, function is a composite of a variety of data inputs. We outline each
+component with a bit more detail below.
+
+\subsubsection*{Form}
+    % form
+        % input data
+            % ET cells
+            % bulidings
+            % street network
+        % morphometrics
+            % different categories of characters
+                % dimension
+                % shape
+                % spatial distribution
+                % intensity
+                % connectivity
+                % diversity
+            % different scales
+                % individual elements -> adjacency -> networks
+        % contextualisation
+            % interest in characterisation of spatial patterns
+            % distance-weighted higher order contiguity spatial weights
+            % reflection of a statistical distribution of data within context
+                % proxy of diversity
+Morphometric characterisation of urban form is based on the numerical description
+of four elements capturing the built environment - buildings, streets, ETCs, and
+enclosures - and reflects their patterns based on six categories of
+characters: dimensions, shapes, spatial
+distribution, intensity, connectivity and diversity\cite{fleischmann2020a}. Each element is considered across
+different scales, from the measurement of individual geometries, to relations of
+neighbouring geometries, to a graph-based analysis of the street network. The combination of
+elements, categories and scales results in a set of 59 individual morphometric
+characters listed in the online table 1.
+
+% Q: do we want to include some morphometric theory here? I'd say no since this is a
+% data descriptor but I can add some if needed.
+
+However, measuring individual characters is not enough to understand the predominant
+spatial patterns. For some types of urban environment, high heterogeneity is not
+uncommon. This means that using, for example, areas of building footprints would, in most cases, result
+in largely discontinuous clusters that do not capture the pattern within an area. Therefore, we represent each of the
+morphometric characters using three summary variables reflecting statistical distributions
+of measured data within a spatial context of each ETC. Context is defined as
+tenth
+order of contiguity computed across the mesh composed of contiguous ETCs. Furthermore, each
+value is weighted by the inverse distance between so-called poles of inaccessibility
+(defined as a centre of a maximum inscribed circle) of each ETC. Three proxy variables
+then capture the first, the second and the third quartile of the resulting weighted
+distribution. Such a characterisation can capture the contextual tendency of each
+morphometric character and hence identify contiguous clusters in both homogenous and
+heterogeneous urban tissues.
+
+\subsubsection*{Function}
+    % function
+        % input data
+            % overview - from population and POIs to NDVI and night lights
+            % include table with transfer methods
+        % transfer methods overview
+            % blg-based interpolation
+            % areal interpolation
+            % accessibility
+            % euclidean distance
+            % zonal statistics
+        % contextualisation
+            % depending on the transfer method, function-based characters we
+            %  contextualised using the same method used in morphometrics
+Characterisation of the function component uses a different approach. While data
+describing urban form are not generally available in a processed format, forcing us to employ morphometric approaches, different aspects of function are often available as
+open data products. Therefore, the main goal of our characterisation of ETCs based on
+function is to develop appropriate transfer methods to link data published as grids or
+linked to administrative boundaries to ETCs.
+
+In this work, we are using five different transfer methods: Areal interpolation,
+Building-based dasymetric areal interpolation\cite{eli_knaap_2021_5047613}, Network-constrained accessibility,
+Euclidean accessibility, and Zonal statistics. Areal interpolation is used when the
+functional data covers the entirety of space in the
+form of polygon geometry and when there is no assumption that the phenomena it captures
+are linked directly to the human population, such as land cover data. When there is
+an assumption of relation to the population, building-based dasymetric areal
+interpolation is used instead. The main difference is that instead of ETC polygons,
+building footprint polygons linked to individual ETCs are used as a target of
+interpolation. That ensures that data like population estimates are linked to ETCs
+proportionally to their ability to house population rather than by their area.
+Network-constrained accessibility is used when the input data represents points of
+interest like locations of supermarkets. Points are then snapped to the nearest node on
+the street network and linked to the ETCs through the count of observations
+accessible from the cell within 15 minutes of walk (1200m on the street network) and a distance to the nearest point. In
+some cases, Euclidean (as-crow-flies) accessibility is measured instead to accommodate
+for phenomena that are often outside the reach of a drivable network like water bodies.
+Zonal statistics are used to transfer data originally stored in a raster
+format to ETCs as the mean value of raster pixels intersecting each polygon
+geometry. Finally, characters based on interpolation and zonal statistics are expressed
+using their contextual versions following the method used for form characters to, again,
+reflect the contextual pattern of measured values. The selection of datasets and the chosen
+transfer method are listed in the table \ref{tab:function}.
+
+\subsection*{Cluster analysis}
+% cluster analysis
+    % comparison of clustering methods (shall we include this?? skip for now, keep only
+    % as a notebook online)
+        % K-Means, GMM, SOM
+
+    % two levels of K-Means clustering
+        % data input
+            % combination of both form and function, all characters equally weighted
+            % only contextualised representation of characters is used to capture pattern
+
+            % data standardisation
+                % column-based mean standardisation
+
+When combined, contextual summaries of form and function characters (or characters
+themselves when they are reflecting the context by definition) compose a dataset
+describing each ETC by 331 variables (177 for form and 154 for function.)
+Assigning equal weight to each variable, we standardize them applying
+Z-score normalization, and use them as input for K-Means cluster analysis.
+
+        % selection of number of clusters
+            % clustergram
+            % supplementary metrics
+                % Silhouette
+                % Calinski-Harabasz
+                % Davies-Boulding
+Due to the nature of the selected K-Means clustering, the step preceding the final
+analysis is the selection of an optimal number of clusters. We use the
+clustergram exploratory method\cite{schonlau2002clustergram}, reflecting the behaviour of different options, the relationship
+between clustering solutions regarding the allocation of individual observations to
+classes, and the separation between the clusters within each tested solution.
+Clustergram is further accompanied by measures of internal validation measures - the
+Silhouette score diagram, Calinski-Harabasz index\cite{calinski1974} and Davies-Bouldin index\cite{davies1979cluster}. The optimal
+number of classes is selected based on the interpretation of clustergram supported by
+additional measures aiming at a balance between cluster separation and an appropriate
+detail of resulting classification.
+
+        % top level providing a first national classification
+        % sub clustering of urban areas
+            % selection criteria for to-be-subclustered classes
+The results of the clustering capture the first group of a national signature
+classification composed of ten clusters. However, since the classified ETCs cover entirety of space from vast
+natural open spaces to dense city centres, it may result in only a few classes
+representing urban areas. While that is caused by the variable heterogeneity of our
+dataset in combination with K-Means clustering, the measured characters have the ability
+to further distinguish classes of already identified clusters. As spatial signatures
+are focused on the urban environment, we further subdivide those clusters covering
+a substantial portion of urban areas using another iteration of K-Means clustering
+(one class into nine and another into three clusters).
+The resulting classification then provide classification capturing the typology of
+spatial signatures with a detailed focus on urban development.
+
+
+% generation of signature geometry
+    % dissolution based on contiguity and assigned class
+Finally, individual spatial signature geometries are generated as a combination of
+adjacent ETCs belonging to the same signature class.
+
+% - Feature importance - should this actually be included in here? It is not part of the
+%   data product so I'd say no.
+
+
+\section*{Data Records}
+
+% The Data Records section should be used to explain each data record associated with this
+% work, including the repository where this information is stored, and to provide an
+% overview of the data files and their formats. Each external data record should be cited
+% numerically in the text of this section, for example \cite{Hao:gidmaps:2014}, and
+% included in the main reference list as described below. A data citation should also be
+% placed in the subsection of the Methods containing the data-collection or analytical
+% procedure(s) used to derive the corresponding record. Providing a direct link to the
+% dataset may also be helpful to readers
+% (\hyperlink{https://doi.org/10.6084/m9.figshare.853801}{https://doi.org/10.6084/m9.figshare.853801}).
+
+% Tables should be used to support the data records, and should clearly indicate the
+% samples and subjects (study inputs), their provenance, and the experimental
+% manipulations performed on each (please see 'Tables' below). They should also specify
+% the data output resulting from each data-collection or analytical step, should these
+% form part of the archived record.
+
+%  This section should be used to explain each data record associated with this work,
+%  including the repository where this information is stored, and to provide an overview
+%  of the data files and their formats. Each external data record should be cited using
+%  our data citation format.
+
+% description of the GPKG/archive
+The data product described in this article is available through the Consumer Data
+Research Centre Open Data repository available at
+\hyperlink{https://data.cdrc.ac.uk/dataset/spatial-signatures-great-britain}{https://data.cdrc.ac.uk/dataset/spatial-signatures-great-britain}
+under the Open Government Licence v3.0 license and archived at
+\hyperlink{https://doi.org/10.6084/m9.figshare.16691575.v1}{https://doi.org/10.6084/m9.figshare.16691575.v1}.
+The dataset stored in the repository contains a GeoPackage with a signature geometry
+(OSGB36 / British National Grid (\texttt{EPSG:27700}) CRS) and related signature type,
+plain-text pen portraits describing individual signature types, a series of CSV files
+describing individual signatures and signature types, and a CSV files linking signature
+types to the Output Area and Lower Super Output Area geometry. An online interactive map
+of spatial signatures for the whole of Great Britain is available on the project website
+(\hyperlink{https://urbangrammarai.xyz/great-britain}{https://urbangrammarai.xyz/great-britain}).
+
+
+\section*{Technical Validation}
+
+% This section presents any experiments or analyses that are needed to support the
+% technical quality of the dataset. This section may be supported by figures and tables,
+% as needed. This is a required section; authors must present information justifying the
+% reliability of their data.
+
+Spatial signatures are unique as a classification method, limiting the potential
+validation approaches. In this context, we focus on indirect methods that use ancillary datasets capturing
+conceptually similar aspects of the environment. We compare the signatures with three of
+such datasets, each focusing on a different classification perspective, but all related
+to our classification to a degree when we can assume there will be a measurable level of
+association between the two:
+
+\begin{itemize}
+    \item WorldPop settlement patterns of building footprints (2021)\cite{jochem2021tools}
+    \item Classification of Multidimensional Open Data of Urban Morphology (MODUM) (2015)\cite{alexiou2016}
+    \item Copernicus Urban Atlas (2018)\cite{eea2018}
+\end{itemize}
+
+
+\subsection*{Validation approach}
+% General method of validation
+    % data transfer (one or the other way depending on feasibility) chi-squared
+    % statistic Cramer's V
+All datasets, spatial signatures and those selected as validation contain a
+categorical classification of space linked to their unique geometry. The first
+requirement to be able to compare data products is to transfer their
+information to the same geometry. We take two approaches for this step,
+depending on the dataset we are comparing the signatures with:
+an interpolation of one set of polygon-based data to another (input to ETCs);
+or the conversion of
+spatial signatures to the raster representation matching an input raster,
+which is computationally more efficient when one of the layers is already a raster. The second
+step is a statistical comparison of two sets of classification labels, one representing
+spatial signature typology and the other validation classes. We use contingency tables
+and Pearson's $\chi^{2}$ test to determine whether the frequencies of observed
+(signature types) and expected (validation types) labels significantly differ in one or
+more categories. Furthermore, we use Cramér's $V$ statistics\cite{cramer2016mathematical} to assess the strength of
+the association.
+
+\subsection*{WorldPop settlement patterns of building footprints}
+% - WorldPop (Spsig)
+    % description of dataset + figure
+WorldPop settlement patterns of building footprints dataset aims to derive a typology of
+morphological patterns based on a gridded approach with cells of
+100x100m, and building footprints. Authors measure six morphometric characters
+linked to the grid cells and use them as input for an unsupervised clustering
+algorithm leading to a six-class typology.
+    % expectations regarding similarity
+As the classification is dependent on building footprints, grid cells that do
+not contain any information on the building-based pattern are treated as missing in the
+final data product. For the validation of spatial signatures, this \textit{missing}
+category is treated as a single class. It is assumed that the top-level large scale
+patterns detected by the WorldPop method and spatial signatures will provide similar
+results. However, there will be differences caused by the inclusion of function in spatial
+signatures, higher granularity of both initial spatial units and the resulting
+classification (6 vs 19 classes).
+
+Signature typology is rasterized and linked to the WorldPop grid. The resulting
+contingency table is shown in Figure \ref{fig:crosstab_worldpop}. There is a significant relationship between
+two typologies, $\chi^{2} (114, N = 22993921) = 13341832, p < .001$. The strength of
+association measured as Cram\'{e}r's $V$ is $0.311$, indicating moderate association.
+The contingency table shows that WorldPop classes tend to be linked to groups of
+signature types of a similarly degree of urbanity. A WorldPop class 15 is "undefined" due
+to the lack of building footprints in the area, therefore overlapping a large portion of
+signatures.
+    % results + contingency table figure
+
+\subsection*{MODUM}
+% - MODUM (Spsig)
+    % description of dataset + figure
+Multidimensional Open Data Urban Morphology (MODUM) classification describes a typology
+of neighbourhoods derived from 18 indicators capturing built environment as streets,
+railways or parks, linked to the Census Output Area geometry. The classification
+identifies 8 types of neighbourhoods.
+    % expectations regarding similarity
+Compared to the WorldPop classification, MODUM takes into account more features of
+the built environment than building footprints, which makes it conceptually closer to the
+spatial signatures. However, it is still focusing predominantly on the form component,
+although there are some indicators that would be classified as function within the
+signatures framework (e.g. population). The MODUM method uses a different way of
+capturing context compared to the signatures, which leads to some classes being
+determined predominantly by a single character. For example, the \textit{Railway Buzz} type
+forms a narrow strip around the railway network, which is an effect signatures avoid.
+    % results + contingency table figure
+MODUM typology is available only for England and Wales. Therefore the validation takes
+into account only ETCs covering the same area. The classification is linked to the
+ETC geometry is based on the proportion (the type covering the largest portion of ETC is
+assigned). The resulting contingency table is shown in Figure \ref{fig:crosstab_modum}. There is a
+significant relationship between two typologies, $\chi^{2} (152, N = 13067584) =
+13938867, p < .001$. The strength of association measured as Cramér's $V$ is $0.300$,
+indicating moderate association of very similar levels we have seen above. The
+contingency table indicates similar relationships, where a single MODUM class overlaps a
+group of signature types. However, the groups tend to be well defined and formed based
+on the similarity of types.
+
+\subsection*{Copernicus Urban Atlas}
+% - Urban atlas (Spsig)
+    % description of dataset + figure
+Copernicus Urban Atlas is the least similar of the validation datasets. It is a
+high-resolution land use classification of functional urban areas derived primarily from
+Earth Observation data enriched by other reference data as OpenStreetMap or topographic
+maps. Its smallest spatial unit in urban areas is 0.25 ha and 1 ha in rural areas,
+defined primarily by physical barriers. It identifies
+27 predefined classes using the supervised method.
+    % expectations regarding similarity
+The majority of urban areas is classified as urban fabric further distinguished based on
+continuity and density resulting in six classes of the urban fabric. The classification does
+not consider the type of the pattern or any other aspect. Furthermore, it does not take
+into account what signatures call \textit{context} as each spatial unit is
+classified independently, which in some cases leads to the high heterogeneity of
+classification within a small portion of land. Signatures take a different approach.
+Consequently, it is expected that the similarity between the two will be limited.
+    % results + contingency table figure
+Urban Atlas is available only for functional urban areas (FUA), leaving rural areas
+unclassified. Validation then applies to FUAs only. The classification is linked to the
+ETC geometry based on the proportion (the type covering the largest portion of ETC is
+assigned). The resulting contingency table is shown in Figure \ref{fig:crosstab_ua}. There is a
+significant relationship between two typologies, $\chi^{2} (450, N = 8396642) = 5229900,
+p < .001$. The strength of association measured as Cramér's $V$ is $0.186$, indicating
+a weak association. The contingency table shows the difference in the aim of spatial
+signatures and that of Urban Atlas with a majority of signatures being linked to a few
+of Urban Atlas classes. Within relevant classes, we see a tendency of signature types to
+cluster within Urban Atlas classes based on the level of urbanity, albeit not as strong
+as in the previous two cases.
+
+\subsection*{Summary}
+None of the comparisons shows more than a moderate association, but since none of the
+validation datasets is aiming to capture the same conceptualization of space as spatial
+signatures do, such a result is expected. The moderate association with both WorldPop
+settlements patterns and MODUM is reassuring as both are conceptually closer to
+signatures than the Urban Atlas (especially in their unsupervised design). Urban Atlas,
+though very different in its aims and methods, still shows a measurable association,
+which we interpret as sign that the key structural aspects forming cities are captured by both. The
+validation exercise suggests that general patterns forming cities are shared among
+signatures and existing typologies. Signature types tend to form groups when we look at
+their relation to validation classes and it is not uncommon that a single signature type
+is present in multiple groups linked to different classes. However, all these groups
+tend to be formed based on the similarity and illustrate the granularity of the
+presented classification compared to existing datasets, allowing us to distinguish, for
+example, five types of signature types forming town an city centres.
+
+
+\section*{Usage Notes}
+
+The released data product follows widespread standards for geographic data storage and
+should be easy to integrate with other data and methods by researchers wanting to reuse it. However, due to the density of
+signature geometry (resulting from the detailed ETCs), it may be needed to simplify the
+geometry for a smoother interactive experience on machines with limited resources.
+
+Replication of the analysis optimally requires at least a single computational node with
+a large amount of RAM (+100GB) due to the size of the input data and detail on which
+signature characterization is computed. It is also recommended to revisit the state of
+the development of related software packages, notably
+\texttt{momepy}\cite{fleischmann_2019}, \texttt{libpysal}\cite{rey2021pysal},
+\texttt{tobler}\cite{eli_knaap_2021_5047613} and
+\texttt{dask-geopandas} as they may soon offer more efficient drop-in replacements
+of the custom code used to produce this dataset.
+
+\section*{Code availability}
+
+The source code used to produce this dataset is openly available in a GitHub repository
+at \newline
+\hyperlink{https://github.com/urbangrammarai/spatial\_signatures}{https://github.com/urbangrammarai/spatial\_signatures}
+and in the form of a website on
+\hyperlink{https://urbangrammarai.xyz}{https://urbangrammarai.xyz}.
+Code is
+organized in a series of Jupyter notebooks and have been executed within the
+\texttt{darribas:gds\_dev:6.1}\cite{gds_env}
+Docker container, unless specified otherwise in the individual notebooks.
+
+\bibliography{refs}
+
+% \noindent LaTeX formats citations and references automatically using the bibliography
+% records in your .bib file, which you can edit via the project menu. Use the cite command
+% for an inline citation, e.g. \cite{Kaufman2020, Figueredo:2009dg, Babichev2002,
+% behringer2014manipulating}. For data citations of datasets uploaded to e.g.
+% \emph{figshare}, please use the \verb|howpublished| option in the bib entry to specify
+% the platform and the link, as in the \verb|Hao:gidmaps:2014| example in the sample
+% bibliography file. For journal articles, DOIs should be included for works in press that
+% do not yet have volume or page numbers. For other journal articles, DOIs should be
+% included uniformly for all articles or not at all. We recommend that you encode all DOIs
+% in your bibtex database as full URLs, e.g. https://doi.org/10.1007/s12110-009-9068-2.
+
+\section*{Acknowledgements} (not compulsory)
+
+% Acknowledgements should be brief, and should not include thanks to anonymous referees
+% and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
+
+M.F. and D.A. kindly acknowledge funding by the UK's Economic and Social Research
+Council through the project ``Learning an urban grammar from satellite data
+through AI'', project reference \texttt{ES/T005238/1}.
+
+\section*{Author contributions statement}
+
+% Must include all authors, identified by initials, for example: A.A. conceived the
+% experiment(s), A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the
+% results. All authors reviewed the manuscript.
+
+M.F. and D.A. designed the method, M.F. conducted the experiments, M.F. and D.A.
+analysed the results. M.F. and D.A. wrote and reviewed the manuscript.
+
+\section*{Competing interests}
+
+The authors declare no competing interests.
+
+\section*{Figures \& Tables}
+
+
+\begin{figure}[ht]
+    \includegraphics[width=\linewidth]{fig/workflow.pdf}
+\caption{Diagram illustrating the sequential steps leading to the delineation of
+spatial signatures. From a series of enclosing components, to enclosures,
+enclosed tessellation (ET), the addition of form and function characters to ET
+cells, and the development of spatial signatures.}
+\label{fig:workflow}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \includegraphics[width=\linewidth]{fig/signatures_map.png}
+\caption{Illustration of a classification of spatial signatures in Liverpool and
+    Birkenhead area, in the north west of England.}
+\label{fig:map}
+\end{figure}
+
+\begin{figure}[ht]
+    \includegraphics[width=\linewidth]{fig/et_diagram.pdf}
+    \caption{Diagram illustrating the sequential steps leading to the delineation of
+    enclosed tessellation. From a series of enclosing components, where blue are streets
+    and yellow river banks (A), to enclosures (B), incorporation of buildings as anchors
+    (C) to final tessellation cells (D).}
+    \label{fig:et_diagram}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\linewidth]{fig/crosstab_worldpop.pdf}
+    \caption{Contingency table showing frequencies (in \%) of WorldPop classes within signature types.}
+    \label{fig:crosstab_worldpop}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.8\linewidth]{fig/crosstab_modum.pdf}
+    \caption{Contingency table showing frequencies (in \%) of MODUM classes within signature types.}
+    \label{fig:crosstab_modum}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{fig/crosstab_ua.pdf}
+    \caption{Contingency table showing frequencies (in \%) of Urban Atlas classes within signature types.}
+    \label{fig:crosstab_ua}
+\end{figure}
+
+
+\begin{table}[ht]
+\begin{tabular}{p{35mm}p{50mm}p{35mm}p{40mm}}
+\toprule
+                                data & source &                   input geometry &                               transfer method \\
+\midrule
+                Population estimates & ONS Census Output Area population estimates, Statistics.gov.scot &     Vector (output area polygon) & Building-based dasymetric areal interpolation \\
+            Retail POIs (supermarkets) & Geolytix &                   Vector (point) &             Network-constrained accessibility \\
+                        Water bodies & OS OpenMap Local &      Vector (water body polygon) &                       Euclidean accessibility \\
+                    Listed Buildings & Historic England, Historic Environment Scotland, Lle Geo-Portal for Wales &                   Vector (point) & Network-constrained accessibility \\
+                        Night Lights & VIIRS DNB Nighttime Lights &                    Raster (500m) &                              Zonal statistics \\
+    Food Hygiene Rating Scheme Ratings & CDRC.ac.uk &                   Vector (point) &             Network-constrained accessibility \\
+                Workplace population & ONS Census Workplace population, Scotland's census Workplace population &     Vector (output area polygon) & Building-based dasymetric areal interpolation \\
+            Culture (theatres, cinemas) & OpenStreetMap &                   Vector (point) &             Network-constrained accessibility \\
+                    Corine land cover & Copernicus Land Monitoring Service & Vector (land cover zone polygon) &                           Areal interpolation \\
+                                NDVI & GHS-composite-S2 R2020A &                     Raster (10m) &                              Zonal statistics \\
+                        Retail centres & CDRC.ac.uk &   Vector (retail centre polygon) &                       Euclidean accessibility \\
+\bottomrule
+\end{tabular}
+
+\caption{\label{tab:function}Functional characters used to
+describe the function component of spatial signatures. For details of the implementation,
+refer to the reproducible Jupyter notebooks available at urbangrammarai.xyz.}
+\end{table}
+
+% Figures, tables, and their legends, should be included at the end of the document.
+% Figures and tables can be referenced in \LaTeX{} using the ref command, e.g. Figure
+% \ref{fig:stream} and Table \ref{tab:example}.
+
+% Authors are encouraged to provide one or more tables that provide basic information on
+% the main ‘inputs’ to the study (e.g. samples, participants, or information sources) and
+% the main data outputs of the study. Tables in the manuscript should generally not be
+% used to present primary data (i.e. measurements). Tables containing primary data should
+% be submitted to an appropriate data repository.
+
+% Tables may be provided within the \LaTeX{} document or as separate files (tab-delimited
+% text or Excel files). Legends, where needed, should be included here. Generally, a Data
+% Descriptor should have fewer than ten Tables, but more may be allowed when needed.
+% Tables may be of any size, but only Tables which fit onto a single printed page will be
+% included in the PDF version of the article (up to a maximum of three).
+
+% Due to typesetting constraints, tables that do not fit onto a single A4 page cannot be
+% included in the PDF version of the article and will be made available in the online
+% version only. Any such tables must be labelled in the text as ‘Online-only’ tables and
+% numbered separately from the main table list e.g. ‘Table 1, Table 2, Online-only Table
+% 1’ etc.
+
+% \begin{figure}[ht]
+% \centering
+% \includegraphics[width=\linewidth]{stream}
+% \caption{Legend (350 words max). Example legend text.}
+% \label{fig:stream}
+% \end{figure}
+
+
+% \begin{table}[ht]
+% \centering
+% \begin{tabular}{|l|l|l|}
+% \hline
+% Condition & n & p \\
+% \hline
+% A & 5 & 0.1 \\
+% \hline
+% B & 10 & 0.01 \\
+% \hline
+% \end{tabular}
+% \caption{\label{tab:example}Legend (350 words max). Example legend text.}
+% \end{table}
+
+\end{document}
