@@ -366,7 +366,7 @@ following the rules derived by \cite{sneath1973numerical}. The gist is to includ
 many characters present in literature as is feasible, while minimising potential
 collinearity and limiting redundancy of information. That can be caused by a capturing the same
 phenomena, like a specific aspect of a shape of a building, using multiple characters. Note that
-the characters that are statistically correlated but capture dirrefent concepts are kept as such
+the characters that are statistically correlated but capture different concepts are kept as such
 information is reflective of a nature of urban form and increases the robustness of the method.
 
 % Q: do we want to include some morphometric theory here? I'd say no since this is a
@@ -535,7 +535,7 @@ are focused on the urban environment, we further subdivide those clusters coveri
 a substantial portion of urban areas using another iteration of K-Means clustering
 (one class into nine and another into three clusters). Both subdivisions were created using
 standard K-Means (single batch) using 1,000 initialisations.
-The resulting classification then provide classification capturing the typology of
+The resulting classification then provides classification capturing the typology of
 spatial signatures with a detailed focus on urban development.
 
 
@@ -610,7 +610,7 @@ we can use F-test to assess the significance of the relationship between the cha
 train a supervised model, in our case Random Forest, designed to predict individual
 signature types from input data. The former unpacks whether all the characters play a role
 in the delineation of clusters while the latter provides a feature importance - a relative measure of
-a strenght of each character in distinguishing between the types. Out of 328 characters,
+a strength of each character in distinguishing between the types. Out of 328 characters,
 18 are invariant\footnote{'Land cover [Airports] Q1, Land cover [Mineral extraction
 sites] Q1, Land cover [Road and rail networks and associated land] Q1, Land cover [Water
 bodies] Q1, Land cover [Inland marshes] Q1, Land cover [Dump sites] Q1, Land cover
@@ -623,14 +623,14 @@ and 5 insignificant\footnote{Land cover [Green urban areas] Q1, Land cover [Road
 Land cover [Water bodies] Q2, Land cover [Transitional woodland-shrub] Q1, Land cover [Coniferous forest] Q1}
 (all derived from land cover) according to the F-test results. The results of
 the Random Forest-based feature importance approach are shown in
-a table \ref{tab:imp}. As you can see, form-based characters dominate the top 10 characters but it is worth
+a table \ref{tab:imp}. As you can see, form-based characters dominate the top 10 characters, but it is worth
 noting that these top 10 characters together bear only 0.196 of the overall importance.
 
 A similar exercise can be done on a level of individual clusters, with a binary Random Forest model trained
-to distingish that particular class from the other. Resulting relative importance of top 10 characters for each signature type
+to distinguish that particular class from the other. Resulting relative importance of top 10 characters for each signature type
 is presented in a table \ref{tab:imp_cls}. While it is clear that form-based characters still dominate the prediction,
 the more urban signature types are, the higher the importance of function seems to be. Complete tables
-with all characters are availble as online tables 1 and 2.
+with all characters are available as online tables 1 and 2.
 
 \subsection*{Comparison}
 
@@ -697,12 +697,12 @@ to the lack of building footprints in the area, therefore overlapping a large po
 signatures.
     % results + contingency table figure
 The difference between classifications is likely driven by two main aspects - one is the different
-number of classes. We can see that WorldPop classes tend to cluster wihtin a limited number of
+number of classes. We can see that WorldPop classes tend to cluster within a limited number of
 signature types and vice versa. The only exception is allocation of signature types into classes 4 and 6,
 which seems to heavily overlap. That is possibly caused by the second aspect - inclusion of function. Both
 classes 4 and 6 tend to be outside of city centres but still within urban areas. While it is
 the footprint-based form that is driving the difference between them, signatures in the same
-area are often disntiguished by function and varies access to amenities and services.
+area are often distinguished by function and varies access to amenities and services.
 
 \subsection*{MODUM}
 % - MODUM (Spsig)
@@ -721,7 +721,7 @@ capturing context compared to the signatures, which leads to some classes being
 determined predominantly by a single character. For example, the \textit{Railway Buzz} type
 forms a narrow strip around the railway network, which is an effect signatures avoid.
     % results + contingency table figure
-MODUM typology is available only for England and Wales. Therefore the comparison takes
+MODUM typology is available only for England and Wales. Therefore, the comparison takes
 into account only ETCs covering the same area. The classification is linked to the
 ETC geometry is based on the proportion (the type covering the largest portion of ETC is
 assigned). The resulting contingency table is shown in Figure \ref{fig:crosstab_modum}. There is a
@@ -764,9 +764,9 @@ of Urban Atlas classes. Within relevant classes, we see a tendency of signature 
 cluster within Urban Atlas classes based on the level of urbanity, albeit not as strong
 as in the previous two cases.
 The main reason behind such a large difference are the aims of both classifications. While
-the Copernicus Urban Atlas attemps to capture land cover, resulting in a large number
+the Copernicus Urban Atlas attempts to capture land cover, resulting in a large number
 of non-urban classes, spatial signatures are aimed at urban environment with 13 out of 16
-classes covering primarily urbanised areas. sdf
+classes covering primarily urbanised areas.
 
 \subsection*{Local Climate Zones}
 % - Local climate zones (Spsig)
@@ -779,10 +779,10 @@ as they are not present in the British landscape. The datasets produced by
 \cite{demuzere2019mapping} released LCZs in a 100 meters grid based on the 2016 data. As
 the LCZs are remotely sensed in this case, authors report overall average accuracy of 80 \%.
     % expectations regarding similarity
-As a conceptual classification aimed to cover all possible types of primariliy urban climate zones globally,
+As a conceptual classification aimed to cover all possible types of primarily urban climate zones globally,
 LZCs may not be optimal when looking into a single country with specific history of urban
-development. This is furhter indicated by classes that are missing. It is therefore likely
-that large parts of British cities will fall into only a few of LCZ classes, while being representated
+development. This is further indicated by classes that are missing. It is therefore likely
+that large parts of British cities will fall into only a few of LCZ classes, while being represented
 by a much larger number of signature types.
     % results + contingency table figure
 
@@ -816,7 +816,7 @@ their relation to comparison classes and it is not uncommon that a single signat
 is present in multiple groups linked to different classes. However, all these groups
 tend to be formed based on the similarity and illustrate the granularity of the
 presented classification compared to existing datasets, allowing us to distinguish, for
-example, five types of signature types forming town an city centres.
+example, five types of signature types forming town and city centres.
 
 
 \section*{Usage Notes}
@@ -828,7 +828,7 @@ geometry for a smoother interactive experience on machines with limited resource
 
 Replication of the analysis optimally requires at least a single computational node with
 a large amount of RAM (+100GB) due to the size of the input data and detail on which
-signature characterization is computed. It is also recommended to revisit the state of
+signature characterisation is computed. It is also recommended revisiting the state of
 the development of related software packages, notably
 \texttt{momepy}\cite{fleischmann_2019}, \texttt{libpysal}\cite{rey2021pysal},
 \texttt{tobler}\cite{eli_knaap_2021_5047613} and
@@ -860,7 +860,7 @@ Docker container, unless specified otherwise in the individual notebooks.
 % included uniformly for all articles or not at all. We recommend that you encode all DOIs
 % in your bibtex database as full URLs, e.g. https://doi.org/10.1007/s12110-009-9068-2.
 
-\section*{Acknowledgements} (not compulsory)
+\section*{Acknowledgements}
 
 % Acknowledgements should be brief, and should not include thanks to anonymous referees
 % and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
@@ -925,10 +925,10 @@ cells, and the development of spatial signatures.}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\linewidth]{fig/clustergram.png}
-    \caption{Clustergram and relevant metrics of a goodness of fit (Silhouette score, C
-    alinski-Harabazs score, Davies-Bouldin score) for tested numbers of clusters. The
+    \caption{Clustergram and relevant metrics of a goodness of fit (Silhouette score,
+    Calinski-Harabazs score, Davies-Bouldin score) for tested numbers of clusters. The
     clustergram suggest two potential solutions, the very conservative option of 4
-    clusters and 10 clusters selected as an optimal resul (indicated by a vertical yellow line).}
+    clusters and 10 clusters selected as an optimal result (indicated by a vertical yellow line).}
     \label{fig:clustergram}
 \end{figure}
 
