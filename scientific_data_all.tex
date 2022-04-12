@@ -364,10 +364,10 @@ characters listed in the table \ref{tab:form}. The selection builds on the princ
 outlined by \cite{dibble2019origin} and later explored by \cite{fleischmann2021}, both
 following the rules derived by \cite{sneath1973numerical}. The gist is to include as
 many characters present in literature as is feasible, while minimising potential
-collinearity and limiting redundancy of information. That can be caused by a capturing the same
-phenomena, like a specific aspect of a shape of a building, using multiple characters. Note that
+collinearity and limiting redundancy of information. That can be caused by capturing the same
+phenomena, like a specific aspect of the shape of a building, using multiple characters. Note that
 the characters that are statistically correlated but capture different concepts are kept as such
-information is reflective of a nature of urban form and increases the robustness of the method.
+information reflects the nature of urban form and thus increases the robustness of the method.
 
 % Q: do we want to include some morphometric theory here? I'd say no since this is a
 % data descriptor but I can add some if needed.
@@ -535,7 +535,7 @@ are focused on the urban environment, we further subdivide those clusters coveri
 a substantial portion of urban areas using another iteration of K-Means clustering
 (one class into nine and another into three clusters). Both subdivisions were created using
 standard K-Means (single batch) using 1,000 initialisations.
-The resulting classification then provides classification capturing the typology of
+The resulting classification then provides a classification capturing the typology of
 spatial signatures with a detailed focus on urban development.
 
 
@@ -606,12 +606,12 @@ The characters used in the cluster analysis have each different importance in di
 Those characters which spatial distribution most closely matches the distribution of signatures
 can be seen as more important that those that are seemingly random or mostly invariant (as some of the land cover classes are).
 Unpacking the importance of individual characters from K-Means clustering cannot be done directly. However,
-we can use F-test to assess the significance of the relationship between the characters and signature types or
+we provide indirect evidence from two different approaches. First, we can use the F-test to assess the significance of the relationship between characters and signature types by regressing each character on a set of indicator variables with our signature classes. If the variation in the character maps onto that between classes, the F-test will reject the null hypothesis and will be considered significant. In the second exercise, we
 train a supervised model, in our case Random Forest, designed to predict individual
 signature types from input data. The former unpacks whether all the characters play a role
-in the delineation of clusters while the latter provides a feature importance - a relative measure of
-a strength of each character in distinguishing between the types. Out of 328 characters,
-18 are invariant\footnote{'Land cover [Airports] Q1, Land cover [Mineral extraction
+in the delineation of clusters while the latter provides indication on feature importance - a relative measure of
+strength of each character in distinguishing between the types. Out of 328 characters,
+18 are invariant\footnote{The full list includes: 'Land cover [Airports] Q1, Land cover [Mineral extraction
 sites] Q1, Land cover [Road and rail networks and associated land] Q1, Land cover [Water
 bodies] Q1, Land cover [Inland marshes] Q1, Land cover [Dump sites] Q1, Land cover
 [Water courses] Q2, Land cover [Burnt areas] Q2, Land cover [Water courses] Q1, Land
@@ -619,14 +619,14 @@ cover [Burnt areas] Q1, Land cover [Agro-forestry areas] Q3, Land cover [Coastal
 lagoons] Q2, Land cover [Burnt areas] Q3, Land cover [Agro-forestry areas] Q1, Land
 cover [Agro-forestry areas] Q2, Land cover [Dump sites] Q2, Land cover [Coastal lagoons]
 Q1, Land cover [Coastal lagoons] Q3'}
-and 5 insignificant\footnote{Land cover [Green urban areas] Q1, Land cover [Road and rail networks and associated land] Q2,
+and five insignificant at the 5\% level\footnote{The full list includes: Land cover [Green urban areas] Q1, Land cover [Road and rail networks and associated land] Q2,
 Land cover [Water bodies] Q2, Land cover [Transitional woodland-shrub] Q1, Land cover [Coniferous forest] Q1}
 (all derived from land cover) according to the F-test results. The results of
 the Random Forest-based feature importance approach are shown in
-a table \ref{tab:imp}. As you can see, form-based characters dominate the top 10 characters, but it is worth
+a table \ref{tab:imp}. As can be seen, form-based characters dominate the top 10 characters, but it is worth
 noting that these top 10 characters together bear only 0.196 of the overall importance.
 
-A similar exercise can be done on a level of individual clusters, with a binary Random Forest model trained
+A similar exercise can be done on at the level of individual clusters, with a binary Random Forest model trained
 to distinguish that particular class from the other. Resulting relative importance of top 10 characters for each signature type
 is presented in a table \ref{tab:imp_cls}. While it is clear that form-based characters still dominate the prediction,
 the more urban signature types are, the higher the importance of function seems to be. Complete tables
