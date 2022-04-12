@@ -1,7 +1,7 @@
 \documentclass[fleqn,10pt]{wlscirep}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL submission_v2.tex         Tue Apr 12 09:50:17 2022
-%DIF ADD scientific_data_all.tex   Tue Apr 12 10:11:58 2022
+%DIF ADD scientific_data_all.tex   Tue Apr 12 13:00:35 2022
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lineno}
@@ -409,10 +409,10 @@ characters listed in the table \ref{tab:form}. The selection builds on the princ
 outlined by \cite{dibble2019origin} and later explored by \cite{fleischmann2021}, both
 following the rules derived by \cite{sneath1973numerical}. The gist is to include as
 many characters present in literature as is feasible, while minimising potential
-collinearity and limiting redundancy of information. \DIFaddbegin \DIFadd{That can be caused by a capturing the same
-phenomena, like a specific aspect of a shape of a building, using multiple characters. Note that
+collinearity and limiting redundancy of information. \DIFaddbegin \DIFadd{That can be caused by capturing the same
+phenomena, like a specific aspect of the shape of a building, using multiple characters. Note that
 the characters that are statistically correlated but capture different concepts are kept as such
-information is reflective of a nature of urban form and increases the robustness of the method.
+information reflects the nature of urban form and thus increases the robustness of the method.
 }\DIFaddend 
 
 % Q: do we want to include some morphometric theory here? I'd say no since this is a
@@ -581,7 +581,7 @@ are focused on the urban environment, we further subdivide those clusters coveri
 a substantial portion of urban areas using another iteration of K-Means clustering
 (one class into nine and another into three clusters). Both subdivisions were created using
 standard K-Means (single batch) using 1,000 initialisations.
-The resulting classification then \DIFdelbegin \DIFdel{provide }\DIFdelend \DIFaddbegin \DIFadd{provides }\DIFaddend classification capturing the typology of
+The resulting classification then \DIFdelbegin \DIFdel{provide }\DIFdelend \DIFaddbegin \DIFadd{provides a }\DIFaddend classification capturing the typology of
 spatial signatures with a detailed focus on urban development.
 
 
@@ -653,12 +653,12 @@ Those characters which spatial distribution most closely matches the distributio
 can be seen as more important that those that are seemingly random or mostly invariant (as some of the land cover classes are).
 Unpacking the importance of individual characters from K-Means clustering cannot be done directly\DIFdelbegin \DIFdel{, but
 a useful method is to }\DIFdelend \DIFaddbegin \DIFadd{. However,
-we can use F-test to assess the significance of the relationship between the characters and signature types or
+we provide indirect evidence from two different approaches. First, we can use the F-test to assess the significance of the relationship between characters and signature types by regressing each character on a set of indicator variables with our signature classes. If the variation in the character maps onto that between classes, the F-test will reject the null hypothesis and will be considered significant. In the second exercise, we
 }\DIFaddend train a supervised model, in our case Random Forest, designed to predict individual
-signature types from input data. \DIFdelbegin \DIFdel{Such a model then }\DIFdelend \DIFaddbegin \DIFadd{The former unpacks whether all the characters play a role
-in the delineation of clusters while the latter }\DIFaddend provides a feature importance - a relative measure of
-a \DIFdelbegin \DIFdel{strenght }\DIFdelend \DIFaddbegin \DIFadd{strength }\DIFaddend of each character in distinguishing between the types. \DIFaddbegin \DIFadd{Out of 328 characters,
-18 are invariant}\footnote{\DIFadd{'Land cover }[\DIFadd{Airports}] \DIFadd{Q1, Land cover }[\DIFadd{Mineral extraction
+signature types from input data. \DIFdelbegin \DIFdel{Such a model then provides a }\DIFdelend \DIFaddbegin \DIFadd{The former unpacks whether all the characters play a role
+in the delineation of clusters while the latter provides indication on }\DIFaddend feature importance - a relative measure of
+\DIFdelbegin \DIFdel{a strenght }\DIFdelend \DIFaddbegin \DIFadd{strength }\DIFaddend of each character in distinguishing between the types. \DIFaddbegin \DIFadd{Out of 328 characters,
+18 are invariant}\footnote{\DIFadd{The full list includes: 'Land cover }[\DIFadd{Airports}] \DIFadd{Q1, Land cover }[\DIFadd{Mineral extraction
 sites}] \DIFadd{Q1, Land cover }[\DIFadd{Road and rail networks and associated land}] \DIFadd{Q1, Land cover }[\DIFadd{Water
 bodies}] \DIFadd{Q1, Land cover }[\DIFadd{Inland marshes}] \DIFadd{Q1, Land cover }[\DIFadd{Dump sites}] \DIFadd{Q1, Land cover
 }[\DIFadd{Water courses}] \DIFadd{Q2, Land cover }[\DIFadd{Burnt areas}] \DIFadd{Q2, Land cover }[\DIFadd{Water courses}] \DIFadd{Q1, Land
@@ -666,18 +666,18 @@ cover }[\DIFadd{Burnt areas}] \DIFadd{Q1, Land cover }[\DIFadd{Agro-forestry are
 lagoons}] \DIFadd{Q2, Land cover }[\DIFadd{Burnt areas}] \DIFadd{Q3, Land cover }[\DIFadd{Agro-forestry areas}] \DIFadd{Q1, Land
 cover }[\DIFadd{Agro-forestry areas}] \DIFadd{Q2, Land cover }[\DIFadd{Dump sites}] \DIFadd{Q2, Land cover }[\DIFadd{Coastal lagoons}]
 \DIFadd{Q1, Land cover }[\DIFadd{Coastal lagoons}] \DIFadd{Q3'}}
-\DIFadd{and 5 insignificant}\footnote{\DIFadd{Land cover }[\DIFadd{Green urban areas}] \DIFadd{Q1, Land cover }[\DIFadd{Road and rail networks and associated land}] \DIFadd{Q2,
+\DIFadd{and five insignificant at the 5\% level}\footnote{\DIFadd{The full list includes: Land cover }[\DIFadd{Green urban areas}] \DIFadd{Q1, Land cover }[\DIFadd{Road and rail networks and associated land}] \DIFadd{Q2,
 Land cover }[\DIFadd{Water bodies}] \DIFadd{Q2, Land cover }[\DIFadd{Transitional woodland-shrub}] \DIFadd{Q1, Land cover }[\DIFadd{Coniferous forest}] \DIFadd{Q1}}
 \DIFadd{(all derived from land cover) according to the F-test results. }\DIFaddend The results of
 \DIFdelbegin \DIFdel{this }\DIFdelend \DIFaddbegin \DIFadd{the Random Forest-based feature importance }\DIFaddend approach are shown in
-a table \ref{tab:imp}. As you can see, form-based characters dominate the top 10 characters\DIFaddbegin \DIFadd{, }\DIFaddend but it is worth
+a table \ref{tab:imp}. As \DIFdelbegin \DIFdel{you can see}\DIFdelend \DIFaddbegin \DIFadd{can be seen}\DIFaddend , form-based characters dominate the top 10 characters\DIFaddbegin \DIFadd{, }\DIFaddend but it is worth
 noting that these top 10 characters together bear only 0.196 of the overall importance.
 
-A similar exercise can be done on a level of individual clusters, with a binary Random Forest model trained
+A similar exercise can be done on \DIFdelbegin \DIFdel{a }\DIFdelend \DIFaddbegin \DIFadd{at the }\DIFaddend level of individual clusters, with a binary Random Forest model trained
 to \DIFdelbegin \DIFdel{distingish }\DIFdelend \DIFaddbegin \DIFadd{distinguish }\DIFaddend that particular class from the other. Resulting relative importance of top 10 characters for each signature type
 is presented in a table \ref{tab:imp_cls}. While it is clear that form-based characters still dominate the prediction,
 the more urban signature types are, the higher the importance of function seems to be. Complete tables
-with all characters are \DIFdelbegin \DIFdel{availble }\DIFdelend \DIFaddbegin \DIFadd{available }\DIFaddend as online tables 1 and 2.
+with all characters are \DIFdelbegin \DIFdel{availble as online tables }\DIFdelend \DIFaddbegin \DIFadd{available as online Tables }\DIFaddend 1 and 2.
 
 \subsection*{Comparison}
 
