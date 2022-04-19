@@ -1,7 +1,7 @@
 \documentclass[fleqn,10pt]{wlscirep}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL submission_v2.tex         Tue Apr 12 09:50:17 2022
-%DIF ADD scientific_data_all.tex   Tue Apr 12 13:04:03 2022
+%DIF DEL submission_v2.tex         Tue Apr 12 16:36:23 2022
+%DIF ADD scientific_data_all.tex   Tue Apr 19 10:03:38 2022
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lineno}
@@ -623,7 +623,9 @@ derived from these numerical profiles.
 %  our data citation format.
 
 % description of the GPKG/archive
-The data product described in this article is available through the Consumer Data
+The data product \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{fleischmannmartin2021Geographical} }\hskip0pt%DIFAUXCMD
+}\DIFaddend described in this article is available through the Consumer Data
 Research Centre Open Data repository available at
 \hyperlink{https://data.cdrc.ac.uk/dataset/spatial-signatures-great-britain}{https://data.cdrc.ac.uk/dataset/spatial-signatures-great-britain}
 under the Open Government Licence v3.0 license and archived at
@@ -639,7 +641,7 @@ The underlying data used to create the ODP are available in a dedicated GitHub r
 available from (\hyperlink{https://github.com/urbangrammarai/signatures\_gb}{https://github.com/urbangrammarai/signatures\_gb}).
 
 
-\section*{Composition and comparison}
+\section*{\DIFdelbegin \DIFdel{Composition and comparison}\DIFdelend \DIFaddbegin \DIFadd{Technical validation}\DIFaddend }
 
 % This section presents any experiments or analyses that are needed to support the
 % technical quality of the dataset. This section may be supported by figures and tables,
