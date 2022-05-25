@@ -380,7 +380,7 @@ cover [Burnt areas] Q1, Land cover [Agro-forestry areas] Q3, Land cover [Coastal
 lagoons] Q2, Land cover [Burnt areas] Q3, Land cover [Agro-forestry areas] Q1, Land
 cover [Agro-forestry areas] Q2, Land cover [Dump sites] Q2, Land cover [Coastal lagoons]
 Q1, Land cover [Coastal lagoons] Q3')
-and five insignificant at the 5\
+and five insignificant at the 5\% level (the full list includes: Land cover [Green urban areas] Q1, Land cover [Road and rail networks and associated land] Q2,
 Land cover [Water bodies] Q2, Land cover [Transitional woodland-shrub] Q1, Land cover [Coniferous forest] Q1)
 (all derived from land cover) according to the F-test results. The results of
 the Random Forest-based feature importance approach are shown in
@@ -510,7 +510,7 @@ and 7 and natural ones. In the context of Great Britain, the dataset used in thi
 does not contain 2 of them, \textit{Lightweight low-rise} and \textit{Compact highrise}
 as they are not present in the British landscape. The datasets produced by
 \cite{demuzere2019mapping} released LCZs in a 100 meters grid based on the 2016 data. As
-the LCZs are remotely sensed in this case, authors report overall average accuracy of 80 \
+the LCZs are remotely sensed in this case, authors report overall average accuracy of 80 \%
 As a conceptual classification aimed to cover all possible types of primarily urban climate zones globally,
 LZCs may not be optimal when looking into a single country with specific history of urban
 development. This is further indicated by classes that are missing. It is therefore likely
@@ -568,7 +568,68 @@ Code is
 organized in a series of Jupyter notebooks and have been executed within the
 \texttt{darribas:gds\_dev:6.1}\cite{gds_env}
 Docker container, unless specified otherwise in the individual notebooks.
-\bibliography{refs}
+\begin{thebibliography}{9}
+\bibitem{gds_env}Dani Arribas-Bel gds\_env: A containerised platform for Geographic Data Science.  (2019,8,6), https://darribas.org/gds\_env
+\bibitem{eli_knaap_2021_5047613}Knaap, Cortes, R., Rey, S., Arribas-Bel, D., Gaboardi, J., Fleischmann, M. \& Frontiera, P. pysal/tobler: Release v0.8.2. (Zenodo,2021,6), https://doi.org/10.5281/zenodo.5047613
+\bibitem{rey2021pysal}Rey, S., Anselin, L., Amaral, P., Arribas-Bel, D., Cortes, R., Gaboardi, J., Kang, W., Knaap, E., Li, Z., Lumnitz, S. \& Others The PySAL Ecosystem: Philosophy and Implementation. {\em Geographical Analysis}. (2021)
+\bibitem{demuzere2019mapping}Demuzere, M., Bechtel, B., Middel, A. \& Mills, G. Mapping Europe into local climate zones. {\em PloS One}. \textbf{14}, e0214474 (2019)
+\bibitem{stewart2012local}Stewart, I. \& Oke, T. Local climate zones for urban temperature studies. {\em Bulletin Of The American Meteorological Society}. \textbf{93}, 1879-1900 (2012)
+\bibitem{fleischmann_2019}Fleischmann, M. momepy: Urban Morphology Measuring Toolkit. {\em Journal Of Open Source Software}. \textbf{4}, 1807 (2019)
+\bibitem{odp_paper21}Arribas-Bel, D., Green, M., Rowe, F. \& Singleton, A. Open Data Products: a framework for creating valuable analysis-ready data. {\em Journal Of Geographical Systems}. \textbf{23} pp. 497-514 (2021)
+\bibitem{dab_mf_2021a}Arribas-Bel, D. \& Fleischmann, M. Spatial Signatures - Understanding (urban) spaces through form and function. {\em Habitat International}. pp. 0 (2022)
+\bibitem{dab_mf_2021b}Fleischmann, M. \& Arribas-Bel, D. Classifying urban form at national scale - The British morphosignatures. {\em Proceedings Of XXVIII International Seminar On Urban Form}. (2022)
+\bibitem{singleton2021geographic}Singleton, A. \& Arribas-Bel, D. Geographic data science. {\em Geographical Analysis}. \textbf{53}, 61-75 (2021)
+\bibitem{Kaufman2020}Kaufman, D., McKay, N., Routson, C., Erb, M., Davis, B., Heiri, O., Jaccard, S., Tierney, J., Dätwyler, C., Axford, Y., Brussel, T., Cartapanis, O., Chase, B., Dawson, A., Vernal, A., Engels, S., Jonkers, L., Marsicek, J., Moffa-Sánchez, P., Morrill, C., Orsi, A., Rehfeld, K., Saunders, K., Sommer, P., Thomas, E., Tonello, M., Tóth, M., Vachula, R., Andreev, A., Bertrand, S., Biskaborn, B., Bringué, M., Brooks, S., Caniupán, M., Chevalier, M., Cwynar, L., Emile-Geay, J., Fegyveresi, J., Feurdean, A., Finsinger, W., Fortin, M., Foster, L., Fox, M., Gajewski, K., Grosjean, M., Hausmann, S., Heinrichs, M., Holmes, N., Ilyashuk, B., Ilyashuk, E., Juggins, S., Khider, D., Koinig, K., Langdon, P., Larocque-Tobler, I., Li, J., Lotter, A., Luoto, T., Mackay, A., Magyari, E., Malevich, S., Mark, B., Massaferro, J., Montade, V., Nazarova, L., Novenko, E., Pařil, P., Pearson, E., Peros, M., Pienitz, R., Płóciennik, M., Porinchu, D., Potito, A., Rees, A., Reinemann, S., Roberts, S., Rolland, N., Salonen, S., Self, A., Seppä, H., Shala, S., St-Jacques, J., Stenni, B., Syrykh, L., Tarrats, P., Taylor, K., Bos, V., Velle, G., Wahl, E., Walker, I., Wilmshurst, J., Zhang, E. \& Zhilich, S. A global database of Holocene paleotemperature records. {\em Scientific Data}. \textbf{7}, 115 (2020,4), https://doi.org/10.1038/s41597-020-0445-3
+\bibitem{Babichev2002}Babichev, S., Ries, J. \& Lvovsky, A. Quantum scissors: teleportation of single-mode optical states by means of a nonlocal single photon. (Preprint at https://arxiv.org/abs/quant-ph/0208066,2002), https://arxiv.org/abs/quant-ph/0208066
+\bibitem{Figueredo:2009dg}Figueredo, A. \& Wolf, P. Assortative pairing and life history strategy – a cross-cultural study. {\em Human Nature}. \textbf{20} pp. 317-330 (2009)
+\bibitem{Hao:gidmaps:2014}Hao, Z., AghaKouchak, A., Nakhjiri, N. \& Farahmand, A. Global integrated drought monitoring and prediction system (GIDMaPS) data sets. (<i>figshare</i> https://doi.org/10.6084/m9.figshare.853801,2014)
+\bibitem{behringer2014manipulating}Behringer, R. Manipulating the mouse embryo: a laboratory manual. (Cold Spring Harbor Laboratory Press,2014)
+\bibitem{angel2020}Angel, S., Arango Franco, S., Liu, Y. \& Blei, A. The Shape Compactness of Urban Footprints. {\em Progress In Planning}. \textbf{139} pp. 100429 (2020,7)
+\bibitem{alexiou2016}Alexiou, A., Singleton, A. \& Longley, P. A Classification of Multidimensional Open Data for Urban Morphology. {\em Built Environment}. \textbf{42}, 382-395 (2016,10)
+\bibitem{taubenbock2019new}Taubenböck, H., Weigand, M., Esch, T., Staab, J., Wurm, M., Mast, J. \& Dech, S. A new ranking of the world's largest cities—Do administrative units obscure morphological realities?. {\em Remote Sensing Of Environment}. \textbf{232} pp. 111353 (2019)
+\bibitem{brodsky2018h3}Brodsky, I. H3: Uber’s hexagonal hierarchical spatial index. {\em Available From Uber Engineering Website: Https://eng. Uber. Com/h3/[22 June 2019]}. (2018)
+\bibitem{jochem2021tools}Jochem, W. \& Tatem, A. Tools for Mapping Multi-Scale Settlement Patterns of Building Footprints: An Introduction to the R Package Foot. {\em PloS One}. \textbf{16}, e0247535 (2021)
+\bibitem{araldi2019}Araldi, A. \& Fusco, G. From the Street to the Metropolitan Region: Pedestrian Perspective in Urban Fabric Analysis:. {\em Environment And Planning B: Urban Analytics And City Science}. \textbf{46}, 1243-1263 (2019,8)
+\bibitem{caruso2017}Caruso, G., Hilal, M. \& Thomas, I. Measuring Urban Forms from Inter-Building Distances: Combining MST Graphs with a Local Index of Spatial Association. {\em Landscape And Urban Planning}. \textbf{163} pp. 80-89 (2017,7)
+\bibitem{lowry2014}Lowry, J. \& Lowry, M. Comparing Spatial Metrics That Quantify Urban Form. {\em Computers, Environment And Urban Systems}. \textbf{44} pp. 59-67 (2014,1)
+\bibitem{feliciotti2018}Feliciotti, A. RESILIENCE AND URBAN DESIGN: A SYSTEMS APPROACH TO THE STUDY OF RESILIENCE IN URBAN FORM. (University of Strathclyde,2018,1)
+\bibitem{gil2012}Gil, J., Montenegro, N., Beirão, J. \& Duarte, J. On the Discovery of Urban Typologies: Data Mining the Multi-Dimensional Character of Neighbourhoods. {\em Urban Morphology}. \textbf{16}, 27-40 (2012,1)
+\bibitem{boeing2018}Boeing, G. A Multi-Scale Analysis of 27,000 Urban Street Networks: Every US City, Town, Urbanized Area, and Zillow Neighborhood. {\em Environment And Planning B: Urban Analytics And City Science}. \textbf{219}, 239980831878459 (2018,1)
+\bibitem{hijazi2016}Hijazi, I., Li, X., Koenig, R., Schmit, G., El Meouche, R., Lv, Z. \& Abunemeh, M. Measuring the Homogeneity of Urban Fabric Using 2D Geometry Data. {\em Environment And Planning B: Planning And Design}. pp. 1-25 (2016,1)
+\bibitem{hamaina2012a}Hamaina, R., Leduc, T. \& Moreau, G. Towards Urban Fabrics Characterization Based on Buildings Footprints. {\em Bridging The Geographic Information Sciences}. \textbf{2} pp. 327-346 (2012,1)
+\bibitem{porta2006}Porta, S., Crucitti, P. \& Latora, V. The Network Analysis of Urban Streets: A Primal Approach. {\em Environment And Planning B: Planning And Design}. \textbf{33}, 705-725 (2006,1)
+\bibitem{hallowell2013}Hallowell, G. \& Baran, P. Suburban Change: A Time Series Approach to Measuring Form and Spatial Configuration. {\em The Journal Of Space Syntax}. \textbf{4}, 74-91 (2013,1)
+\bibitem{schirmer2015}Schirmer, P. \& Axhausen, K. A Multiscale Classification of Urban Morphology. {\em Journal Of Transport And Land Use}. \textbf{9}, 101-130 (2015,5)
+\bibitem{vanderhaegen2017}Vanderhaegen, S. \& Canters, F. Mapping Urban Form and Function at City Block Level Using Spatial Metrics. {\em Landscape And Urban Planning}. \textbf{167} pp. 399-409 (2017,11)
+\bibitem{bobkova2019}Bobkova, E., Berghauser Pont, M. \& Marcus, L. Towards Analytical Typologies of Plot Systems: Quantitative Profile of Five European Cities. {\em Environment And Planning B: Urban Analytics And City Science}. pp. 239980831988090 (2019,10)
+\bibitem{kropf2018}Kropf, K. Plots, Property and Behaviour. {\em Urban Morphology}. \textbf{22}, 5-14 (2018,1)
+\bibitem{fleischmann2020}Fleischmann, M., Feliciotti, A., Romice, O. \& Porta, S. Morphological Tessellation as a Way of Partitioning Space: Improving Consistency in Urban Morphology at the Plot Scale. {\em Computers, Environment And Urban Systems}. \textbf{80} pp. 101441 (2020,1)
+\bibitem{openroads2020}Ordnance Survey OS Open Roads.  (2020), https://www.ordnancesurvey.co.uk/business-government/products/open-map-roads
+\bibitem{openmap2020}Ordnance Survey OS OpenMap - Local.  (2020), https://www.ordnancesurvey.co.uk/business-government/products/open-map-local
+\bibitem{openrivers2020}Ordnance Survey OS Open Rivers.  (2020), https://www.ordnancesurvey.co.uk/business-government/products/open-map-rivers
+\bibitem{strategi2016}Ordnance Survey Strategi.  (2016), https://www.ordnancesurvey.co.uk/business-government/products/strategi
+\bibitem{fleischmann2020a}Fleischmann, M., Romice, O. \& Porta, S. Measuring Urban Form: Overcoming Terminological Inconsistencies for a Quantitative and Comprehensive Morphologic Analysis of Cities. {\em Environment And Planning B: Urban Analytics And City Science}. pp. 239980832091044 (2020,3)
+\bibitem{sneath1973numerical}Sneath, P., Sokal, R. \& Others Numerical taxonomy. The principles and practice of numerical classification.. (Freeman,1973,1)
+\bibitem{fleischmann2021}Fleischmann, M., Feliciotti, A., Romice, O. \& Porta, S. Methodological foundation of a numerical taxonomy of urban form. {\em Environment And Planning B: Urban Analytics And City Science}. pp. 23998083211059835 (2021)
+\bibitem{schonlau2002clustergram}Schonlau, M. The Clustergram: A Graph for Visualizing Hierarchical and Nonhierarchical Cluster Analyses. {\em The Stata Journal}. \textbf{2}, 391-402 (2002)
+\bibitem{hamaina2013}Hamaina, R., Leduc, T. \& Moreau, G. A New Method to Characterize Density Adapted to a Coarse City Model. {\em OpenStreetMap In GIScience}. pp. 249-263 (2013,12)
+\bibitem{calinski1974}Caliński, T. \& J Harabasz A dendrite method for cluster analysis. {\em Communications In Statistics}. \textbf{3}, 1-27 (1974)
+\bibitem{davies1979cluster}Davies, D. \& Bouldin, D. A cluster separation measure. {\em IEEE Transactions On Pattern Analysis And Machine Intelligence}., 224-227 (1979)
+\bibitem{eea2018}European environment agency (EEA) Urban Atlas.  (2018), https://land.copernicus.eu/local/urban-atlas/urban-atlas-2018
+\bibitem{cramer2016mathematical}Cramér, H. Mathematical Methods of Statistics (PMS-9), Volume 9. (Princeton university press,2016)
+\bibitem{dibble2019origin}Dibble, J., Prelorendjos, A., Romice, O., Zanella, M., Strano, E., Pagel, M. \& Porta, S. On the origin of spaces: Morphometric foundations of urban form evolution. {\em Environment And Planning B: Urban Analytics And City Science}. \textbf{46}, 707-730 (2019)
+\bibitem{steiniger2008}Steiniger, S., Lange, T., Burghardt, D. \& Weibel, R. An Approach for the Classification of Urban Building Structures Based on Discriminant Analysis Techniques. {\em Transactions In GIS}. \textbf{12}, 31-59 (2008,2)
+\bibitem{basaraner2017}Basaraner, M. \& Cetinkaya, S. Performance of Shape Indices and Classification Schemes for Characterising Perceptual Shape Complexity of Building Footprints in GIS. {\em International Journal Of Geographical Information Science}. \textbf{31}, 1952-1977 (2017,7)
+\bibitem{luwp22}HM Government Levelling Up the United Kingdom. (https://www.gov.uk/government/publications/levelling-up-the-united-kingdom,2022), London: The Stationery Office
+\bibitem{webber2018predictive}Webber, R. \& Burrows, R. The predictive postcode: the geodemographic classification of British society. (Sage,2018)
+\bibitem{lage2001minimal}Lage, J., Assunção, R. \& Reis, E. A minimal spanning tree algorithm applied to spatial cluster analysis. {\em Electronic Notes In Discrete Mathematics}. \textbf{7} pp. 162-165 (2001)
+\bibitem{baccao2005self}Bação, F., Lobo, V. \& Painho, M. The self-organizing map, the Geo-SOM, and relevant variants for geosciences. {\em Computers & Geosciences}. \textbf{31}, 155-163 (2005)
+\bibitem{wolf2021spatially}Wolf, L. Spatially–encouraged spectral clustering: a technique for blending map typologies and regionalization. {\em International Journal Of Geographical Information Science}. \textbf{35}, 2356-2373 (2021)
+\bibitem{fleischmannmartin2021Geographical}Fleischmann, M. \& Arribas-Bel, D. Geographical Characterisation of British Urban Form and Function Using the Spatial Signatures Framework. (figshare,2021)
+\bibitem{cdrc}Fleischmann, M. \& Arribas-Bel, D. Geographical Characterisation of British Urban Form and Function Using the Spatial Signatures Framework. (Consumer Data Research Centre,2021), https://data.cdrc.ac.uk/dataset/spatial-signatures-great-britain
+\end{thebibliography}
+
+
 \section*{Acknowledgements}
 M.F. and D.A. kindly acknowledge funding by the UK's Economic and Social Research
 Council through the project ``Learning an urban grammar from satellite data
@@ -623,25 +684,25 @@ cells, and the development of spatial signatures.}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\linewidth]{fig/crosstab_worldpop.pdf}
-    \caption{Contingency table showing frequencies (in \
+    \caption{Contingency table showing frequencies  (in \%) of WorldPop classes within signature types.}
     \label{fig:crosstab_worldpop}
 \end{figure}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\linewidth]{fig/crosstab_modum.pdf}
-    \caption{Contingency table showing frequencies (in \
+    \caption{Contingency table showing frequencies (in \%) of MODUM classes within signature types.}
     \label{fig:crosstab_modum}
 \end{figure}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{fig/crosstab_ua.pdf}
-    \caption{Contingency table showing frequencies (in \
+    \caption{Contingency table showing frequencies (in \%) of Urban Atlas classes within signature types.}
     \label{fig:crosstab_ua}
 \end{figure}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.8\linewidth]{fig/crosstab_lcz.pdf}
-    \caption{Contingency table showing frequencies (in \
+    \caption{Contingency table showing frequencies (in \%) of Local Climate Zones within signature types.}
     \label{fig:crosstab_lcz}
 \end{figure}
 \begin{longtable}{lll}
