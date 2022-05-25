@@ -4,8 +4,8 @@
 \usepackage{lineno}
 \linenumbers
 
-\title{Geographical Characterisation of British Urban Form and Function using
-the Spatial Signatures Framework}
+\title{Geographical characterisation of British urban form and function using
+the spatial signatures framework}
 
 \author[1, *]{Martin Fleischmann}
 \author[1]{Daniel Arribas-Bel}
@@ -51,7 +51,7 @@ their structure.
 % main text – no abbreviations lists or tables should be included. Structure of the main
 % text is provided below.
 
-\section*{Background \& Summary}
+\section*{Background \& summary}
 
 %       (700 words maximum) An overview of the study design, the assay(s) performed, and the
 %       created data, including any background information needed to put this study in the
@@ -318,9 +318,9 @@ Railways are retrieved from OS OpenMap - Local\cite{openmap2020}
 OS OpenRivers\cite{openrivers2020} representing river network of GB as centrelines, and a coastline is
 retrieved from OS Strategi®\cite{strategi2016}, capturing coastline as a continuous line
 geometry. Building geometry is extracted, again, from OS OpenMap - Local ("Building"
-layer) and represents generalised building footprint polygons.\footnote{Note that the dataset
+layer) and represents generalised building footprint polygons. Note that the dataset
 does not distinguish between individual buildings when they are adjacent (e.g. perimeter
-block composed of multiple buildings is represented by a single polygon).}
+block composed of multiple buildings is represented by a single polygon).
 
 % characterisation of space
 \subsection*{Characterisation of space}
@@ -360,7 +360,7 @@ distribution, intensity, connectivity and diversity\cite{fleischmann2020a}. Each
 different scales, from the measurement of individual geometries, to relations of
 neighbouring geometries, to a graph-based analysis of the street network. The combination of
 elements, categories and scales results in a set of 59 individual morphometric
-characters listed in the table \ref{tab:form}. The selection builds on the principles
+characters listed in the supplementary table \ref{tab:form}. The selection builds on the principles
 outlined by \cite{dibble2019origin} and later explored by \cite{fleischmann2021}, both
 following the rules derived by \cite{sneath1973numerical}. The gist is to include as
 many characters present in literature as is feasible, while minimising potential
@@ -441,7 +441,7 @@ geometry. Finally, characters based on interpolation and zonal statistics are ex
 using their contextual versions following the method used for form characters to, again,
 reflect the contextual pattern of measured values. As in the case of morphometric characters,
 only contextual versions are then used in the cluster analysis. The selection of datasets and the chosen
-transfer method are listed in the table \ref{tab:function}.
+transfer method are listed in the supplementary table \ref{tab:function}.
 
 \subsection*{Cluster analysis}
 % cluster analysis
@@ -545,7 +545,7 @@ Finally, individual spatial signature geometries are generated as a combination 
 adjacent ETCs belonging to the same signature class. To describe each geometry and
 each signature type, we measure mean values of the original, non-contextualised
 characters, and release it as additional descriptive tables. The resulting numerical
-profile of each signature type is available as table \ref{tab:port}. Table \ref{tab:pens} contains pen portraits
+profile of each signature type is available as supplementary table \ref{tab:port}. Supplementary table \ref{tab:pens} contains pen portraits
 derived from these numerical profiles.
 
 % - Feature importance - should this actually be included in here? It is not part of the
@@ -553,7 +553,7 @@ derived from these numerical profiles.
 
 
 
-\section*{Data Records}
+\section*{Data records}
 
 % The Data Records section should be used to explain each data record associated with this
 % work, including the repository where this information is stored, and to provide an
@@ -578,10 +578,8 @@ derived from these numerical profiles.
 
 % description of the GPKG/archive
 The data product \cite{fleischmannmartin2021Geographical} described in this article is available through the Consumer Data
-Research Centre Open Data repository available at
-\hyperlink{https://data.cdrc.ac.uk/dataset/spatial-signatures-great-britain}{https://data.cdrc.ac.uk/dataset/spatial-signatures-great-britain}
-under the Open Government Licence v3.0 license and archived at
-\hyperlink{https://doi.org/10.6084/m9.figshare.16691575.v1}{https://doi.org/10.6084/m9.figshare.16691575.v1}.
+Research Centre Open Data repository \cite{cdrc}
+under the Open Government Licence v3.0 license and archived \cite{fleischmannmartin2021Geographical}.
 The dataset stored in the repository contains a GeoPackage with a signature geometry
 (OSGB36 / British National Grid (\texttt{EPSG:27700}) CRS) and related signature type,
 plain-text pen portraits describing individual signature types, a series of CSV files
@@ -611,16 +609,16 @@ train a supervised model, in our case Random Forest, designed to predict individ
 signature types from input data. The former unpacks whether all the characters play a role
 in the delineation of clusters while the latter provides indication on feature importance - a relative measure of
 strength of each character in distinguishing between the types. Out of 328 characters,
-18 are invariant\footnote{The full list includes: 'Land cover [Airports] Q1, Land cover [Mineral extraction
+18 are invariant (the full list includes: 'Land cover [Airports] Q1, Land cover [Mineral extraction
 sites] Q1, Land cover [Road and rail networks and associated land] Q1, Land cover [Water
 bodies] Q1, Land cover [Inland marshes] Q1, Land cover [Dump sites] Q1, Land cover
 [Water courses] Q2, Land cover [Burnt areas] Q2, Land cover [Water courses] Q1, Land
 cover [Burnt areas] Q1, Land cover [Agro-forestry areas] Q3, Land cover [Coastal
 lagoons] Q2, Land cover [Burnt areas] Q3, Land cover [Agro-forestry areas] Q1, Land
 cover [Agro-forestry areas] Q2, Land cover [Dump sites] Q2, Land cover [Coastal lagoons]
-Q1, Land cover [Coastal lagoons] Q3'}
-and five insignificant at the 5\% level\footnote{The full list includes: Land cover [Green urban areas] Q1, Land cover [Road and rail networks and associated land] Q2,
-Land cover [Water bodies] Q2, Land cover [Transitional woodland-shrub] Q1, Land cover [Coniferous forest] Q1}
+Q1, Land cover [Coastal lagoons] Q3')
+and five insignificant at the 5\% level (the full list includes: Land cover [Green urban areas] Q1, Land cover [Road and rail networks and associated land] Q2,
+Land cover [Water bodies] Q2, Land cover [Transitional woodland-shrub] Q1, Land cover [Coniferous forest] Q1)
 (all derived from land cover) according to the F-test results. The results of
 the Random Forest-based feature importance approach are shown in
 a table \ref{tab:imp}. As can be seen, form-based characters dominate the top 10 characters, but it is worth
@@ -628,7 +626,7 @@ noting that these top 10 characters together bear only 0.196 of the overall impo
 
 A similar exercise can be done on at the level of individual clusters, with a binary Random Forest model trained
 to distinguish that particular class from the other. Resulting relative importance of top 10 characters for each signature type
-is presented in a table \ref{tab:imp_cls}. While it is clear that form-based characters still dominate the prediction,
+is presented in a supplementary table \ref{tab:imp_cls}. While it is clear that form-based characters still dominate the prediction,
 the more urban signature types are, the higher the importance of function seems to be. Complete tables
 with all characters are available as online Tables 1 and 2.
 
@@ -704,7 +702,7 @@ classes 4 and 6 tend to be outside of city centres but still within urban areas.
 the footprint-based form that is driving the difference between them, signatures in the same
 area are often distinguished by function and varies access to amenities and services.
 
-\subsection*{MODUM}
+\subsection*{Multidimensional open data urban morphology}
 % - MODUM (Spsig)
     % description of dataset + figure
 Multidimensional Open Data Urban Morphology (MODUM) classification describes a typology
@@ -734,7 +732,7 @@ on the similarity of types. Signature types are minimally present in MODUM class
 by a single character (\textit{Railway Buzz}, \textit{Waterside Settings},
 \textit{High Street and Promenades}), suggesting the more balanced weight of characters.
 
-\subsection*{Copernicus Urban Atlas}
+\subsection*{Copernicus urban atlas}
 % - Urban atlas (Spsig)
     % description of dataset + figure
 Copernicus Urban Atlas is the least similar of the comparison datasets. It is a
@@ -768,7 +766,7 @@ the Copernicus Urban Atlas attempts to capture land cover, resulting in a large 
 of non-urban classes, spatial signatures are aimed at urban environment with 13 out of 16
 classes covering primarily urbanised areas.
 
-\subsection*{Local Climate Zones}
+\subsection*{Local climate zones}
 % - Local climate zones (Spsig)
     % description of dataset + figure
 Local climate zones (LCZ) are conceptual classes originally designed to support study of urban
@@ -819,7 +817,7 @@ presented classification compared to existing datasets, allowing us to distingui
 example, five types of signature types forming town and city centres.
 
 
-\section*{Usage Notes}
+\section*{Usage notes}
 
 The released data product follows widespread standards for geographic data storage and
 should be easy to integrate with other data and methods by researchers wanting to reuse it. However, due to the density of
@@ -881,8 +879,7 @@ analysed the results. M.F. and D.A. wrote and reviewed the manuscript.
 \section*{Competing interests}
 
 The authors declare no competing interests.
-
-\section*{Figures \& Tables}
+\section*{Figures \& tables}
 
 
 \begin{figure}[ht]
